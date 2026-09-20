@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hospital Veterinário Arca | Veterinário 24h em Santana, Zona Norte de SP</title>
+<meta name="description" content="Hospital veterinário 24 horas em Santana, São Paulo. Emergência, internação com UTI, cirurgia, exames no mesmo dia e nove especialidades para cães, gatos e animais exóticos.">
+<meta name="robots" content="noindex,follow">
+<meta name="theme-color" content="#1B3FD8">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%231B3FD8'/%3E%3Cpath d='M8 36h14l5-16 8 28 5-12h16' fill='none' stroke='%23FF6B5E' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;800;900&family=Red+Hat+Text:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* Concept: a hospital that happens to be for animals. Pure white, one loud cobalt, coral reserved for urgency. Every photo and button has one square corner, like a clipped patient tag. A single ECG trace draws once and closes into a heart. */
+:root{
+  --white:#fff; --cobalt:#1B3FD8; --cobalt-deep:#1230A8; --navy:#0B1B5C; --soft:#47507A;
+  --coral:#FF6B5E; --coral-hi:#FF8478; --lilac:#ECEEFF; --line:#0B1B5C24; --amber:#F5A400;
+  --disp:"Red Hat Display",system-ui,sans-serif; --text:"Red Hat Text",system-ui,sans-serif;
+  --wrap:1200px; --bar:40px; --head:72px; --top:calc(var(--bar) + var(--head));
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--top) + 20px);-webkit-text-size-adjust:100%}
+body{margin:0;font:400 1.0625rem/1.65 var(--text);color:var(--navy);background:var(--white);overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+h1,h2,h3{font-family:var(--disp);font-weight:900;line-height:1.04;letter-spacing:-.025em;margin:0;text-wrap:balance}
+h2{font-size:clamp(2.1rem,4.6vw,3.5rem)}
+h3{font-size:1.2rem;font-weight:800;letter-spacing:-.01em;line-height:1.2}
+p{margin:0}
+a{color:inherit}
+a,summary,button,label{touch-action:manipulation;-webkit-tap-highlight-color:rgba(255,107,94,.25)}
+:focus-visible{outline:3px solid var(--cobalt);outline-offset:3px;border-radius:4px}
+.on-dark :focus-visible,.urgent :focus-visible{outline-color:#fff}
+.wrap{width:min(var(--wrap),100% - 2.5rem);margin-inline:auto}
+.skip{position:absolute;left:-999px;top:0;background:var(--navy);color:#fff;padding:.75rem 1rem;z-index:100}
+.skip:focus{left:0}
+.band{padding-block:clamp(4rem,8vw,7rem)}
+.head{max-width:46rem;margin-bottom:clamp(2rem,4vw,3.25rem)}
+.lede{font-size:1.15rem;color:var(--soft);margin-top:1rem;max-width:60ch}
+.on-dark .lede{color:#D5DAFF}
+.ic{width:28px;height:28px;flex:none;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+/* the clipped-tag corner: three soft corners, one square */
+.tag{border-radius:14px 14px 14px 2px}
+.ph{margin:0;overflow:hidden;background:var(--lilac)}
+.ph img{width:100%;height:100%;object-fit:cover}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;text-decoration:none;cursor:pointer;border:0;font:800 1.02rem/1 var(--disp);padding:1.05rem 1.5rem;border-radius:14px 14px 14px 2px;background:var(--cobalt);color:#fff;transition:background .15s}
+.btn svg{width:1.3em;height:1.3em;flex:none}
+.btn:hover{background:var(--cobalt-deep)}
+.btn.sos{background:var(--coral);color:var(--navy)}
+.btn.sos:hover{background:var(--coral-hi)}
+.btn.ghost{background:#fff;color:var(--cobalt)}
+.btn.ghost:hover{background:var(--lilac)}
+
+/* fixed urgency bar + header */
+.fixed{position:fixed;inset:0 0 auto 0;z-index:50}
+.urgent{background:var(--coral);color:var(--navy);font:700 .95rem/1 var(--disp)}
+.urgent .wrap{height:var(--bar);display:flex;align-items:center;justify-content:space-between;gap:1rem;white-space:nowrap}
+.open{display:inline-flex;align-items:center;gap:.55rem}
+.open i{width:10px;height:10px;border-radius:50%;background:var(--navy);position:relative}
+.open i::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:2px solid var(--navy);animation:ping 2s ease-out infinite}
+@keyframes ping{from{transform:scale(.5);opacity:1}to{transform:scale(1.25);opacity:0}}
+.short{display:none}
+.urgent a{text-decoration:none;display:inline-flex;align-items:center;gap:.45rem;height:var(--bar)}
+.urgent a b{font-weight:900;text-decoration:underline;text-underline-offset:.2em}
+.urgent a svg{width:17px;height:17px}
+.top{background:rgba(255,255,255,.97);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:var(--head)}
+.logo{text-decoration:none;display:inline-flex;align-items:center;gap:.55rem;color:var(--cobalt);font:900 1.9rem/1 var(--disp);letter-spacing:-.05em}
+.logo svg{width:40px;height:26px;stroke:var(--coral);stroke-width:3.4;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.logo small{font:700 .78rem/1.1 var(--disp);letter-spacing:0;color:var(--navy);border-left:2px solid var(--line);padding-left:.6rem}
+.nav{display:flex;gap:1.6rem}
+.nav a{text-decoration:none;font-weight:500;font-size:.98rem;padding:.4rem 0;border-bottom:2px solid transparent}
+.nav a:hover{border-color:var(--coral)}
+.top .btn{padding:.8rem 1.15rem;font-size:.94rem}
+.actions{display:flex;align-items:center;gap:.4rem}
+.menu{display:none;position:relative}
+.menu summary{list-style:none;width:46px;height:46px;display:grid;place-items:center;cursor:pointer;color:var(--navy)}
+.menu summary::-webkit-details-marker{display:none}
+.menu nav{position:absolute;right:-.25rem;top:54px;background:#fff;border:1px solid var(--line);border-radius:14px 2px 14px 14px;box-shadow:0 18px 40px -18px #0B1B5C66;padding:.3rem 1.25rem .5rem;min-width:240px;display:grid}
+.menu nav a{padding:.85rem 0;text-decoration:none;font-weight:500;border-bottom:1px solid var(--line)}
+.menu nav a:last-child{border:0}
+
+/* hero: a cobalt ward wall */
+.hero{background:var(--cobalt);color:#fff;padding-top:var(--top);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:clamp(2rem,5vw,4.5rem);align-items:end}
+.hero .copy{padding-block:clamp(2.75rem,6vw,5.5rem)}
+.hero h1{font-size:clamp(2.7rem,6vw,5.1rem);line-height:.98}
+.hero .lede{color:#E3E7FF;font-size:clamp(1.1rem,1.4vw,1.25rem);max-width:48ch;margin-top:0}
+.ecg{display:block;width:min(100%,560px);height:auto;margin:1.1rem 0 1.2rem -4px;overflow:visible}
+.ecg path{fill:none;stroke:var(--coral);stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:0;animation:beat 2.8s cubic-bezier(.6,0,.3,1) .3s backwards}
+@keyframes beat{from{stroke-dashoffset:1}}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2rem}
+.selo{display:inline-flex;align-items:center;gap:.8rem;margin-top:1.75rem;text-decoration:none;line-height:1.2;padding:.65rem 1.15rem .65rem .75rem;background:#fff;color:var(--navy);border-radius:14px 14px 14px 2px}
+.selo svg{width:30px;height:30px;flex:none}
+.selo b{font:900 1.35rem/1 var(--disp);display:block}
+.selo em{font-style:normal;font-size:.9rem;color:var(--soft)}
+.g-star{color:var(--amber)}
+.hero .ph{border-radius:220px 0 0 0;align-self:end;aspect-ratio:5/6;background:var(--cobalt-deep)}
+
+/* é emergência? */
+.sos-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:clamp(2rem,5vw,4.5rem);align-items:start}
+.signs{list-style:none;margin:0;padding:0}
+.signs li{display:grid;grid-template-columns:28px 1fr;gap:1rem;padding:1.05rem 0;border-top:1px solid var(--line);align-items:start}
+.signs li:last-child{border-bottom:1px solid var(--line)}
+.signs .ic{color:#C8281B;margin-top:.1rem}
+.signs b{font:800 1.1rem/1.3 var(--disp);display:block}
+.signs span{color:var(--soft);font-size:1rem;line-height:1.5}
+.js .signs li{opacity:0;transform:translateX(-10px);transition:opacity .45s,transform .45s;transition-delay:calc(var(--i)*60ms)}
+.js .signs.in li{opacity:1;transform:none}
+.call{position:sticky;top:calc(var(--top) + 24px);background:var(--navy);color:#fff;padding:2rem;border-radius:80px 14px 14px 14px}
+.call h3{font-size:1.55rem;font-weight:900;margin-top:1.5rem}
+.call p{color:#D5DAFF;margin-top:.7rem;font-size:1rem}
+.call .num{display:block;font:900 clamp(1.9rem,3vw,2.35rem)/1 var(--disp);letter-spacing:-.03em;color:#fff;text-decoration:none;margin:1.4rem 0 1.1rem;white-space:nowrap}
+.call .btn{width:100%}
+.call small{display:block;margin-top:1rem;color:#D5DAFF;font-size:.92rem;line-height:1.5}
+
+/* especialidades: a directory board, not cards */
+.spec{background:var(--lilac)}
+.board{display:grid;grid-template-columns:repeat(3,1fr);border-top:2px solid var(--navy)}
+.board article{padding:1.6rem 1.5rem 1.7rem 0;border-bottom:1px solid var(--line)}
+.board article:not(:nth-child(3n+1)){padding-left:1.5rem;border-left:1px solid var(--line)}
+.board .ic{width:34px;height:34px;color:var(--cobalt)}
+.board h3{margin-top:.8rem}
+.board p{color:var(--soft);font-size:1rem;line-height:1.55;margin-top:.35rem}
+.also{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:clamp(2.5rem,5vw,4rem)}
+.also .ph{aspect-ratio:4/3;position:relative}
+.also .ph:nth-child(1){border-radius:110px 0 0 0}
+.also .ph:nth-child(2){border-radius:0 0 110px 0}
+.also .ph:nth-child(3){border-radius:0 110px 0 0}
+.also figcaption{position:absolute;left:0;bottom:0;background:#fff;color:var(--navy);font:800 .95rem/1 var(--disp);padding:.6rem .9rem;border-radius:0 12px 0 0}
+
+/* estrutura */
+.plant{background:var(--navy);color:#fff}
+.plant .wrap{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.plant .pics{display:grid;gap:1.25rem}
+.plant .pics .ph:first-child{aspect-ratio:4/3;border-radius:0 160px 0 0}
+.plant .pics .ph:last-child{aspect-ratio:16/9;border-radius:0 0 0 120px;margin-left:18%}
+.plant dl{margin:1.75rem 0 0;display:grid;grid-template-columns:1fr 1fr;gap:0 2rem}
+.plant dl div{padding:1rem 0;border-top:1px solid #ffffff2e}
+.plant dt{font:800 1.08rem/1.25 var(--disp);color:#fff}
+.plant dd{margin:.25rem 0 0;color:#D5DAFF;font-size:.98rem;line-height:1.5}
+.plant dl div:first-child{grid-column:1/-1}
+.plant dl div:first-child dt{color:var(--coral-hi);font-size:1.25rem}
+
+/* planos */
+.pup{max-width:none;display:grid;grid-template-columns:1fr 200px;column-gap:3rem;align-items:end}
+.pup .ph{grid-column:2;grid-row:1/3;aspect-ratio:1;border-radius:0 100px 0 0}
+.pup .lede{grid-column:1;align-self:start}
+.pup h2{align-self:end}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;align-items:stretch}
+.plan{border:2px solid var(--navy);border-radius:48px 14px 14px 14px;padding:2rem 1.75rem;display:flex;flex-direction:column}
+.plan .age{font-size:1rem;color:var(--soft);margin-top:.3rem}
+.plan h3{font-size:1.7rem;font-weight:900}
+.plan .cost{margin:1.2rem 0;padding-block:1rem;border-block:1px solid var(--line);line-height:1.1}
+.plan .cost b{font:900 2.9rem/1 var(--disp);letter-spacing:-.04em;color:var(--cobalt);white-space:nowrap}
+.plan .cost span{color:var(--soft);font-size:1rem}
+.plan ul{list-style:none;margin:0 0 1.75rem;padding:0;display:grid;gap:.55rem;font-size:1rem;line-height:1.5}
+.plan li{padding-left:1.6rem;position:relative}
+.plan li::before{content:"";position:absolute;left:0;top:.45em;width:.95rem;height:.5rem;border-left:2.5px solid var(--cobalt);border-bottom:2.5px solid var(--cobalt);transform:rotate(-45deg) scale(.8)}
+.plan .btn{margin-top:auto}
+.plan.main{background:var(--cobalt);border-color:var(--cobalt);color:#fff}
+.plan.main .age,.plan.main .cost span{color:#E3E7FF}
+.plan.main .cost{border-color:#ffffff3d}
+.plan.main .cost b{color:#fff}
+.plan.main li::before{border-color:var(--coral-hi)}
+.vax{margin-top:2rem;background:var(--lilac);border-radius:14px 14px 14px 2px;padding:1.4rem 1.6rem;display:grid;grid-template-columns:auto 1fr;gap:1rem 1.5rem;align-items:center}
+.vax .ic{width:36px;height:36px;color:var(--cobalt)}
+.vax p{font-size:1rem;line-height:1.55}
+
+/* equipe */
+.team{background:var(--lilac)}
+.crew{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem 1.5rem}
+.crew .ph{aspect-ratio:4/5;background:#fff}
+.crew article:nth-child(odd) .ph{border-radius:90px 0 0 0}
+.crew article:nth-child(even) .ph{border-radius:0 90px 0 0}
+.crew h3{margin-top:1.15rem;font-size:1.3rem}
+.crew .role{display:block;color:var(--cobalt);font:700 1rem/1.3 var(--disp);margin-top:.25rem}
+.crew .crmv{display:block;color:var(--soft);font-size:.92rem;margin-top:.15rem}
+.crew p{color:var(--soft);font-size:1rem;line-height:1.55;margin-top:.55rem}
+
+/* agendar */
+.book .wrap{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.book .ph{aspect-ratio:4/5;border-radius:0 0 0 200px}
+.slip{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem 1.25rem;margin-top:1.75rem}
+.slip label,.slip legend{font:700 .98rem/1.3 var(--disp);padding:0}
+.slip label{display:grid;gap:.4rem}
+.slip select,.slip input[type=date],.slip input[type=text]{width:100%;font:400 1.05rem/1.2 var(--text);color:var(--navy);background:#fff;border:2px solid var(--navy);border-radius:10px 10px 10px 2px;padding:.8rem .85rem;min-height:52px}
+.slip select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='m1 1 5 5 5-5' fill='none' stroke='%231B3FD8' stroke-width='2'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right .9rem center;background-size:12px;padding-right:2.2rem}
+.slip fieldset{border:0;margin:0;padding:0;min-width:0}
+.turns{display:flex;margin-top:.4rem;border:2px solid var(--navy);border-radius:10px 10px 10px 2px;overflow:hidden}
+.turns label{flex:1;display:block;position:relative;font-weight:500}
+.turns input{position:absolute;opacity:0;inset:0;width:100%;height:100%;cursor:pointer;margin:0}
+.turns span{display:grid;place-items:center;min-height:48px;border-left:2px solid var(--navy);font-family:var(--text)}
+.turns label:first-child span{border-left:0}
+.turns input:checked+span{background:var(--cobalt);color:#fff;font-weight:700}
+.turns input:focus-visible+span{outline:3px solid var(--coral);outline-offset:-5px}
+.slip .full{grid-column:1/-1}
+.slip .btn{grid-column:1/-1;font-size:1.08rem;padding-block:1.2rem}
+.hint{grid-column:1/-1;font-size:.96rem;color:var(--soft)}
+.hint a{color:#B3241A;font-weight:700}
+
+/* depoimentos */
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.rev{margin:0;background:#fff;border:1px solid var(--line);border-radius:14px 14px 14px 2px;padding:1.5rem;display:flex;flex-direction:column;gap:.85rem;box-shadow:0 22px 40px -30px #0B1B5C80}
+.rev header{display:flex;align-items:center;gap:.8rem}
+.av{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;color:#fff;font:700 1.05rem/1 system-ui,sans-serif;flex:none}
+.rev cite{font-style:normal;font-weight:700;display:block;line-height:1.2}
+.rev small{color:var(--soft);font-size:.88rem}
+.rev header svg{width:22px;height:22px;margin-left:auto;flex:none}
+.stars{letter-spacing:.1em;font-size:1.15rem;line-height:1}
+.rev blockquote{margin:0;font-size:1.02rem;line-height:1.6}
+
+.faq .wrap{max-width:860px}
+.faq details{border-top:1px solid var(--line)}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;padding:1.25rem 0;font:800 1.2rem/1.25 var(--disp);display:flex;justify-content:space-between;gap:1rem;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";display:grid;place-items:center;width:2.1rem;height:2.1rem;border-radius:10px 10px 10px 2px;background:var(--lilac);color:var(--cobalt);font:500 1.5rem/1 var(--text);flex:none;transition:transform .25s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 0 1.5rem;color:var(--soft);max-width:66ch}
+
+.contact{background:var(--cobalt);color:#fff}
+.contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:stretch}
+.contact address{font-style:normal;margin:1.6rem 0 2rem}
+.contact address div{padding:.95rem 0;border-top:1px solid #ffffff3d;display:grid;grid-template-columns:9rem 1fr;gap:1rem}
+.contact address b{font:800 1rem/1.6 var(--disp);color:#fff}
+.contact address span{color:#E3E7FF}
+.contact address a{color:#fff;font-weight:700}
+.cta-row{display:flex;flex-wrap:wrap;gap:.9rem}
+.map{min-height:460px;border-radius:0 160px 0 0;overflow:hidden;background:var(--cobalt-deep)}
+.map iframe{width:100%;height:100%;min-height:460px;border:0;display:block}
+
+footer{background:var(--navy);color:#D5DAFF;font-size:.95rem}
+footer .wrap{display:grid;grid-template-columns:auto 1fr;gap:1rem 3rem;align-items:center;padding-block:2.5rem 6.5rem}
+footer .logo{color:#fff}
+footer .logo small{color:#D5DAFF;border-color:#ffffff3d}
+footer p{line-height:1.65}
+footer p a{color:#fff}
+
+.fab{position:fixed;right:1.1rem;bottom:max(1.1rem,env(safe-area-inset-bottom));z-index:60;width:58px;height:58px;border-radius:50%;background:#1A8F4A;color:#fff;display:grid;place-items:center;box-shadow:0 10px 24px -8px rgba(11,27,92,.7);border:3px solid #fff;transition:transform .2s}
+.fab:hover{transform:scale(1.06)}
+.fab svg{width:30px;height:30px}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .signs li{opacity:1;transform:none}
+}
+@media (max-width:1100px){
+  .nav{display:none}.menu{display:block}
+  .crew{grid-template-columns:repeat(2,1fr);max-width:680px}
+  .plant dl{grid-template-columns:1fr}
+}
+@media (max-width:860px){
+  .hero .wrap,.sos-grid,.plant .wrap,.book .wrap,.contact .wrap{grid-template-columns:1fr}
+  .hero .copy{padding-bottom:0}
+  .hero .ph{aspect-ratio:4/3;border-radius:120px 0 0 0;margin-right:-1.25rem}
+  .call{position:static;border-radius:48px 14px 14px 14px}
+  .board{grid-template-columns:1fr 1fr}
+  .board article,.board article:not(:nth-child(3n+1)){padding:1.3rem 1rem 1.4rem 0;border-left:0}
+  .board article:nth-child(even){padding-left:1rem;border-left:1px solid var(--line)}
+  .book .ph{display:none}
+  .plans,.revs{grid-template-columns:1fr;max-width:480px}
+  .pup{grid-template-columns:1fr}.pup .ph{display:none}
+  .map{border-radius:0 90px 0 0}
+  footer .wrap{grid-template-columns:1fr}
+}
+@media (max-width:620px){
+  :root{--bar:38px;--head:60px}
+  .urgent{font-size:.84rem}
+  .short{display:inline}
+  .urgent .long,.logo small,.top .btn b{display:none}
+  .logo{font-size:1.65rem}
+  .top .btn{padding:.75rem .9rem}
+  .hero-cta .btn,.cta-row .btn{width:100%}
+  .also{grid-template-columns:1fr 1fr;gap:1rem}
+  .also .ph:nth-child(3){display:none}
+  .also .ph:nth-child(1){border-radius:70px 0 0 0}
+  .also .ph:nth-child(2){border-radius:0 70px 0 0}
+  .board h3{font-size:1.05rem}
+  .board p{font-size:.94rem}
+  .slip{grid-template-columns:1fr}
+  .crew{gap:1.75rem 1rem}
+  .crew h3{font-size:1.12rem}
+  .crew article:nth-child(n) .ph{border-radius:56px 0 0 0}
+  .vax{grid-template-columns:1fr}
+  .contact address div{grid-template-columns:1fr;gap:0}
+  .map,.map iframe{min-height:340px}
+}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js')</script>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 15l-1.4 5.1 5.2-1.4A9.9 9.9 0 1 0 12.04 2Zm0 1.8a8.1 8.1 0 1 1-4.1 15.1l-.3-.2-3.1.8.8-3-.2-.3A8.1 8.1 0 0 1 12.04 3.8Zm-3.3 3.9c-.2 0-.5.1-.7.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.2 5 4.4 2.4.9 2.9.8 3.5.7.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.4l-1.9-.9c-.3-.1-.5-.2-.7.2l-.9 1.1c-.2.2-.3.2-.6.1a7.5 7.5 0 0 1-3.7-3.2c-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.5-.5-.5-.7-.5h-.6Z"/></symbol>
+  <symbol id="i-g" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20H24v8.5h11.3C33.7 33.4 29.3 36.5 24 36.5a12.5 12.5 0 1 1 8.2-21.9l6-6A21 21 0 1 0 45 24c0-1.4-.1-2.7-.4-4Z"/><path fill="#FF3D00" d="m5.3 14.7 7 5.1A12.5 12.5 0 0 1 32.2 14.6l6-6A21 21 0 0 0 5.3 14.7Z"/><path fill="#4CAF50" d="M24 45c5.2 0 10-2 13.6-5.2l-6.5-5.3A12.5 12.5 0 0 1 12.3 28.3l-7 5.4A21 21 0 0 0 24 45Z"/><path fill="#1976D2" d="M43.6 20H24v8.5h11.3a12.6 12.6 0 0 1-4.2 6l6.5 5.3C41.5 36.3 45 30.8 45 24c0-1.4-.1-2.7-.4-4Z"/></symbol>
+  <symbol id="i-tel" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></symbol>
+  <symbol id="i-ecg" viewBox="0 0 40 26"><path d="M2 15h9l3-10 6 18 4-8h14"/></symbol>
+  <!-- line icons, 24 grid -->
+  <symbol id="s-lung" viewBox="0 0 24 24"><path d="M12 3v9M12 12c-1 0-3 1-3 3v4c0 1-1 2-3 2s-3-1-3-3c0-5 2-10 4-11s2 1 2 2M12 12c1 0 3 1 3 3v4c0 1 1 2 3 2s3-1 3-3c0-5-2-10-4-11s-2 1-2 2"/></symbol>
+  <symbol id="s-bolt" viewBox="0 0 24 24"><path d="M13 2 5 14h6l-1 8 9-13h-6l1-7Z"/></symbol>
+  <symbol id="s-skull" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3M8 15h8"/></symbol>
+  <symbol id="s-car" viewBox="0 0 24 24"><path d="M4 16v-4l2-5h12l2 5v4M4 16h16M4 16v2M20 16v2M4 12h16"/><circle cx="8" cy="14" r=".6"/><circle cx="16" cy="14" r=".6"/></symbol>
+  <symbol id="s-drop" viewBox="0 0 24 24"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.500 6-11 6-11ZM4 4l16 17"/></symbol>
+  <symbol id="s-alert" viewBox="0 0 24 24"><path d="M12 3 2 20h20L12 3ZM12 10v5M12 17.500v.5"/></symbol>
+  <symbol id="s-belly" viewBox="0 0 24 24"><circle cx="12" cy="13" r="7"/><path d="M12 3v3M8 13h2l1-2 2 4 1-2h2"/></symbol>
+  <symbol id="e-steth" viewBox="0 0 24 24"><path d="M6 3v6a4 4 0 0 0 8 0V3M10 13v3a5 5 0 0 0 10 0v-1"/><circle cx="20" cy="13" r="2"/></symbol>
+  <symbol id="e-scalpel" viewBox="0 0 24 24"><path d="M20 3c1 4-2 8-7 11l-2-2L20 3ZM11 12l-7 7 1 1 8-6"/></symbol>
+  <symbol id="e-heart" viewBox="0 0 24 24"><path d="M12 20S3 14.500 3 8.500A4.500 4.500 0 0 1 12 7a4.500 4.500 0 0 1 9 1.500C21 14.500 12 20 12 20ZM3.500 11H9l1.500-2.500 2 5L14 11h6.500"/></symbol>
+  <symbol id="e-skin" viewBox="0 0 24 24"><path d="M3 9c3-2 6 2 9 0s6 2 9 0M3 15c3-2 6 2 9 0s6 2 9 0M8 3v3M16 3v3M12 19v2"/></symbol>
+  <symbol id="e-bone" viewBox="0 0 24 24"><path d="M8.500 15.500 15.500 8.500M15.500 8.500a2.500 2.500 0 1 1 3-3 2.500 2.500 0 1 1-1.500 4.500M8.500 15.500a2.500 2.500 0 1 1-3 3 2.500 2.500 0 1 1 1.500-4.500M17 10l-7 7M7 14l7-7"/></symbol>
+  <symbol id="e-tooth" viewBox="0 0 24 24"><path d="M7 3c2 0 3 1 5 1s3-1 5-1c2.500 0 4 2 4 5 0 4-2 5-2.500 9-.3 2-1 4-2.500 4s-1.500-5-4-5-2.500 5-4 5-2.200-2-2.500-4C5 13 3 12 3 8c0-3 1.500-5 4-5Z"/></symbol>
+  <symbol id="e-ribbon" viewBox="0 0 24 24"><path d="M12 3c3 0 4 2 4 4 0 4-8 9-10 14M12 3C9 3 8 5 8 7c0 4 8 9 10 14M9.500 14.500 6 21M14.500 14.500 18 21"/></symbol>
+  <symbol id="e-cat" viewBox="0 0 24 24"><path d="M4 4l4 4h8l4-4v9a8 8 0 0 1-16 0V4ZM9 13v.5M15 13v.5M11 16.500h2"/></symbol>
+  <symbol id="e-bird" viewBox="0 0 24 24"><path d="M15 5a4 4 0 0 1 4 4v1l2 1-2 1c0 5-4 8-9 8H3l5-6V9a4 4 0 0 1 7-4ZM15.500 8.500v.5M10 20v2M13 19.500V22"/></symbol>
+  <symbol id="e-syringe" viewBox="0 0 24 24"><path d="M17 3l4 4M19 5l-3 3M7 12l5-5 5 5-7 7H7v-3l-.5-.5M10 9l2 2M13 12l-2 2M7 19l-4 2"/></symbol>
+</svg>
+
+<div class="fixed">
+  <div class="urgent">
+    <div class="wrap">
+      <span class="open"><i aria-hidden="true"></i><span><span class="long">Estamos abertos</span><span class="short">Aberto</span> agora<span class="long">. Pronto-socorro veterinário 24&nbsp;horas, todos os dias</span></span></span>
+      <a href="tel:+551130000000" aria-label="Ligar para a emergência 24 horas: (11) 3000-0000"><svg aria-hidden="true"><use href="#i-tel"/></svg>Emergência <b>(11)&nbsp;3000-0000</b></a>
+    </div>
+  </div>
+  <header class="top">
+    <div class="wrap">
+      <a class="logo" translate="no" href="#topo" aria-label="Hospital Veterinário Arca, início"><svg aria-hidden="true"><use href="#i-ecg"/></svg>arca<small>Hospital<br>Veterinário 24h</small></a>
+      <nav class="nav" aria-label="Principal">
+        <a href="#emergencia">É emergência?</a>
+        <a href="#especialidades">Especialidades</a>
+        <a href="#estrutura">Estrutura</a>
+        <a href="#planos">Planos</a>
+        <a href="#equipe">Equipe</a>
+        <a href="#contato">Onde fica</a>
+      </nav>
+      <div class="actions">
+        <a class="btn" href="#agendar" aria-label="Agendar consulta"><span>Agendar<b style="font-weight:inherit">&nbsp;consulta</b></span></a>
+        <details class="menu">
+          <summary aria-label="Abrir menu"><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M3 7h18M3 12h18M3 17h18"/></svg></summary>
+          <nav aria-label="Menu">
+            <a href="#emergencia">É emergência?</a>
+            <a href="#especialidades">Especialidades</a>
+            <a href="#estrutura">Estrutura</a>
+            <a href="#planos">Planos e vacinas</a>
+            <a href="#equipe">Equipe</a>
+            <a href="#agendar">Agendar consulta</a>
+            <a href="#duvidas">Dúvidas</a>
+            <a href="#contato">Onde fica</a>
+          </nav>
+        </details>
+      </div>
+    </div>
+  </header>
+</div>
+
+<main id="conteudo">
+<div class="hero on-dark" id="topo">
+  <div class="wrap">
+    <div class="copy">
+      <h1>Seu bicho atendido agora, a qualquer hora.</h1>
+      <svg class="ecg" viewBox="0 0 570 80" aria-hidden="true"><path pathLength="1" d="M2 50H150l11-9 11 9h34l10 9 14-54 17 74 11-29h44l13-11 13 11H505L530 72C530 72 562 50 562 29 562 13 540 9 530 25 520 9 498 13 498 29 498 41 510 53 530 72"/></svg>
+      <p class="lede">Veterinário de plantão 24&nbsp;horas em Santana, com UTI, centro cirúrgico e laboratório no mesmo prédio. Às três da tarde ou às três da manhã, quem atende é um médico, não uma secretária eletrônica.</p>
+      <div class="hero-cta">
+        <a class="btn sos" href="tel:+551130000000"><svg aria-hidden="true"><use href="#i-tel"/></svg>Emergência 24h</a>
+        <a class="btn ghost" href="https://wa.me/5511900000000?text=Ol%C3%A1%2C%20Arca!%20Quero%20agendar%20uma%20consulta." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Agendar consulta</a>
+      </div>
+      <a class="selo" href="#avaliacoes" aria-label="Nota 4,9 de 5 no Google, com 1.120 avaliações. Ver depoimentos"><svg aria-hidden="true"><use href="#i-g"/></svg><span><b>4,9&nbsp;<span class="g-star" aria-hidden="true">★</span></b><em>no Google · 1.120&nbsp;avaliações</em></span></a>
+    </div>
+    <figure class="ph"><img src="https://images.unsplash.com/photo-1563460716037-460a3ad24ba9?w=1000&h=1200&fit=crop&q=80&auto=format" width="1000" height="1200" alt="Cachorro branco e caramelo deitado tranquilo ao lado de um gato rajado, os dois encostados um no outro" fetchpriority="high"></figure>
+  </div>
+</div>
+
+<section class="band" id="emergencia">
+  <div class="wrap">
+    <div class="head">
+      <h2>É emergência?</h2>
+      <p class="lede">Se o seu animal apresenta qualquer um destes sinais, não espere para ver se melhora. Ligue e venha: a equipe já se prepara enquanto você está a caminho.</p>
+    </div>
+    <div class="sos-grid">
+      <ul class="signs" id="signs">
+        <li style="--i:0"><svg class="ic" aria-hidden="true"><use href="#s-lung"/></svg><div><b>Dificuldade para respirar</b><span>Boca aberta, língua arroxeada, respiração curta e rápida. Em gatos, respirar de boca aberta já é grave.</span></div></li>
+        <li style="--i:1"><svg class="ic" aria-hidden="true"><use href="#s-bolt"/></svg><div><b>Convulsão ou desmaio</b><span>Afaste móveis, não segure a língua e marque quanto tempo durou. Venha assim que a crise passar.</span></div></li>
+        <li style="--i:2"><svg class="ic" aria-hidden="true"><use href="#s-skull"/></svg><div><b>Comeu veneno, chocolate, remédio ou planta tóxica</b><span>Não provoque vômito em casa. Traga a embalagem do que ele ingeriu.</span></div></li>
+        <li style="--i:3"><svg class="ic" aria-hidden="true"><use href="#s-car"/></svg><div><b>Atropelamento, queda ou briga</b><span>Mesmo andando normalmente, pode haver lesão interna. Transporte deitado sobre uma superfície firme.</span></div></li>
+        <li style="--i:4"><svg class="ic" aria-hidden="true"><use href="#s-drop"/></svg><div><b>Não consegue urinar</b><span>Vai à caixa ou ao quintal várias vezes e não sai nada. Em gatos machos, é questão de horas.</span></div></li>
+        <li style="--i:5"><svg class="ic" aria-hidden="true"><use href="#s-alert"/></svg><div><b>Vômito ou diarreia com sangue</b><span>Principalmente em filhotes e animais sem vacina em dia.</span></div></li>
+        <li style="--i:6"><svg class="ic" aria-hidden="true"><use href="#s-belly"/></svg><div><b>Barriga inchada e dura</b><span>Com ânsia sem conseguir vomitar, em cães grandes, pode ser torção de estômago.</span></div></li>
+      </ul>
+      <aside class="call on-dark" aria-label="Telefone de emergência">
+        <svg class="ic" style="width:44px;height:44px;color:var(--coral-hi)" aria-hidden="true"><use href="#i-tel"/></svg>
+        <h3>Na dúvida, ligue. Orientar por telefone não custa nada.</h3>
+        <a class="num" href="tel:+551130000000">(11)&nbsp;3000-0000</a>
+        <a class="btn sos" href="tel:+551130000000"><svg aria-hidden="true"><use href="#i-tel"/></svg>Ligar agora</a>
+        <small>Pronto-socorro por ordem de gravidade, sem agendamento. Rua Voluntários da Pátria, 2.140, Santana.</small>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="band spec" id="especialidades">
+  <div class="wrap">
+    <div class="head">
+      <h2>Nove especialidades sob o mesmo teto</h2>
+      <p class="lede">O clínico que conhece o seu animal conversa com o especialista no corredor, e o prontuário é um só.</p>
+    </div>
+    <div class="board">
+      <article><svg class="ic" aria-hidden="true"><use href="#e-steth"/></svg><h3>Clínica geral</h3><p>Consultas, check-ups, vacinas e acompanhamento de doenças crônicas.</p></article>
+      <article><svg class="ic" aria-hidden="true"><use href="#e-scalpel"/></svg><h3>Cirurgia</h3><p>De castração a cirurgia de tecidos moles, com anestesia inalatória e anestesista dedicado.</p></article>
+      <article><svg class="ic" aria-hidden="true"><use href="#e-heart"/></svg><h3>Cardiologia</h3><p>Ecocardiograma, eletrocardiograma e controle de pressão para cardiopatas.</p></article>
+      <article><svg class="ic" aria-hidden="true"><use href="#e-skin"/></svg><h3>Dermatologia</h3><p>Coceira que não passa, alergias, otites de repetição e queda de pelo.</p></article>
+      <article><svg class="ic" aria-hidden="true"><use href="#e-bone"/></svg><h3>Ortopedia</h3><p>Fraturas, ruptura de ligamento, displasia e luxação de patela.</p></article>
+      <article><svg class="ic" aria-hidden="true"><use href="#e-tooth"/></svg><h3>Odontologia veterinária</h3><p>Limpeza de tártaro, extrações e tratamento de gengivite sob anestesia segura.</p></article>
+      <article><svg class="ic" aria-hidden="true"><use href="#e-ribbon"/></svg><h3>Oncologia</h3><p>Diagnóstico, quimioterapia e cuidado paliativo com foco em qualidade de vida.</p></article>
+      <article><svg class="ic" aria-hidden="true"><use href="#e-cat"/></svg><h3>Felinos</h3><p>Atendimento cat friendly: sala própria, sem cheiro nem latido de cachorro.</p></article>
+      <article><svg class="ic" aria-hidden="true"><use href="#e-bird"/></svg><h3>Silvestres e exóticos</h3><p>Coelhos, porquinhos-da-índia, calopsitas, papagaios, jabutis e furões.</p></article>
+    </div>
+    <div class="also">
+      <figure class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13?w=800&h=600&fit=crop&q=80&auto=format" width="800" height="600" alt="Gato de pelo longo branco e cinza olhando para cima com atenção"><figcaption>Gatos</figcaption></figure>
+      <figure class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?w=800&h=600&fit=crop&q=80&auto=format" width="800" height="600" alt="Coelho branco de orelhas em pé sentado na grama"><figcaption>Coelhos e roedores</figcaption></figure>
+      <figure class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1552728089-57bdde30beb3?w=800&h=600&fit=crop&q=80&auto=format" width="800" height="600" alt="Periquito verde de bico alaranjado pousado em um galho"><figcaption>Aves</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="band plant on-dark" id="estrutura">
+  <div class="wrap">
+    <div class="pics">
+      <figure class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1516549655169-df83a0774514?w=1000&h=750&fit=crop&q=80&auto=format" width="1000" height="750" alt="Centro cirúrgico amplo e iluminado, com mesa de cirurgia, foco de teto e monitores"></figure>
+      <figure class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1553688738-a278b9f063e0?w=1000&h=562&fit=crop&q=80&auto=format" width="1000" height="562" alt="Filhote de labrador descansando sobre cobertores coloridos em um leito de internação"></figure>
+    </div>
+    <div>
+      <h2>Um hospital inteiro, não só um consultório</h2>
+      <p class="lede">Exame, diagnóstico, cirurgia e recuperação acontecem aqui. Seu animal não precisa atravessar a cidade de carro no pior momento dele.</p>
+      <dl>
+        <div><dt>Internação 24h com monitoramento</dt><dd>Veterinário e auxiliar presentes a noite toda, com boletim enviado por WhatsApp duas vezes ao dia.</dd></div>
+        <div><dt>UTI</dt><dd>Oxigênio, bomba de infusão e monitor multiparamétrico em cada leito.</dd></div>
+        <div><dt>Centro cirúrgico</dt><dd>Duas salas, anestesia inalatória e sala de recuperação aquecida.</dd></div>
+        <div><dt>Raio-X digital</dt><dd>Imagem em minutos, com laudo de radiologista.</dd></div>
+        <div><dt>Ultrassom</dt><dd>Abdominal, gestacional e ecocardiograma.</dd></div>
+        <div><dt>Laboratório próprio</dt><dd>Hemograma e bioquímico com resultado no mesmo dia. Na emergência, em 40&nbsp;minutos.</dd></div>
+        <div><dt>Ala separada para gatos</dt><dd>Recepção, consultório e internação longe dos cães.</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="planos">
+  <div class="wrap">
+    <div class="head pup">
+      <figure class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?w=480&h=480&fit=crop&q=80&auto=format" width="480" height="480" alt="Filhote de golden retriever correndo em direção à câmera em um gramado ao entardecer"></figure>
+      <h2>Planos de saúde Arca</h2>
+      <p class="lede">Prevenção custa menos que tratamento. Mensalidade fixa, sem carência para consultas e vacinas, e 15% de desconto em tudo o que não estiver incluído.</p>
+    </div>
+    <div class="plans">
+      <article class="plan">
+        <h3>Filhote</h3><p class="age">Até 12 meses</p>
+        <p class="cost"><b>R$&nbsp;89</b> <span>por mês</span></p>
+        <ul><li>Consultas ilimitadas em horário comercial</li><li>Protocolo completo de vacinas do primeiro ano</li><li>Vermifugação e controle de pulgas</li><li>Microchip de identificação</li><li>20% de desconto na castração</li></ul>
+        <a class="btn" href="https://wa.me/5511900000000?text=Ol%C3%A1%2C%20Arca!%20Quero%20saber%20mais%20sobre%20o%20plano%20Filhote." target="_blank" rel="noopener">Quero o plano Filhote</a>
+      </article>
+      <article class="plan main on-dark">
+        <h3>Adulto</h3><p class="age">De 1 a 7 anos</p>
+        <p class="cost"><b>R$&nbsp;119</b> <span>por mês</span></p>
+        <ul><li>Consultas ilimitadas em horário comercial</li><li>Vacinas anuais: múltipla, antirrábica e gripe</li><li>Check-up anual com hemograma e bioquímico</li><li>Uma limpeza de tártaro por ano</li><li>Duas consultas de emergência sem taxa de plantão</li></ul>
+        <a class="btn sos" href="https://wa.me/5511900000000?text=Ol%C3%A1%2C%20Arca!%20Quero%20saber%20mais%20sobre%20o%20plano%20Adulto." target="_blank" rel="noopener">Quero o plano Adulto</a>
+      </article>
+      <article class="plan">
+        <h3>Sênior</h3><p class="age">A partir de 8 anos</p>
+        <p class="cost"><b>R$&nbsp;159</b> <span>por mês</span></p>
+        <ul><li>Consultas ilimitadas em horário comercial</li><li>Vacinas anuais</li><li>Check-up semestral com exames de sangue e urina</li><li>Ecocardiograma e ultrassom abdominal anuais</li><li>Consulta com especialista sem custo adicional</li></ul>
+        <a class="btn" href="https://wa.me/5511900000000?text=Ol%C3%A1%2C%20Arca!%20Quero%20saber%20mais%20sobre%20o%20plano%20S%C3%AAnior." target="_blank" rel="noopener">Quero o plano Sênior</a>
+      </article>
+    </div>
+    <div class="vax">
+      <svg class="ic" aria-hidden="true"><use href="#e-syringe"/></svg>
+      <p><b>Só quer vacinar?</b> Aplicamos sem plano também: V10 para cães a R$&nbsp;110, quíntupla felina a R$&nbsp;130 e antirrábica a R$&nbsp;70. Todas com avaliação clínica antes da aplicação e carteirinha digital.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band team" id="equipe">
+  <div class="wrap">
+    <div class="head">
+      <h2>Quem cuida do seu animal</h2>
+      <p class="lede">São 22 veterinários em escala. Estes quatro coordenam as áreas e você vai encontrá-los no corredor.</p>
+    </div>
+    <div class="crew">
+      <article>
+        <figure class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1614608682850-e0d6ed316d47?w=640&h=800&fit=crop&crop=faces&q=80&auto=format" width="640" height="800" alt="Médica veterinária de jaleco branco sorrindo enquanto ajusta o estetoscópio vermelho no pescoço"></figure>
+        <h3>Dra. Beatriz Lacerda</h3><span class="role">Diretora clínica · Clínica geral</span><span class="crmv">CRMV-SP 00.000</span>
+        <p>Fundou a Arca em 2011 depois de dez anos de plantão. Ainda atende toda terça e quinta.</p>
+      </article>
+      <article>
+        <figure class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1612531386530-97286d97c2d2?w=640&h=800&fit=crop&crop=faces&q=80&auto=format" width="640" height="800" alt="Médico veterinário de barba e óculos, de jaleco branco e estetoscópio, com os braços cruzados"></figure>
+        <h3>Dr. Rafael Moura</h3><span class="role">Cirurgia e ortopedia</span><span class="crmv">CRMV-SP 00.001</span>
+        <p>Mais de 3&nbsp;mil cirurgias. Liga pessoalmente para o tutor assim que o animal acorda.</p>
+      </article>
+      <article>
+        <figure class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1666214280557-f1b5022eb634?w=640&h=800&fit=crop&crop=faces&q=80&auto=format" width="640" height="800" alt="Médica veterinária de jaleco branco explicando um exame de imagem exibido no monitor"></figure>
+        <h3>Dra. Joana Reis</h3><span class="role">Cardiologia e imagem</span><span class="crmv">CRMV-SP 00.002</span>
+        <p>Mostra o exame na tela e explica sem pressa o que cada mancha quer dizer.</p>
+      </article>
+      <article>
+        <figure class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1527613426441-4da17471b66d?w=640&h=800&fit=crop&crop=faces&q=80&auto=format" width="640" height="800" alt="Médica veterinária de jaleco, máscara e luvas ajustando o foco de luz da sala de procedimentos"></figure>
+        <h3>Dra. Marina Sato</h3><span class="role">Felinos e emergência</span><span class="crmv">CRMV-SP 00.003</span>
+        <p>Coordena o plantão noturno e a ala dos gatos. Tem quatro em casa, todos resgatados.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band book" id="agendar">
+  <div class="wrap">
+    <figure class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1644675443401-ea4c14bad0e6?w=800&h=1000&fit=crop&q=80&auto=format" width="800" height="1000" alt="Dois veterinários de pijama cirúrgico e máscara examinando juntos um cachorro pequeno de pelo caramelo"></figure>
+    <div>
+      <h2>Agende uma consulta</h2>
+      <p class="lede">Conte quem vem e por quê. A recepção confirma o horário exato pelo WhatsApp em poucos minutos.</p>
+      <form class="slip" id="slip">
+        <fieldset class="full"><legend>Quem vem à consulta?</legend>
+          <div class="turns">
+            <label><input type="radio" name="especie" value="cão" checked><span>Cão</span></label>
+            <label><input type="radio" name="especie" value="gato"><span>Gato</span></label>
+            <label><input type="radio" name="especie" value="outro animal"><span>Outro</span></label>
+          </div>
+        </fieldset>
+        <label>Nome do pet<input id="f-n" name="pet" type="text" required maxlength="40" autocomplete="off" placeholder="Ex.: Pipoca"></label>
+        <label>Motivo
+          <select id="f-m" name="motivo">
+            <option>Consulta de rotina</option><option>Vacina</option><option>Check-up</option><option>Problema de pele ou ouvido</option><option>Avaliação para cirurgia ou castração</option><option>Consulta com especialista</option><option>Retorno</option>
+          </select></label>
+        <label>Dia<input id="f-d" name="dia" type="date" required></label>
+        <fieldset><legend>Período</legend>
+          <div class="turns">
+            <label><input type="radio" name="periodo" value="manhã"><span>Manhã</span></label>
+            <label><input type="radio" name="periodo" value="tarde" checked><span>Tarde</span></label>
+            <label><input type="radio" name="periodo" value="noite"><span>Noite</span></label>
+          </div>
+        </fieldset>
+        <button class="btn" type="submit"><svg aria-hidden="true"><use href="#i-wa"/></svg>Pedir horário no WhatsApp</button>
+        <p class="hint">Abre o WhatsApp com a mensagem pronta. Se for urgente, não agende: <a href="tel:+551130000000">ligue (11)&nbsp;3000-0000</a>.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="avaliacoes" style="padding-top:0">
+  <div class="wrap">
+    <div class="head">
+      <h2>O que os tutores dizem no Google</h2>
+      <p class="lede"><b>4,9&nbsp;<span class="g-star" aria-hidden="true">★</span></b> de média em 1.120&nbsp;avaliações.</p>
+    </div>
+    <div class="revs">
+      <figure class="rev">
+        <header><span class="av" style="background:#6A3FB5" aria-hidden="true">P</span><span><cite>Patrícia Nogueira</cite><small>há 3 semanas</small></span><svg role="img" aria-label="Avaliação no Google"><use href="#i-g"/></svg></header>
+        <p class="stars g-star" role="img" aria-label="5 de 5 estrelas">★★★★★</p>
+        <blockquote>Três e meia da manhã, a Mel convulsionando. Liguei, atenderam no segundo toque e quando cheguei já tinha gente esperando na porta. Ela ficou dois dias internada e eu recebia boletim de manhã e à noite.</blockquote>
+      </figure>
+      <figure class="rev">
+        <header><span class="av" style="background:#B5473F" aria-hidden="true">R</span><span><cite>Rogério Tavares</cite><small>há 2 meses</small></span><svg role="img" aria-label="Avaliação no Google"><use href="#i-g"/></svg></header>
+        <p class="stars g-star" role="img" aria-label="5 de 5 estrelas">★★★★★</p>
+        <blockquote>O Thor rompeu o ligamento do joelho. O Dr. Rafael desenhou a cirurgia num papel, passou o orçamento fechado e me ligou assim que ele acordou. Hoje corre como se nada tivesse acontecido.</blockquote>
+      </figure>
+      <figure class="rev">
+        <header><span class="av" style="background:#2F6FAE" aria-hidden="true">L</span><span><cite>Luciana Akemi</cite><small>há 4 meses</small></span><svg role="img" aria-label="Avaliação no Google"><use href="#i-g"/></svg></header>
+        <p class="stars g-star" role="img" aria-label="5 de 5 estrelas">★★★★★</p>
+        <blockquote>Minha gata entrava em pânico em toda clínica. Aqui a sala de espera dos gatos é separada, sem latido, e a Dra. Marina examinou a Nina dentro da própria caixa. Primeira consulta sem arranhão.</blockquote>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="band faq" id="duvidas" style="padding-top:0">
+  <div class="wrap">
+    <div class="head">
+      <h2>Dúvidas frequentes</h2>
+    </div>
+    <details open>
+      <summary>Vocês atendem sem agendar?</summary>
+      <p>Sim. O pronto-socorro funciona 24&nbsp;horas por ordem de gravidade, como em um hospital humano. Para consultas de rotina e especialistas, agendar evita espera.</p>
+    </details>
+    <details>
+      <summary>Aceitam plano de saúde pet?</summary>
+      <p>Temos os planos próprios da Arca e atendemos os principais convênios pet por reembolso: emitimos nota fiscal e relatório completo para você enviar à operadora.</p>
+    </details>
+    <details>
+      <summary>Dá para parcelar cirurgia e internação?</summary>
+      <p>Parcelamos em até 10x sem juros no cartão. Antes de qualquer procedimento você recebe o orçamento por escrito, e nada é feito além dele sem a sua autorização.</p>
+    </details>
+    <details>
+      <summary>Posso visitar meu animal internado?</summary>
+      <p>Pode, todos os dias, das 10h às 12h e das 17h às 20h. Na UTI, as visitas duram 15&nbsp;minutos. Fora desses horários, mandamos boletim e foto pelo WhatsApp.</p>
+    </details>
+    <details>
+      <summary>Vocês atendem animais silvestres e exóticos?</summary>
+      <p>Atendemos coelhos, roedores, aves, répteis e furões, com veterinário especializado de segunda a sábado. Emergências de exóticos são recebidas a qualquer hora para estabilização.</p>
+    </details>
+  </div>
+</section>
+
+<section class="band contact on-dark" id="contato">
+  <div class="wrap">
+    <div>
+      <h2>A porta fica aberta a noite toda</h2>
+      <p class="lede">A cinco minutos a pé do metrô Santana, com entrada de emergência pela lateral.</p>
+      <address>
+        <div><b>Endereço</b><span>Rua Voluntários da Pátria, 2.140, Santana<br>São Paulo, SP · CEP 02011-000</span></div>
+        <div><b>Horário</b><span>Aberto 24&nbsp;horas, todos os dias, inclusive feriados</span></div>
+        <div><b>Estacionamento</b><span>Gratuito no local, com vaga de embarque em frente à emergência</span></div>
+        <div><b>Emergência</b><span><a href="tel:+551130000000">(11)&nbsp;3000-0000</a></span></div>
+        <div><b>WhatsApp</b><span><a href="https://wa.me/5511900000000" target="_blank" rel="noopener">(11)&nbsp;90000-0000</a></span></div>
+      </address>
+      <div class="cta-row">
+        <a class="btn sos" href="tel:+551130000000"><svg aria-hidden="true"><use href="#i-tel"/></svg>Ligar para a emergência</a>
+        <a class="btn ghost" href="https://wa.me/5511900000000?text=Ol%C3%A1%2C%20Arca!%20Quero%20agendar%20uma%20consulta." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Agendar consulta</a>
+      </div>
+    </div>
+    <div class="map">
+      <iframe title="Mapa de Santana, Zona Norte de São Paulo" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Santana,+S%C3%A3o+Paulo+-+SP&z=15&hl=pt-BR&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="on-dark">
+  <div class="wrap">
+    <a class="logo" translate="no" href="#topo" aria-label="Hospital Veterinário Arca, voltar ao topo"><svg aria-hidden="true"><use href="#i-ecg"/></svg>arca<small>Hospital<br>Veterinário 24h</small></a>
+    <div>
+      <p>Hospital Veterinário Arca · Santana, Zona Norte de São Paulo. Responsável técnica: Dra. Beatriz Lacerda, CRMV-SP&nbsp;00.000.</p>
+      <p>Marca, endereço, profissionais, valores e avaliações fictícios. Site demonstrativo criado por <a href="https://soulfork.com.br" target="_blank" rel="noopener">SoulFork</a>.</p>
+    </div>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/5511900000000?text=Ol%C3%A1%2C%20Arca!%20Quero%20agendar%20uma%20consulta." target="_blank" rel="noopener" aria-label="Falar com o Hospital Veterinário Arca no WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg></a>
+
+<script>
+var $=function(id){return document.getElementById(id)},day=$('f-d');
+var DIAS=['domingo','segunda','terça','quarta','quinta','sexta','sábado'];
+function pad(n){return (n<10?'0':'')+n}
+var now=new Date();day.min=now.getFullYear()+'-'+pad(now.getMonth()+1)+'-'+pad(now.getDate());
+// split the ISO string by hand: new Date('yyyy-mm-dd') is UTC and shifts the day in Brazil
+function parts(v){var p=v.split('-');return {d:p[2],m:p[1],w:new Date(+p[0],p[1]-1,+p[2]).getDay()}}
+function checked(n){return document.querySelector('[name='+n+']:checked').value}
+function bookingUrl(){
+  var p=parts(day.value),t=checked('periodo');
+  var msg='Olá, Arca! Quero agendar uma consulta para '+$('f-n').value.trim()+' ('+checked('especie')+'). Motivo: '+$('f-m').value+'. Dia: '+DIAS[p.w]+', '+p.d+'/'+p.m+', '+(t==='manhã'?'de manhã':'à '+t)+'.';
+  return 'https://wa.me/5511900000000?text='+encodeURIComponent(msg)}
+$('slip').addEventListener('submit',function(e){e.preventDefault();window.open(bookingUrl(),'_blank','noopener')});
+// one reveal: the warning signs slide in when first seen
+var sg=$('signs');
+if('IntersectionObserver' in window){new IntersectionObserver(function(es,io){if(es[0].isIntersecting){sg.classList.add('in');io.disconnect()}},{threshold:.1}).observe(sg)}else{sg.classList.add('in')}
+document.querySelectorAll('.menu nav a').forEach(function(a){a.addEventListener('click',function(){a.closest('details').removeAttribute('open')})});
+</script>
+</body>
+</html>

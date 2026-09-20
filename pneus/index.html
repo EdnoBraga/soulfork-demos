@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rodão Pneus | Pneus, alinhamento e freios no Tatuapé</title>
+<meta name="description" content="Loja de pneus e centro automotivo no Tatuapé, Zona Leste de São Paulo. Pneu novo montado em 40 minutos, alinhamento 3D, balanceamento, suspensão e freios. Orçamento pelo WhatsApp em 5 minutos.">
+<meta name="robots" content="noindex,follow">
+<meta name="theme-color" content="#15171A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%2315171A'/%3E%3Ccircle cx='32' cy='32' r='21' fill='none' stroke='%23FFC400' stroke-width='9' stroke-dasharray='5 3'/%3E%3Ccircle cx='32' cy='32' r='7' fill='%23FFC400'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+/* Concept: the tyre sidewall. Wide moulded lettering, size codes in mono, safety yellow on asphalt, chamfered steel plates. */
+:root{
+  --asphalt:#15171A; --graphite:#1E2125; --steel:#2B2F35; --line:#3A3F47; --chalk:#F2EFE6; --dust:#B9B6AC;
+  --yellow:#FFC400; --yellow-deep:#D9A400; --ink:#0D0E10;
+  --display:"Archivo",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+  --wrap:1220px; --top:68px; --cut:14px;
+  --hazard:repeating-linear-gradient(-45deg,var(--yellow) 0 14px,var(--ink) 14px 28px);
+  --tread:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='30'%3E%3Cpath d='M-4 3 22 21 48 3' fill='none' stroke='%2323262B' stroke-width='9'/%3E%3C/svg%3E");
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--top) + 20px);-webkit-text-size-adjust:100%}
+body{margin:0;font:400 1.0625rem/1.65 var(--display);color:var(--chalk);background:var(--asphalt);overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+h1,h2,h3{font-family:var(--display);font-stretch:125%;font-weight:900;text-transform:uppercase;line-height:1;letter-spacing:-.015em;margin:0;text-wrap:balance}
+h2{font-size:clamp(1.9rem,4.2vw,3.3rem)}
+h3{font-size:1.12rem;line-height:1.2;font-weight:800;letter-spacing:0}
+p{margin:0}
+a{color:inherit}
+a,summary,button{touch-action:manipulation;-webkit-tap-highlight-color:rgba(255,196,0,.25)}
+:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+.on-yellow :focus-visible,.btn:focus-visible{outline:3px solid var(--chalk);outline-offset:3px;box-shadow:inset 0 0 0 3px var(--ink)}
+.wrap{width:min(var(--wrap),100% - 2.5rem);margin-inline:auto}
+.skip{position:absolute;left:-999px;top:0;background:var(--yellow);color:var(--ink);font-weight:700;padding:.75rem 1rem;z-index:100}
+.skip:focus{left:0}
+.lede{font-size:1.15rem;color:var(--dust);max-width:58ch;margin-top:1rem}
+.band{padding-block:clamp(4rem,7.5vw,7rem)}
+.head{margin-bottom:clamp(2rem,4vw,3.25rem)}
+.mono{font-family:var(--mono);font-weight:500;font-stretch:100%;letter-spacing:0}
+.cut{clip-path:polygon(var(--cut) 0,100% 0,100% calc(100% - var(--cut)),calc(100% - var(--cut)) 100%,0 100%,0 var(--cut))}
+.treadline{height:30px;background:var(--tread) 0 0/44px 30px repeat-x}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;text-decoration:none;border:0;cursor:pointer;background:var(--yellow);color:var(--ink);font:800 1rem/1 var(--display);font-stretch:112%;padding:1.1rem 1.5rem;
+  clip-path:polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px);transition:background .15s}
+.btn svg{width:1.3em;height:1.3em;flex:none}
+.btn:hover{background:#FFD84D}
+.btn:active{background:var(--yellow-deep)}
+.link{font-weight:600;text-underline-offset:.3em;text-decoration-thickness:2px;text-decoration-color:var(--yellow)}
+.link:hover{color:var(--yellow)}
+
+.top{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(21,23,26,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:var(--top)}
+.logo{text-decoration:none;display:inline-flex;align-items:center;gap:.6rem;white-space:nowrap;font:900 1.4rem/1 var(--display);font-stretch:125%;text-transform:uppercase;letter-spacing:-.01em}
+.logo svg{width:30px;height:30px;flex:none}
+.logo span{color:var(--yellow)}
+.nav{display:flex;gap:1.5rem}
+.nav a{text-decoration:none;font-size:.95rem;font-weight:500;padding:.4rem 0;border-bottom:2px solid transparent;color:var(--chalk)}
+.nav a:hover{border-color:var(--yellow)}
+.top .btn{padding:.8rem 1.1rem;font-size:.92rem}
+.actions{display:flex;align-items:center;gap:.4rem}
+.menu{display:none;position:relative}
+.menu summary{list-style:none;width:46px;height:46px;display:grid;place-items:center;cursor:pointer}
+.menu summary::-webkit-details-marker{display:none}
+.menu nav{position:absolute;right:-.5rem;top:57px;background:var(--graphite);border:1px solid var(--line);border-top:0;padding:.3rem 1.25rem .6rem;min-width:240px;display:grid}
+.menu nav a{padding:.9rem 0;text-decoration:none;font-weight:700;font-stretch:112%;border-bottom:1px solid var(--line)}
+.menu nav a:last-child{border:0}
+
+.hero{position:relative;padding:calc(var(--top) + clamp(2rem,4vw,3.5rem)) 0 0;overflow:hidden}
+.hero .wrap{position:relative;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:clamp(1.5rem,4vw,4rem);align-items:center;padding-bottom:clamp(3rem,5vw,4.5rem)}
+.hero h1{font-size:clamp(2.35rem,5.5vw,4.7rem);line-height:.96;letter-spacing:-.025em}
+.hero h1 em{font-style:normal;display:block;color:var(--yellow)}
+.hero .lede{font-size:clamp(1.08rem,1.4vw,1.22rem);max-width:48ch;margin-top:1.5rem}
+.hero-cta{display:flex;flex-wrap:wrap;align-items:center;gap:1.1rem 1.8rem;margin-top:2rem}
+.selo{display:inline-flex;align-items:center;gap:.8rem;margin-top:2rem;text-decoration:none;line-height:1.2;padding:.75rem 1.1rem .75rem .85rem;background:var(--graphite);border-left:4px solid var(--yellow)}
+.selo svg{width:30px;height:30px;flex:none}
+.selo b{font:900 1.45rem/1 var(--display);font-stretch:112%;display:block}
+.selo em{font-style:normal;font-size:.92rem;color:var(--dust)}
+.selo .star,.stars{color:var(--yellow)}
+.shot{position:relative;margin:0}
+.shot img{width:100%;aspect-ratio:10/11;object-fit:cover;--cut:34px;background:var(--graphite)}
+.shot figcaption{position:absolute;left:-1.25rem;bottom:2rem;background:var(--yellow);color:var(--ink);padding:.7rem 1rem;font-weight:800;font-stretch:112%;line-height:1.15;font-size:.98rem}
+.shot figcaption .mono{display:block;font-size:.8rem;font-weight:600}
+.ghost{position:absolute;right:-2rem;top:calc(var(--top) + .5rem);font:600 clamp(5rem,13vw,12rem)/1 var(--mono);white-space:nowrap;color:transparent;-webkit-text-stroke:1px var(--line);pointer-events:none;user-select:none;opacity:.6}
+
+/* medida */
+.size{background:var(--graphite)}
+.size .wrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(2rem,5vw,5rem);align-items:center}
+.tire{margin:0}
+.tire svg{display:block;width:min(100%,430px);margin-inline:auto;height:auto}
+.js .tire svg{transform:rotate(-140deg);transition:transform 1.3s cubic-bezier(.2,.75,.2,1)}
+.js .tire.in svg{transform:none}
+.read{list-style:none;margin:1.5rem auto 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;max-width:430px}
+.read li{border-top:3px solid var(--yellow);padding-top:.6rem;font-size:.9rem;color:var(--dust);line-height:1.35}
+.read b{display:block;font:600 1.5rem/1.1 var(--mono);color:var(--chalk)}
+.quote{margin-top:2rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.quote label{display:grid;gap:.4rem;font-weight:600;font-size:.95rem}
+.quote .full{grid-column:1/-1}
+.quote select,.quote input{width:100%;font:500 1.15rem/1.2 var(--mono);color:var(--chalk);background:var(--asphalt);border:1.5px solid var(--line);border-radius:0;padding:.9rem .85rem;min-height:54px}
+.quote select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='m1 1 5 5 5-5' fill='none' stroke='%23FFC400' stroke-width='2'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right .8rem center;background-size:12px}
+.quote input::placeholder{color:#8E8B82}
+.quote select:focus-visible,.quote input:focus-visible{outline:3px solid var(--yellow);outline-offset:0;border-color:var(--yellow)}
+.quote .btn{grid-column:1/-1;font-size:1.05rem;padding-block:1.2rem}
+.hint{grid-column:1/-1;font-size:.92rem;color:var(--dust)}
+
+/* serviços: a work-order sheet, not cards */
+.os{list-style:none;margin:0;padding:0;border-top:2px solid var(--chalk)}
+.os li{display:grid;grid-template-columns:minmax(0,1.5fr) 9rem 10rem;gap:.5rem 2rem;align-items:center;padding:1.25rem 0;border-bottom:1px solid var(--line)}
+.os p{color:var(--dust);font-size:1rem;margin-top:.3rem;max-width:60ch}
+.os .t,.os .p{font-family:var(--mono);font-weight:500;white-space:nowrap}
+.os .t{color:var(--dust)}
+.os .p{text-align:right;font-size:.85rem;color:var(--dust)}
+.os .p b{display:block;font-size:1.35rem;font-weight:600;color:var(--yellow)}
+.os-note{margin-top:1.5rem;color:var(--dust);font-size:.95rem}
+
+/* marcas */
+.tiers{background:var(--yellow);color:var(--ink)}
+.tiers .lede{color:#2A2300}
+.tiers ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);border-top:3px solid var(--ink)}
+.tiers li{padding:1.5rem 1.75rem 0 0}
+.tiers li+li{padding-left:1.75rem;border-left:1.5px solid rgba(13,14,16,.35)}
+.tiers h3{font-size:clamp(1.3rem,2.2vw,1.8rem);font-weight:900}
+.tiers li p{margin-top:.6rem;color:#2A2300}
+.tiers .mono{display:block;margin-top:1rem;font-weight:600;font-size:.95rem}
+
+/* diferenciais */
+.why .wrap{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(2rem,5vw,5rem);align-items:start}
+.why figure{margin:0;position:sticky;top:calc(var(--top) + 1.5rem)}
+.why figure img{width:100%;aspect-ratio:4/5;object-fit:cover;--cut:28px}
+.why dl{margin:2rem 0 0;display:grid;grid-template-columns:1fr 1fr;gap:0 2.5rem}
+.why dl div{padding:1.2rem 0;border-top:1px solid var(--line)}
+.why dt{font-weight:800;font-stretch:112%;font-size:1.1rem;line-height:1.2}
+.why dd{margin:.35rem 0 0;color:var(--dust);font-size:1rem}
+
+/* ofertas */
+.deals{background:var(--graphite)}
+.kits{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.kit{background:var(--asphalt);display:flex;flex-direction:column;--cut:18px}
+.kit::before{content:"";height:12px;background:var(--hazard)}
+.kit>div{padding:1.6rem 1.6rem 1.7rem;display:flex;flex-direction:column;flex:1}
+.kit .mono{color:var(--yellow);font-size:1.05rem}
+.kit h3{font-size:1.3rem;margin-top:.5rem}
+.kit ul{list-style:none;margin:1rem 0 0;padding:0;color:var(--dust);font-size:1rem;display:grid;gap:.35rem}
+.kit li{padding-left:1.2rem;position:relative}
+.kit li::before{content:"";position:absolute;left:0;top:.6em;width:.55rem;height:.55rem;background:var(--yellow);clip-path:polygon(0 0,100% 50%,0 100%)}
+.cost{margin:1.4rem 0 1.3rem;padding-top:1.1rem;border-top:1px dashed var(--line);line-height:1.2}
+.cost s{color:var(--dust);font-family:var(--mono);font-size:.95rem}
+.cost b{display:block;font:900 2.5rem/1.05 var(--display);font-stretch:112%;white-space:nowrap;letter-spacing:-.02em}
+.cost small{color:var(--dust);font-size:.92rem}
+.kit .btn{margin-top:auto}
+.valid{margin-top:1.75rem;color:var(--dust);font-size:.95rem}
+
+/* depoimentos */
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.rev{margin:0;background:var(--graphite);border:1px solid var(--line);padding:1.5rem;display:flex;flex-direction:column;gap:.9rem}
+.rev header{display:flex;align-items:center;gap:.8rem}
+.av{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:700;flex:none}
+.rev cite{font-style:normal;font-weight:700;display:block;line-height:1.2}
+.rev small{color:var(--dust);font-size:.88rem}
+.rev header svg{width:22px;height:22px;margin-left:auto;flex:none}
+.stars{letter-spacing:.1em;font-size:1.15rem;line-height:1}
+.rev blockquote{margin:0;color:#DDDAD0}
+
+/* faq */
+.faq{background:var(--graphite)}
+.faq .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(2rem,6vw,5rem)}
+.faq figure{margin:2.5rem 0 0}
+.faq figure img{width:100%;aspect-ratio:3/2;object-fit:cover;--cut:22px}
+.faq details{border-top:1px solid var(--line)}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;padding:1.25rem 0;font-weight:800;font-stretch:112%;font-size:1.15rem;line-height:1.25;display:flex;justify-content:space-between;gap:1rem;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";display:grid;place-items:center;width:2rem;height:2rem;background:var(--yellow);color:var(--ink);font:500 1.5rem/1 var(--mono);flex:none;transition:transform .25s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 0 1.5rem;color:var(--dust);max-width:62ch}
+
+/* contato */
+.contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:stretch}
+.contact address{font-style:normal;margin:1.8rem 0 2rem}
+.contact address div{padding:1rem 0;border-top:1px solid var(--line);display:grid;grid-template-columns:7rem 1fr;gap:1rem}
+.contact address b{font-family:var(--mono);font-weight:500;color:var(--yellow);font-size:.95rem;padding-top:.15rem}
+.map{min-height:460px;background:var(--graphite);--cut:28px}
+.map iframe{width:100%;height:100%;min-height:460px;border:0;display:block;filter:grayscale(1) invert(.92) contrast(.9)}
+
+footer{background:var(--ink);color:var(--dust);font-size:.95rem}
+footer::before{content:"";display:block;height:10px;background:var(--hazard)}
+footer .wrap{display:grid;grid-template-columns:auto 1fr;gap:1rem 3rem;align-items:center;padding-block:2.5rem 6.5rem}
+footer p+p{margin-top:.35rem}
+footer p a{color:var(--chalk);font-weight:600}
+
+.fab{position:fixed;right:1.1rem;bottom:max(1.1rem,env(safe-area-inset-bottom));z-index:60;width:58px;height:58px;border-radius:50%;background:#1FA855;color:#fff;display:grid;place-items:center;box-shadow:0 10px 24px -6px rgba(0,0,0,.8);border:3px solid var(--chalk);transition:transform .2s}
+.fab:hover{transform:scale(1.06)}
+.fab svg{width:30px;height:30px}
+.fab:focus-visible{outline-offset:4px}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .tire svg{transform:none}
+}
+@media (max-width:1100px){
+  .nav{display:none}.menu{display:block}
+  .why dl{grid-template-columns:1fr}
+}
+@media (max-width:860px){
+  .hero .wrap,.size .wrap,.why .wrap,.faq .wrap,.contact .wrap{grid-template-columns:1fr}
+  .shot img{aspect-ratio:4/3}
+  .shot figcaption{left:0}
+  .kits,.revs{grid-template-columns:1fr}
+  .kit{max-width:460px;width:100%;margin-inline:auto}
+  .tiers ol{grid-template-columns:1fr}
+  .tiers li,.tiers li+li{padding:1.4rem 0;border-left:0}
+  .tiers li+li{border-top:1.5px solid rgba(13,14,16,.35)}
+  .why figure{position:static;order:2}
+  .why figure img{aspect-ratio:3/2}
+  .faq figure{display:none}
+  footer .wrap{grid-template-columns:1fr}
+  .os li{grid-template-columns:1fr auto;gap:.4rem 1rem}
+  .os li>div{grid-column:1/-1}
+  .os .p{text-align:right}
+  .os .p b{display:inline;margin-left:.4rem}
+}
+@media (max-width:620px){
+  .top .btn b{display:none}
+  .top .btn{padding:.8rem .85rem}
+  .logo{font-size:1.2rem}
+  .hero-cta .btn{width:100%}
+  .hero .lede{margin-top:1.1rem}
+  .hero-cta{margin-top:1.5rem}
+  .selo{margin-top:1.4rem}
+  .ghost{top:auto;bottom:0}
+  .tire svg{width:min(100%,300px)}
+  .quote{gap:.75rem}
+  .quote select{padding-inline:.6rem 1.6rem;font-size:1.05rem;background-position:right .5rem center}
+  .contact address div{grid-template-columns:1fr;gap:0}
+  .map,.map iframe{min-height:340px}
+}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js')</script>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 15l-1.4 5.1 5.2-1.4A9.9 9.9 0 1 0 12.04 2Zm0 1.8a8.1 8.1 0 1 1-4.1 15.1l-.3-.2-3.1.8.8-3-.2-.3A8.1 8.1 0 0 1 12.04 3.8Zm-3.3 3.9c-.2 0-.5.1-.7.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.2 5 4.4 2.4.9 2.9.8 3.5.7.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.4l-1.9-.9c-.3-.1-.5-.2-.7.2l-.9 1.1c-.2.2-.3.2-.6.1a7.5 7.5 0 0 1-3.7-3.2c-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.5-.5-.5-.7-.5h-.6Z"/></symbol>
+  <symbol id="i-g" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20H24v8.5h11.3C33.7 33.4 29.3 36.5 24 36.5a12.5 12.5 0 1 1 8.2-21.9l6-6A21 21 0 1 0 45 24c0-1.4-.1-2.7-.4-4Z"/><path fill="#FF3D00" d="m5.3 14.7 7 5.1A12.5 12.5 0 0 1 32.2 14.6l6-6A21 21 0 0 0 5.3 14.7Z"/><path fill="#4CAF50" d="M24 45c5.2 0 10-2 13.6-5.2l-6.5-5.3A12.5 12.5 0 0 1 12.3 28.3l-7 5.4A21 21 0 0 0 24 45Z"/><path fill="#1976D2" d="M43.6 20H24v8.5h11.3a12.6 12.6 0 0 1-4.2 6l6.5 5.3C41.5 36.3 45 30.8 45 24c0-1.4-.1-2.7-.4-4Z"/></symbol>
+  <symbol id="i-tire" viewBox="0 0 32 32"><circle cx="16" cy="16" r="12" fill="none" stroke="#FFC400" stroke-width="6" stroke-dasharray="4 2.3"/><circle cx="16" cy="16" r="4" fill="#F2EFE6"/></symbol>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" translate="no" href="#topo" aria-label="Rodão Pneus, início"><svg aria-hidden="true"><use href="#i-tire"/></svg>Rodão<span>Pneus</span></a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#medida">Medida do pneu</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#ofertas">Ofertas</a>
+      <a href="#avaliacoes">Avaliações</a>
+      <a href="#duvidas">Dúvidas</a>
+      <a href="#contato">Onde fica</a>
+    </nav>
+    <div class="actions">
+      <a class="btn" href="https://wa.me/5511900000000?text=Ol%C3%A1%2C%20Rod%C3%A3o!%20Quero%20um%20or%C3%A7amento." target="_blank" rel="noopener" aria-label="Pedir orçamento pelo WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg><b style="font-weight:inherit">Pedir orçamento</b></a>
+      <details class="menu">
+        <summary aria-label="Abrir menu"><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-width="2.4" d="M3 7h18M3 12h18M3 17h18"/></svg></summary>
+        <nav aria-label="Menu">
+          <a href="#medida">Medida do pneu</a>
+          <a href="#servicos">Serviços</a>
+          <a href="#ofertas">Ofertas</a>
+          <a href="#avaliacoes">Avaliações</a>
+          <a href="#duvidas">Dúvidas</a>
+          <a href="#contato">Onde fica</a>
+        </nav>
+      </details>
+    </div>
+  </div>
+</header>
+
+<main id="conteudo">
+<div class="hero" id="topo">
+  <span class="ghost" aria-hidden="true">205/55 R16</span>
+  <div class="wrap">
+    <div>
+      <h1>Pneu novo montado <em>em 40 minutos.</em></h1>
+      <p class="lede">Loja de pneus e centro automotivo no Tatuapé. Você manda a medida pelo WhatsApp, recebe o orçamento em 5&nbsp;minutos e sai daqui com o carro alinhado, balanceado e com garantia por escrito.</p>
+      <div class="hero-cta">
+        <a class="btn" href="https://wa.me/5511900000000?text=Ol%C3%A1%2C%20Rod%C3%A3o!%20Quero%20um%20or%C3%A7amento." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Pedir orçamento no WhatsApp</a>
+        <a class="link" href="#medida">Não sei a medida do meu pneu</a>
+      </div>
+      <a class="selo" href="#avaliacoes" aria-label="Nota 4,8 de 5 no Google, com 640 avaliações. Ver depoimentos"><svg aria-hidden="true"><use href="#i-g"/></svg><span><b>4,8&nbsp;<span class="star" aria-hidden="true">★</span></b><em>no Google · 640&nbsp;avaliações</em></span></a>
+    </div>
+    <figure class="shot">
+      <img class="cut" src="https://images.unsplash.com/photo-1645445522156-9ac06bc7a767?w=1100&h=1210&fit=crop&q=80&auto=format" width="1100" height="1210" alt="Mecânico de luvas encaixando uma roda com pneu novo em um carro suspenso no elevador da oficina" fetchpriority="high">
+      <figcaption>Montagem grátis<span class="mono">na compra de 2 ou mais pneus</span></figcaption>
+    </figure>
+  </div>
+  <div class="treadline" aria-hidden="true"></div>
+</div>
+
+<section class="band size" id="medida">
+  <div class="wrap">
+    <figure class="tire" id="tire">
+      <svg viewBox="0 0 400 400" role="img" aria-label="Desenho da lateral de um pneu com a medida 205/55 R16 escrita na borracha, acima da roda">
+        <circle cx="200" cy="200" r="196" fill="#0B0C0E"/>
+        <circle cx="200" cy="200" r="187" fill="none" stroke="#2B2F35" stroke-width="12" stroke-dasharray="7 9"/>
+        <circle cx="200" cy="200" r="176" fill="none" stroke="#2B2F35" stroke-width="1.5"/>
+        <circle cx="200" cy="200" r="112" fill="#2B2F35" stroke="#4A505A" stroke-width="5"/>
+        <g stroke="#15171A" stroke-width="20" stroke-linecap="round"><path d="M200 200V104M200 200l91.300-29.700M200 200l56.400 77.700M200 200l-56.400 77.700M200 200l-91.300-29.700"/></g>
+        <circle cx="200" cy="200" r="26" fill="#15171A" stroke="#4A505A" stroke-width="4"/>
+        <path id="arc-top" d="M58 200A142 142 0 0 1 342 200" fill="none"/>
+        <path id="arc-bot" d="M42 200A158 158 0 0 0 358 200" fill="none"/>
+        <text font-family="IBM Plex Mono,monospace" font-weight="600" font-size="35" fill="#FFC400" text-anchor="middle"><textPath href="#arc-top" startOffset="50%"><tspan id="s-w">205</tspan>/<tspan id="s-p">55</tspan> R<tspan id="s-r">16</tspan></textPath></text>
+        <text font-family="Archivo,sans-serif" font-weight="800" font-size="15" letter-spacing="3" fill="#6B717B" text-anchor="middle"><textPath href="#arc-bot" startOffset="50%">RODÃO · RADIAL · SEM CÂMARA</textPath></text>
+      </svg>
+      <ul class="read">
+        <li><b id="l-w">205</b>largura do pneu, em milímetros</li>
+        <li><b id="l-p">55</b>perfil: a altura é 55% da largura</li>
+        <li><b id="l-r">R16</b>aro da roda, em polegadas</li>
+      </ul>
+    </figure>
+    <div>
+      <h2>Qual a medida do seu pneu?</h2>
+      <p class="lede">Olhe a lateral do pneu: os números ficam gravados na borracha, como no desenho. Escolha os três abaixo e a gente responde com preço e prazo.</p>
+      <form class="quote" id="quote">
+        <label>Largura<select id="f-w" name="largura"></select></label>
+        <label>Perfil<select id="f-p" name="perfil"></select></label>
+        <label>Aro<select id="f-r" name="aro"></select></label>
+        <label class="full">Modelo e ano do carro<input id="f-m" name="modelo" type="text" autocomplete="off" placeholder="Ex.: Onix 2019" required maxlength="60"></label>
+        <button class="btn" type="submit"><svg aria-hidden="true"><use href="#i-wa"/></svg>Enviar medida no WhatsApp</button>
+        <p class="hint">Abre o WhatsApp com a mensagem pronta. Não achou os números? Mande uma foto da lateral do pneu.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="servicos">
+  <div class="wrap">
+    <div class="head">
+      <h2>Serviços, tempo e preço</h2>
+      <p class="lede">O valor final depende do carro, mas você sabe de onde ele parte antes de sair de casa.</p>
+    </div>
+    <ul class="os">
+      <li><div><h3>Venda e montagem de pneus</h3><p>Do aro 13 ao 20, para carro de passeio, SUV e utilitário. Válvula nova e montagem inclusas.</p></div><span class="t">40&nbsp;min</span><span class="p">a partir de <b>R$&nbsp;289</b></span></li>
+      <li><div><h3>Alinhamento 3D</h3><p>Leitura por câmeras nas quatro rodas, com relatório impresso de antes e depois.</p></div><span class="t">30&nbsp;min</span><span class="p">a partir de <b>R$&nbsp;120</b></span></li>
+      <li><div><h3>Balanceamento</h3><p>Computadorizado, por roda. Tira a vibração do volante acima de 80&nbsp;km/h.</p></div><span class="t">20&nbsp;min</span><span class="p">a partir de <b>R$&nbsp;25</b></span></li>
+      <li><div><h3>Suspensão</h3><p>Amortecedores, molas, buchas, pivôs e bandejas. Diagnóstico no elevador sem custo.</p></div><span class="t">2&nbsp;a&nbsp;4&nbsp;h</span><span class="p">a partir de <b>R$&nbsp;380</b></span></li>
+      <li><div><h3>Freios</h3><p>Pastilhas, discos, lonas e fluido. Mostramos a peça gasta antes de trocar.</p></div><span class="t">1&nbsp;h</span><span class="p">a partir de <b>R$&nbsp;180</b></span></li>
+      <li><div><h3>Troca de óleo</h3><p>Óleo e filtro na especificação do manual, com etiqueta da próxima troca.</p></div><span class="t">30&nbsp;min</span><span class="p">a partir de <b>R$&nbsp;160</b></span></li>
+      <li><div><h3>Conserto de roda</h3><p>Desempeno e solda de roda de ferro e de liga leve amassada em buraco.</p></div><span class="t">1&nbsp;a&nbsp;2&nbsp;h</span><span class="p">a partir de <b>R$&nbsp;90</b></span></li>
+      <li><div><h3>Pneu furado</h3><p>Reparo a frio por dentro, com manchão. Atendemos por ordem de chegada.</p></div><span class="t">20&nbsp;min</span><span class="p">a partir de <b>R$&nbsp;35</b></span></li>
+    </ul>
+    <p class="os-note">Valores de referência para carro de passeio. O orçamento fechado sai pelo WhatsApp ou na avaliação, sem compromisso.</p>
+  </div>
+</section>
+
+<section class="band tiers on-yellow" id="marcas">
+  <div class="wrap">
+    <div class="head">
+      <h2>Pneu para cada bolso</h2>
+      <p class="lede">Trabalhamos com as principais marcas do mercado, em três faixas. Todas com nota fiscal, selo do Inmetro e fabricação recente.</p>
+    </div>
+    <ol>
+      <li><h3>Premium</h3><p>As marcas que saem de fábrica nos carros novos. Mais silêncio, mais aderência no molhado e maior quilometragem.</p><span class="mono">garantia de 5&nbsp;anos</span></li>
+      <li><h3>Intermediárias</h3><p>Segunda linha dos grandes fabricantes. Desempenho muito próximo do premium por um valor menor.</p><span class="mono">garantia de 5&nbsp;anos</span></li>
+      <li><h3>Custo-benefício</h3><p>Marcas importadas homologadas, para quem roda na cidade e quer segurança sem apertar o orçamento.</p><span class="mono">garantia de 3&nbsp;anos</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="band why" id="diferenciais">
+  <div class="wrap">
+    <figure><img class="cut" loading="lazy" src="https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?w=900&h=1125&fit=crop&q=80&auto=format" width="900" height="1125" alt="Interior de uma oficina com ferramentas organizadas em painéis na parede e pneus no primeiro plano"></figure>
+    <div>
+      <h2>Por que trocar pneu no Rodão</h2>
+      <p class="lede">Desde 2004 na mesma esquina do Tatuapé. Quem atende você no balcão é quem responde pelo serviço.</p>
+      <dl>
+        <div><dt>Montagem grátis na compra</dt><dd>A partir de 2&nbsp;pneus, montagem e válvulas novas saem por nossa conta.</dd></div>
+        <div><dt>10x sem juros</dt><dd>No cartão de crédito. No Pix, 5% de desconto sobre o valor da nota.</dd></div>
+        <div><dt>Garantia por escrito</dt><dd>Termo com prazo e cobertura de pneus, peças e mão de obra, entregue com a nota.</dd></div>
+        <div><dt>Sala de espera com café e wi-fi</dt><dd>Ar-condicionado, tomada para notebook e vidro para acompanhar o serviço.</dd></div>
+        <div><dt>Leva e traz na região</dt><dd>Buscamos e devolvemos o carro no Tatuapé, Anália Franco, Carrão e Vila Formosa.</dd></div>
+        <div><dt>Descarte ecológico do pneu velho</dt><dd>O pneu usado segue para reciclagem certificada, sem taxa e com comprovante.</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="band deals" id="ofertas">
+  <div class="wrap">
+    <div class="head">
+      <h2>Ofertas da semana</h2>
+      <p class="lede">Kits fechados, com montagem, válvulas e balanceamento já no preço.</p>
+    </div>
+    <div class="kits">
+      <article class="kit cut"><div>
+        <span class="mono">175/65 R14</span>
+        <h3>4 pneus aro 14 + alinhamento</h3>
+        <ul><li>Linha custo-benefício</li><li>Balanceamento das 4&nbsp;rodas</li><li>Alinhamento 3D</li></ul>
+        <p class="cost"><s>de R$&nbsp;1.596</s><b>R$&nbsp;1.396</b><small>ou 10x de R$&nbsp;139,60 sem juros</small></p>
+        <a class="btn" href="https://wa.me/5511900000000?text=Ol%C3%A1%2C%20Rod%C3%A3o!%20Quero%20o%20kit%204%20pneus%20aro%2014%20%2B%20alinhamento." target="_blank" rel="noopener">Quero o kit aro 14</a>
+      </div></article>
+      <article class="kit cut"><div>
+        <span class="mono">195/55 R15</span>
+        <h3>4 pneus aro 15 + geometria completa</h3>
+        <ul><li>Linha intermediária</li><li>Alinhamento, balanceamento e cambagem</li><li>Rodízio grátis aos 10&nbsp;mil&nbsp;km</li></ul>
+        <p class="cost"><s>de R$&nbsp;2.196</s><b>R$&nbsp;1.890</b><small>ou 10x de R$&nbsp;189 sem juros</small></p>
+        <a class="btn" href="https://wa.me/5511900000000?text=Ol%C3%A1%2C%20Rod%C3%A3o!%20Quero%20o%20kit%204%20pneus%20aro%2015%20%2B%20geometria." target="_blank" rel="noopener">Quero o kit aro 15</a>
+      </div></article>
+      <article class="kit cut"><div>
+        <span class="mono">205/55 R16</span>
+        <h3>2 pneus aro 16 + pastilhas dianteiras</h3>
+        <ul><li>Linha premium</li><li>Balanceamento das 2&nbsp;rodas</li><li>Pastilhas com mão de obra</li></ul>
+        <p class="cost"><s>de R$&nbsp;1.540</s><b>R$&nbsp;1.290</b><small>ou 10x de R$&nbsp;129 sem juros</small></p>
+        <a class="btn" href="https://wa.me/5511900000000?text=Ol%C3%A1%2C%20Rod%C3%A3o!%20Quero%20o%20kit%202%20pneus%20aro%2016%20%2B%20pastilhas." target="_blank" rel="noopener">Quero o kit aro 16</a>
+      </div></article>
+    </div>
+    <p class="valid">Ofertas válidas até sábado, 26/09, ou enquanto durar o estoque. Outras medidas sob consulta.</p>
+  </div>
+</section>
+
+<section class="band" id="avaliacoes">
+  <div class="wrap">
+    <div class="head">
+      <h2>O que dizem no Google</h2>
+      <p class="lede"><b>4,8&nbsp;<span class="stars" aria-hidden="true">★</span></b> de média em 640&nbsp;avaliações.</p>
+    </div>
+    <div class="revs">
+      <figure class="rev">
+        <header><span class="av" style="background:#2F6FAE" aria-hidden="true">R</span><span><cite>Rogério Nakamura</cite><small>há 1 semana</small></span><svg role="img" aria-label="Avaliação no Google"><use href="#i-g"/></svg></header>
+        <p class="stars" role="img" aria-label="5 de 5 estrelas">★★★★★</p>
+        <blockquote>Mandei a medida no WhatsApp às 9h, às 9h05 já tinha três opções de preço. Cheguei às 11h e antes do meio-dia estava com os quatro pneus trocados e o carro alinhado.</blockquote>
+      </figure>
+      <figure class="rev">
+        <header><span class="av" style="background:#B0413E" aria-hidden="true">P</span><span><cite>Patrícia Lemos</cite><small>há 3 semanas</small></span><svg role="img" aria-label="Avaliação no Google"><use href="#i-g"/></svg></header>
+        <p class="stars" role="img" aria-label="5 de 5 estrelas">★★★★★</p>
+        <blockquote>Fui achando que ia precisar trocar os amortecedores. Colocaram no elevador, me mostraram que era só uma bucha e cobraram um quarto do que eu esperava. Honestidade rara.</blockquote>
+      </figure>
+      <figure class="rev">
+        <header><span class="av" style="background:#4C7A3D" aria-hidden="true">D</span><span><cite>Diego Farias</cite><small>há 2 meses</small></span><svg role="img" aria-label="Avaliação no Google"><use href="#i-g"/></svg></header>
+        <p class="stars" role="img" aria-label="4 de 5 estrelas">★★★★<span style="color:var(--line)">★</span></p>
+        <blockquote>Sábado de manhã lota e esperei uns 20 minutos além do combinado, mas o café é bom e o serviço ficou perfeito. Volante parou de tremer na Radial Leste.</blockquote>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="band faq" id="duvidas">
+  <div class="wrap">
+    <div>
+      <h2>Dúvidas frequentes</h2>
+      <p class="lede">Se a sua não estiver aqui, <a class="link" href="https://wa.me/5511900000000?text=Ol%C3%A1%2C%20Rod%C3%A3o!%20Tenho%20uma%20d%C3%BAvida." target="_blank" rel="noopener">pergunte no WhatsApp</a>.</p>
+      <figure><img class="cut" loading="lazy" src="https://images.unsplash.com/photo-1578844251758-2f71da64c96f?w=900&h=600&fit=crop&q=80&auto=format" width="900" height="600" alt="Pilhas de pneus novos empilhados no estoque"></figure>
+    </div>
+    <div>
+      <details open>
+        <summary>Quanto tempo demora para trocar os pneus?</summary>
+        <p>Quatro pneus com balanceamento levam cerca de 40&nbsp;minutos. Com alinhamento 3D, conte 1h10. Você pode esperar na sala com café e wi-fi ou usar o leva e traz.</p>
+      </details>
+      <details>
+        <summary>Precisa agendar?</summary>
+        <p>Pneu furado e troca simples atendemos por ordem de chegada. Para suspensão, freios e sábado de manhã, vale reservar horário pelo WhatsApp e não pegar fila.</p>
+      </details>
+      <details>
+        <summary>Vocês parcelam?</summary>
+        <p>Sim, em até 10x sem juros no cartão de crédito, para pneus e serviços. No Pix ou no débito, o desconto é de 5%.</p>
+      </details>
+      <details>
+        <summary>Qual é a garantia?</summary>
+        <p>Pneus têm de 3&nbsp;a&nbsp;5&nbsp;anos de garantia de fábrica contra defeito, conforme a linha. Serviços e peças têm 6&nbsp;meses ou 10&nbsp;mil&nbsp;km. Tudo vai descrito no termo entregue com a nota fiscal.</p>
+      </details>
+      <details>
+        <summary>Como sei que está na hora de trocar o pneu?</summary>
+        <p>Procure a sigla TWI na lateral: ela aponta para pequenos ressaltos dentro dos sulcos. Quando a borracha chega na altura deles, o sulco está com 1,6&nbsp;mm, o mínimo permitido por lei, e o carro pode ser multado. Bolhas, rachaduras ou mais de 5&nbsp;anos de uso também pedem troca. Na dúvida, passe aqui: a medição é gratuita.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="band contact" id="contato">
+  <div class="wrap">
+    <div>
+      <h2>Passe no Rodão</h2>
+      <p class="lede">A duas quadras do metrô Tatuapé, com entrada para carro pela rua lateral.</p>
+      <address>
+        <div><b>Endereço</b><span>Rua Tuiuti, 2310, Tatuapé<br>São Paulo, SP · CEP 03307-005</span></div>
+        <div><b>Horário</b><span>Segunda a sexta, das 8h às 18h<br>Sábado, das 8h às 14h</span></div>
+        <div><b>WhatsApp</b><span><a href="https://wa.me/5511900000000" target="_blank" rel="noopener">(11)&nbsp;90000-0000</a></span></div>
+      </address>
+      <a class="btn" href="https://wa.me/5511900000000?text=Ol%C3%A1%2C%20Rod%C3%A3o!%20Quero%20um%20or%C3%A7amento." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Pedir orçamento no WhatsApp</a>
+    </div>
+    <div class="map cut">
+      <iframe title="Mapa do Tatuapé, São Paulo" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Tatuap%C3%A9,+S%C3%A3o+Paulo+-+SP&z=15&hl=pt-BR&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="logo" translate="no" href="#topo" aria-label="Rodão Pneus, voltar ao topo"><svg aria-hidden="true"><use href="#i-tire"/></svg>Rodão<span>Pneus</span></a>
+    <div>
+      <p>Rodão Pneus e Centro Automotivo · Tatuapé, Zona Leste de São Paulo</p>
+      <p>Marca, endereço, valores e avaliações fictícios. Site demonstrativo criado por <a href="https://soulfork.com.br" target="_blank" rel="noopener">SoulFork</a>.</p>
+    </div>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/5511900000000?text=Ol%C3%A1%2C%20Rod%C3%A3o!%20Quero%20um%20or%C3%A7amento." target="_blank" rel="noopener" aria-label="Falar com a Rodão Pneus no WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg></a>
+
+<script>
+var $=function(id){return document.getElementById(id)};
+function fill(sel,from,to,step,def){for(var v=from;v<=to;v+=step)sel.add(new Option(v,v,v===def,v===def))}
+fill($('f-w'),145,315,10,205);fill($('f-p'),30,80,5,55);fill($('f-r'),13,22,1,16);
+// the drawing follows the selects, so people see which number is which
+function sync(){var w=$('f-w').value,p=$('f-p').value,r=$('f-r').value;
+  $('s-w').textContent=$('l-w').textContent=w;$('s-p').textContent=$('l-p').textContent=p;$('s-r').textContent=r;$('l-r').textContent='R'+r}
+$('quote').addEventListener('change',sync);
+$('quote').addEventListener('submit',function(e){e.preventDefault();
+  var msg='Olá, Rodão! Quero orçamento de pneus '+$('f-w').value+'/'+$('f-p').value+' R'+$('f-r').value+' para '+$('f-m').value.trim()+'.';
+  window.open('https://wa.me/5511900000000?text='+encodeURIComponent(msg),'_blank','noopener')});
+// one motion moment: the tyre rolls into place when first seen
+var tire=$('tire');
+if('IntersectionObserver' in window){new IntersectionObserver(function(es,io){if(es[0].isIntersecting){tire.classList.add('in');io.disconnect()}},{threshold:.3}).observe(tire)}else{tire.classList.add('in')}
+document.querySelectorAll('.menu nav a').forEach(function(a){a.addEventListener('click',function(){a.closest('details').removeAttribute('open')})});
+</script>
+</body>
+</html>

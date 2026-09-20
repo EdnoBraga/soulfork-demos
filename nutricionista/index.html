@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Helena Prado Nutrição | Nutricionista na Vila Madalena e online</title>
+<meta name="description" content="Nutricionista na Vila Madalena, São Paulo, e online. Plano alimentar para a rotina real, sem dieta maluca e sem cortar o que você gosta. Primeira consulta de 60 minutos com bioimpedância. Agende pelo WhatsApp.">
+<meta name="robots" content="noindex,follow">
+<meta name="theme-color" content="#FFF1C2">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%231F7A3A'/%3E%3Ccircle cx='32' cy='32' r='19' fill='%23FFF1C2'/%3E%3Ccircle cx='32' cy='32' r='9' fill='%23F4B223'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400..700,100&family=Figtree:wght@400;500;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+/* Concept: the Saturday street market. Striped awning, food seen from above on plates, recipe index cards, price tags, notes in pen. */
+:root{
+  --butter:#FFF1C2; --cream:#FFFBEA; --card:#FFFEF7; --leaf:#1F7A3A; --leaf-dark:#14532A; --ink:#1B2A1E; --soft:#46564A;
+  --tomato:#C2301C; --turmeric:#F4B223; --amber:#F2A400; --rule:#CFE3D2; --line:rgba(27,42,30,.16);
+  --display:"Fraunces",Georgia,serif; --body:"Figtree",system-ui,sans-serif; --hand:"Caveat","Segoe Print",cursive;
+  --wrap:1200px; --top:64px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:104px;-webkit-text-size-adjust:100%}
+body{margin:0;font:400 1.0625rem/1.65 var(--body);color:var(--ink);background:var(--butter);overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+h1,h2,h3{font-family:var(--display);font-variation-settings:"SOFT" 100;font-weight:600;line-height:1.04;letter-spacing:-.02em;margin:0;text-wrap:balance}
+h2{font-size:clamp(2.2rem,4.6vw,3.7rem)}
+h3{font-size:1.45rem;line-height:1.15;letter-spacing:-.01em}
+p{margin:0}
+a{color:inherit}
+a,summary{touch-action:manipulation;-webkit-tap-highlight-color:rgba(31,122,58,.2)}
+:focus-visible{outline:3px solid var(--tomato);outline-offset:3px;border-radius:4px}
+.on-green :focus-visible{outline-color:#fff}
+.wrap{width:min(var(--wrap),100% - 2.5rem);margin-inline:auto}
+.skip{position:absolute;left:-999px;top:0;background:var(--ink);color:#fff;padding:.75rem 1rem;z-index:100}
+.skip:focus{left:0}
+.lede{font-size:1.18rem;color:var(--soft);max-width:56ch;margin-top:1rem}
+.band{padding-block:clamp(4.5rem,8vw,7.5rem)}
+.head{margin-bottom:clamp(2.25rem,4.5vw,3.5rem)}
+.hand{font:600 1.55rem/1.05 var(--hand);color:var(--tomato)}
+
+/* button: a solid key you press down */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;text-decoration:none;background:var(--leaf);color:#fff;font:600 1.05rem/1 var(--body);padding:1.05rem 1.5rem;border-radius:14px;box-shadow:0 5px 0 var(--leaf-dark);transition:transform .15s,box-shadow .15s}
+.btn svg{width:1.3em;height:1.3em;flex:none}
+.btn:hover{transform:translateY(2px);box-shadow:0 3px 0 var(--leaf-dark)}
+.btn:active{transform:translateY(5px);box-shadow:0 0 0 var(--leaf-dark)}
+.btn.sun{background:var(--turmeric);color:var(--ink);box-shadow:0 5px 0 #B87F05}
+.link{font-weight:600;text-underline-offset:.3em;text-decoration-thickness:2px;text-decoration-color:var(--turmeric)}
+.link:hover{text-decoration-color:var(--tomato)}
+
+/* plate: every food photo sits on a white dish */
+.plate{border-radius:50%;background:radial-gradient(circle,#fff 62%,#F3EEDF 66%,#fff 71%);padding:4.2%;box-shadow:0 22px 34px -16px rgba(74,52,0,.5),0 0 0 1px rgba(74,52,0,.07);margin:0}
+.plate img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:50%;background:var(--cream)}
+
+/* header with the market awning hanging from it */
+.top{position:fixed;inset:0 0 auto 0;z-index:50;background:var(--cream);filter:drop-shadow(0 3px 3px rgba(74,52,0,.16))}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:var(--top)}
+.top::after{content:"";position:absolute;left:0;right:0;top:100%;height:26px;pointer-events:none;
+  background:
+   radial-gradient(circle at 16px 10px,var(--leaf) 15.5px,transparent 16.5px) 0 0/64px 26px repeat-x,
+   radial-gradient(circle at 48px 10px,var(--cream) 15.5px,transparent 16.5px) 0 0/64px 26px repeat-x,
+   repeating-linear-gradient(90deg,var(--leaf) 0 32px,var(--cream) 32px 64px) 0 0/100% 10px no-repeat}
+.logo{text-decoration:none;display:inline-flex;align-items:baseline;gap:.55rem;white-space:nowrap;font:600 1.45rem/1 var(--display);font-variation-settings:"SOFT" 100;letter-spacing:-.02em}
+.logo small{font:600 1.3rem/1 var(--hand);color:var(--tomato);letter-spacing:0}
+.nav{display:flex;gap:1.6rem}
+.nav a{text-decoration:none;font-size:.97rem;font-weight:500;padding:.4rem 0;border-bottom:2px solid transparent}
+.nav a:hover{border-color:var(--turmeric)}
+.top .btn{padding:.75rem 1.1rem;font-size:.95rem;border-radius:12px;box-shadow:0 4px 0 var(--leaf-dark)}
+.actions{display:flex;align-items:center;gap:.5rem}
+.menu{display:none;position:relative}
+.menu summary{list-style:none;width:46px;height:46px;display:grid;place-items:center;cursor:pointer}
+.menu summary::-webkit-details-marker{display:none}
+.menu nav{position:absolute;right:-.5rem;top:58px;background:var(--cream);padding:.4rem 1.25rem .8rem;min-width:240px;display:grid;border-radius:0 0 16px 16px;box-shadow:0 18px 30px -12px rgba(74,52,0,.4)}
+.menu nav a{padding:.85rem 0;text-decoration:none;font:600 1.25rem/1 var(--display);border-bottom:1px solid var(--line)}
+.menu nav a:last-child{border:0}
+
+/* hero */
+.hero{padding:calc(var(--top) + 26px + clamp(2rem,4.5vw,4rem)) 0 clamp(3.5rem,6vw,5.5rem);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);gap:clamp(1.5rem,4vw,4rem);align-items:center}
+.hero h1{font-size:clamp(2.9rem,6.3vw,5.5rem);line-height:.98;letter-spacing:-.035em}
+.hero .lede{font-size:clamp(1.12rem,1.45vw,1.28rem);max-width:46ch;margin-top:1.5rem}
+.hero-cta{display:flex;flex-wrap:wrap;align-items:center;gap:1.1rem 1.8rem;margin-top:2.1rem}
+.selo{display:inline-flex;align-items:center;gap:.75rem;margin-top:2.2rem;background:var(--card);padding:.7rem 1.1rem .7rem .8rem;border-radius:14px;text-decoration:none;line-height:1.2;border:1.5px solid var(--ink);transform:rotate(-1.5deg)}
+.selo svg{width:30px;height:30px;flex:none}
+.selo b{font:600 1.5rem/1 var(--display);display:block}
+.selo em{font-style:normal;font-size:.92rem;color:var(--soft)}
+.selo .star{color:var(--amber)}
+.table{position:relative;width:min(100%,560px);margin-inline:auto;aspect-ratio:1/1.02}
+.table .p1{position:absolute;inset:4% 0 auto 10%;width:84%}
+.table .p2{position:absolute;left:-2%;bottom:0;width:38%}
+.table .p3{position:absolute;right:-3%;top:-3%;width:30%}
+.note{position:absolute;right:2%;bottom:3%;width:11.5rem;text-align:center;transform:rotate(-5deg);font-size:1.7rem}
+.note svg{display:block;width:64px;height:44px;margin:0 0 .1rem 1.2rem;color:var(--tomato)}
+
+/* para quem é: recipe index cards */
+.cards{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem 1.5rem}
+.ficha{--lh:1.75rem;position:relative;background:var(--card);border-radius:6px;padding:1.25rem 1.4rem 1.4rem;box-shadow:0 14px 22px -14px rgba(74,52,0,.45),0 0 0 1px rgba(74,52,0,.08);
+  background-image:linear-gradient(var(--tomato),var(--tomato)),repeating-linear-gradient(transparent 0 calc(var(--lh) - 1px),var(--rule) calc(var(--lh) - 1px) var(--lh));
+  background-size:100% 2px,100% 100%;background-position:0 4.45rem,0 4.55rem;background-repeat:no-repeat,no-repeat}
+.ficha:nth-child(odd){transform:rotate(-.7deg)}
+.ficha:nth-child(even){transform:rotate(.6deg)}
+.ficha h3{min-height:3.2rem;display:flex;align-items:flex-end;padding-bottom:.35rem}
+.ficha p{line-height:var(--lh);margin-top:.1rem;color:var(--soft);font-size:1.02rem}
+.ficha .hand{display:block;margin-top:var(--lh);line-height:var(--lh);font-size:1.5rem}
+
+/* como é a consulta: a real sequence, so it is numbered */
+.steps{background:var(--leaf);color:#fff}
+.steps .lede{color:#DDF1E1}
+.steps ol{list-style:none;margin:0;padding:0;counter-reset:s;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;position:relative}
+.steps ol::before{content:"";position:absolute;left:2rem;right:12%;top:2rem;border-top:3px dashed rgba(255,255,255,.5)}
+.steps li{counter-increment:s;position:relative}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:4rem;height:4rem;border-radius:50%;background:var(--turmeric);color:var(--ink);font:600 1.9rem/1 var(--display);box-shadow:0 0 0 7px var(--leaf),0 0 0 9px rgba(255,255,255,.55);margin-bottom:1.6rem;position:relative}
+.steps h3{font-size:1.55rem}
+.steps li p{margin-top:.6rem;color:#E6F4E8}
+.steps .when{display:block;font:600 1.5rem/1 var(--hand);color:#FFD977;margin-bottom:.35rem}
+.js .steps li{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s cubic-bezier(.2,.7,.2,1)}
+.js .steps li:nth-child(2){transition-delay:.12s}.js .steps li:nth-child(3){transition-delay:.24s}.js .steps li:nth-child(4){transition-delay:.36s}
+.js .steps ol.in li{opacity:1;transform:none}
+
+/* planos: market price tags */
+.tags{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;align-items:stretch}
+.tag{position:relative;background:var(--card);padding:3.6rem 1.7rem 1.8rem;display:flex;flex-direction:column;
+  clip-path:polygon(22% 0,78% 0,100% 9%,100% 100%,0 100%,0 9%);filter:none}
+.tagwrap{filter:drop-shadow(0 14px 14px rgba(74,52,0,.22));display:flex}
+.tagwrap .tag{flex:1}
+.tag::before{content:"";position:absolute;left:50%;top:1.2rem;width:18px;height:18px;margin-left:-9px;border-radius:50%;background:var(--butter);box-shadow:inset 0 2px 3px rgba(74,52,0,.35)}
+.tag.best{background:var(--turmeric)}
+.tagwrap{position:relative}
+.tagwrap>.hand{position:absolute;z-index:1;top:-.5rem;right:.4rem;transform:rotate(7deg);font-size:1.6rem}
+.tag h3{font-size:1.6rem}
+.tag .sub{color:var(--soft);margin-top:.3rem;font-size:1rem}
+.tag.best .sub,.tag.best li{color:#3A2C00}
+.price{margin:1.3rem 0 1.2rem;padding-block:1rem;border-block:1.5px dashed var(--ink);font-size:.95rem;line-height:1.2}
+.price b{display:block;font:600 3rem/1 var(--display);font-variation-settings:"SOFT" 100;letter-spacing:-.03em;white-space:nowrap;margin-top:.15rem}
+.tag ul{list-style:none;margin:0 0 1.6rem;padding:0;display:grid;gap:.55rem}
+.tag li{padding-left:1.6rem;position:relative;color:var(--soft);font-size:1rem;line-height:1.45}
+.tag li::before{content:"";position:absolute;left:.1rem;top:.35rem;width:.85rem;height:.45rem;border-left:2.5px solid var(--leaf);border-bottom:2.5px solid var(--leaf);transform:rotate(-45deg)}
+.tag.best li::before{border-color:var(--ink)}
+.tag .btn{margin-top:auto}
+.tag.best .btn{background:var(--ink);box-shadow:0 5px 0 #000}
+.modes{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:3rem}
+.modes div{border:1.5px solid var(--ink);border-radius:18px;padding:1.5rem 1.7rem;background:var(--cream)}
+.modes p{color:var(--soft);margin-top:.5rem}
+
+/* sobre */
+.about{background:var(--cream)}
+.about .wrap{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(2rem,6vw,5.5rem);align-items:center}
+.about .plate{max-width:440px;width:100%;margin-inline:auto;padding:3.4%}
+.about figure{position:relative;margin:0}
+.crn{position:absolute;right:4%;bottom:6%;background:var(--turmeric);color:var(--ink);font-weight:600;font-size:.95rem;padding:.45rem .9rem;border-radius:10px;transform:rotate(-4deg);border:1.5px solid var(--ink)}
+.creed{list-style:none;margin:1.8rem 0;padding:0;display:grid;gap:.9rem}
+.creed li{font:500 clamp(1.3rem,2vw,1.6rem)/1.25 var(--display);font-variation-settings:"SOFT" 100;padding-left:1.4rem;border-left:4px solid var(--turmeric)}
+.cv{color:var(--soft);max-width:60ch}
+.cv+.cv{margin-top:.6rem}
+.sign{margin-top:1.4rem;font-size:2.2rem}
+
+/* diferenciais */
+.why .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(2rem,6vw,5.5rem);align-items:center}
+.why dl{margin:2rem 0 0}
+.why dl div{padding:1.1rem 0;border-top:1.5px dashed var(--line)}
+.why dt{font:600 1.4rem/1.15 var(--display);font-variation-settings:"SOFT" 100}
+.why dd{margin:.3rem 0 0;color:var(--soft)}
+.stall{position:relative;margin:0;padding-bottom:16%}
+.stall>img{width:88%;margin-left:12%;aspect-ratio:4/5;object-fit:cover;border-radius:58% 42% 47% 53%/44% 50% 50% 56%}
+.stall .plate{position:absolute;left:0;bottom:0;width:48%}
+.stall .hand{position:absolute;right:2%;bottom:3%;transform:rotate(-4deg);font-size:1.6rem;max-width:9.5rem;text-align:center}
+
+/* depoimentos */
+.revs-band{background:#FFE9A3}
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.rev{margin:0;background:#fff;padding:1.6rem;border-radius:16px;display:flex;flex-direction:column;gap:.9rem;box-shadow:0 12px 20px -14px rgba(74,52,0,.5)}
+.rev header{display:flex;align-items:center;gap:.8rem}
+.av{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;color:#fff;font:600 1.1rem/1 var(--body);flex:none}
+.rev cite{font-style:normal;font-weight:600;display:block;line-height:1.2}
+.rev small{color:var(--soft);font-size:.88rem}
+.rev header svg{width:22px;height:22px;margin-left:auto;flex:none}
+.stars{letter-spacing:.1em;font-size:1.15rem;line-height:1;color:var(--amber)}
+.rev blockquote{margin:0}
+.cfn{margin-top:2rem;color:#5A4A12;font-size:.95rem;max-width:70ch}
+
+/* faq */
+.faq .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(2rem,6vw,5rem)}
+.faq details{border-top:1.5px solid var(--ink)}
+.faq details:last-child{border-bottom:1.5px solid var(--ink)}
+.faq summary{list-style:none;cursor:pointer;padding:1.25rem 0;font:600 1.3rem/1.25 var(--display);font-variation-settings:"SOFT" 100;display:flex;justify-content:space-between;gap:1rem;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";display:grid;place-items:center;width:2rem;height:2rem;border-radius:50%;background:var(--turmeric);font:500 1.5rem/1 var(--body);flex:none;transition:transform .25s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 0 1.5rem;color:var(--soft);max-width:62ch}
+.faq .plate{width:min(260px,70%);margin-top:2.5rem}
+
+/* contato */
+.contact{background:var(--leaf);color:#fff}
+.contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:stretch}
+.contact .lede{color:#DDF1E1}
+.contact address{font-style:normal;margin:1.8rem 0 2rem}
+.contact address div{padding:1rem 0;border-top:1.5px dashed rgba(255,255,255,.4);display:grid;grid-template-columns:7rem 1fr;gap:1rem}
+.contact address b{font:600 1.5rem/1.2 var(--hand);color:#FFD977}
+.contact address a{color:#fff}
+.map{min-height:460px;border-radius:28px;overflow:hidden;border:8px solid var(--cream);background:var(--leaf-dark)}
+.map iframe{width:100%;height:100%;min-height:444px;border:0;display:block}
+
+footer{background:var(--ink);color:#C9D6CB;padding:2.5rem 0 6.5rem;font-size:.95rem}
+footer .wrap{display:grid;grid-template-columns:auto 1fr;gap:1rem 3rem;align-items:center}
+footer .logo{color:#fff}
+footer .logo small{color:#FFD977}
+footer p+p{margin-top:.35rem}
+footer p a{color:#fff;font-weight:600}
+
+.fab{position:fixed;right:1.1rem;bottom:max(1.1rem,env(safe-area-inset-bottom));z-index:60;width:58px;height:58px;border-radius:50%;background:#1FA855;color:#fff;display:grid;place-items:center;box-shadow:0 10px 24px -8px rgba(27,42,30,.7);border:3px solid #fff;transition:transform .2s}
+.fab:hover{transform:scale(1.06)}
+.fab svg{width:30px;height:30px}
+
+/* motion: one moment — the table gets set on load. Steps appear once. */
+@media (prefers-reduced-motion:no-preference){
+  .table .plate{animation:serve .9s cubic-bezier(.2,.8,.2,1) both}
+  .table .p2{animation-delay:.18s}.table .p3{animation-delay:.3s}
+  .note{animation:jot .5s .9s both}
+}
+@keyframes serve{from{opacity:0;transform:rotate(-50deg) scale(.82)}}
+@keyframes jot{from{opacity:0}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .steps li{opacity:1;transform:none}
+}
+
+@media (max-width:1060px){
+  .nav{display:none}.menu{display:block}
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .steps ol{grid-template-columns:repeat(2,1fr);gap:2.5rem 2rem}
+  .steps ol::before{display:none}
+}
+@media (max-width:820px){
+  .hero .wrap,.about .wrap,.why .wrap,.faq .wrap,.contact .wrap{grid-template-columns:1fr}
+  .table{width:min(100%,440px);margin-top:1.5rem}
+  .tags,.revs,.modes{grid-template-columns:1fr}
+  .tagwrap{max-width:440px;width:100%;margin-inline:auto}
+  .about .plate{max-width:320px}
+  .stall{max-width:440px;margin-inline:auto;order:2}
+  .faq .plate{display:none}
+  footer .wrap{grid-template-columns:1fr}
+}
+@media (max-width:620px){
+  .logo small{display:none}
+  .top .btn b{display:none}
+  .top .btn{padding:.75rem .85rem}
+  .hero-cta .btn{width:100%}
+  .hero .lede{font-size:1.06rem;line-height:1.55;margin-top:1rem}
+  .hero-cta{margin-top:1.4rem;gap:.9rem}
+  .selo{margin-top:1.3rem}
+  .table{margin-top:.5rem}
+  .cards,.steps ol{grid-template-columns:1fr}
+  .ficha h3{min-height:0;height:3.2rem}
+  .note{font-size:1.4rem;width:9rem;right:0}
+  .note svg{width:48px;height:34px}
+  .contact address div{grid-template-columns:1fr;gap:0}
+  .map{min-height:340px}.map iframe{min-height:324px}
+}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js')</script>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 15l-1.4 5.1 5.2-1.4A9.9 9.9 0 1 0 12.04 2Zm0 1.8a8.1 8.1 0 1 1-4.1 15.1l-.3-.2-3.1.8.8-3-.2-.3A8.1 8.1 0 0 1 12.04 3.8Zm-3.3 3.9c-.2 0-.5.1-.7.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.2 5 4.4 2.4.9 2.9.8 3.5.7.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.4l-1.9-.9c-.3-.1-.5-.2-.7.2l-.9 1.1c-.2.2-.3.2-.6.1a7.5 7.5 0 0 1-3.7-3.2c-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.5-.5-.5-.7-.5h-.6Z"/></symbol>
+  <symbol id="i-g" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20H24v8.5h11.3C33.7 33.4 29.3 36.5 24 36.5a12.5 12.5 0 1 1 8.2-21.9l6-6A21 21 0 1 0 45 24c0-1.4-.1-2.7-.4-4Z"/><path fill="#FF3D00" d="m5.3 14.7 7 5.1A12.5 12.5 0 0 1 32.2 14.6l6-6A21 21 0 0 0 5.3 14.7Z"/><path fill="#4CAF50" d="M24 45c5.2 0 10-2 13.6-5.2l-6.5-5.3A12.5 12.5 0 0 1 12.3 28.300l-7 5.400A21 21 0 0 0 24 45Z"/><path fill="#1976D2" d="M43.6 20H24v8.500h11.300a12.600 12.600 0 0 1-4.200 6l6.500 5.300C41.500 36.300 45 30.800 45 24c0-1.400-.1-2.700-.4-4Z"/></symbol>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" translate="no" href="#topo" aria-label="Helena Prado Nutrição, início">Helena Prado <small>nutrição sem terrorismo</small></a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#para-quem">Para quem é</a>
+      <a href="#consulta">A consulta</a>
+      <a href="#planos">Planos e valores</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#duvidas">Dúvidas</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <div class="actions">
+      <a class="btn" href="https://wa.me/5511900000000?text=Ol%C3%A1%2C%20Helena!%20Quero%20agendar%20uma%20consulta." target="_blank" rel="noopener" aria-label="Agendar consulta pelo WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg><b style="font-weight:inherit">Agendar consulta</b></a>
+      <details class="menu">
+        <summary aria-label="Abrir menu"><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg></summary>
+        <nav aria-label="Menu">
+          <a href="#para-quem">Para quem é</a>
+          <a href="#consulta">A consulta</a>
+          <a href="#planos">Planos e valores</a>
+          <a href="#sobre">Sobre</a>
+          <a href="#duvidas">Dúvidas</a>
+          <a href="#contato">Contato</a>
+        </nav>
+      </details>
+    </div>
+  </div>
+</header>
+
+<main id="conteudo">
+<div class="hero" id="topo">
+  <div class="wrap">
+    <div>
+      <h1>Comer bem sem dieta maluca.</h1>
+      <p class="lede">Sou nutricionista na Vila Madalena e atendo também online. Monto um plano que cabe na sua rotina, com arroz, feijão, pão e o chope de sexta, e acompanho você até ele virar hábito.</p>
+      <div class="hero-cta">
+        <a class="btn" href="https://wa.me/5511900000000?text=Ol%C3%A1%2C%20Helena!%20Quero%20agendar%20uma%20consulta." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Agendar consulta no WhatsApp</a>
+        <a class="link" href="#planos">Ver planos e valores</a>
+      </div>
+      <a class="selo" href="#avaliacoes" aria-label="Nota 5,0 de 5 no Google, com 190 avaliações. Ver depoimentos"><svg aria-hidden="true"><use href="#i-g"/></svg><span><b>5,0&nbsp;<span class="star" aria-hidden="true">★</span></b><em>no Google · 190&nbsp;avaliações</em></span></a>
+    </div>
+    <div class="table">
+      <figure class="plate p1"><img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=1000&h=1000&fit=crop&q=80&auto=format" width="1000" height="1000" alt="Prato visto de cima com abacate fatiado, tomates, grão-de-bico, batata-doce, repolho roxo e folhas verdes" fetchpriority="high"></figure>
+      <figure class="plate p2"><img src="https://images.unsplash.com/photo-1610832958506-aa56368176cf?w=480&h=480&fit=crop&q=80&auto=format" width="480" height="480" alt="Mamão, laranja, kiwi, uvas e abacate cortados, vistos de cima"></figure>
+      <figure class="plate p3"><img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&h=400&fit=crop&q=80&auto=format" width="400" height="400" alt="Tigela com tofu grelhado, ovo cozido, milho, tomate e repolho roxo"></figure>
+      <p class="hand note" aria-hidden="true"><svg viewBox="0 0 64 44" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M58 40C50 22 34 10 8 8"/><path d="M19 2 7 8l10 9"/></svg>pão francês continua liberado</p>
+    </div>
+  </div>
+</div>
+
+<section class="band" id="para-quem" style="padding-top:clamp(2rem,4vw,3.5rem)">
+  <div class="wrap">
+    <div class="head">
+      <h2>Para quem é a consulta</h2>
+      <p class="lede">Cada pessoa chega com uma história diferente. Estas são as seis que mais aparecem por aqui.</p>
+    </div>
+    <ul class="cards">
+      <li class="ficha"><h3>Emagrecimento sem efeito sanfona</h3><p>Déficit calórico leve, comida de verdade e nenhum grupo alimentar proibido. O peso desce devagar e não volta na primeira viagem.</p><span class="hand">sem contar cada caloria</span></li>
+      <li class="ficha"><h3>Hipertrofia e esporte</h3><p>Proteína bem distribuída, carboidrato na hora certa e estratégia para o treino, a prova e a recuperação.</p><span class="hand">corrida, musculação, bike</span></li>
+      <li class="ficha"><h3>Gestantes e pós-parto</h3><p>Ganho de peso saudável, enjoo, diabetes gestacional e amamentação, com cardápio possível para quem dorme pouco.</p><span class="hand">do positivo ao desmame</span></li>
+      <li class="ficha"><h3>Infantil e seletividade alimentar</h3><p>Introdução alimentar e criança que só aceita três comidas. Trabalho junto com a família, sem briga na mesa.</p><span class="hand">a partir dos 6 meses</span></li>
+      <li class="ficha"><h3>Diabetes, colesterol e intestino</h3><p>Plano alinhado com o seu médico e ajustado pelos exames. Também intestino preso, gastrite e síndrome do intestino irritável.</p><span class="hand">de olho nos exames</span></li>
+      <li class="ficha"><h3>Vegetarianos e veganos</h3><p>Proteína, ferro, B12 e ômega-3 sem mistério. Para quem já é ou para quem quer fazer a transição com segurança.</p><span class="hand">feijão é proteína, sim</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="band steps on-green" id="consulta">
+  <div class="wrap">
+    <div class="head">
+      <h2>Como é a consulta</h2>
+      <p class="lede">Quatro passos, da primeira conversa ao retorno. Você nunca fica um mês inteiro sem resposta.</p>
+    </div>
+    <ol>
+      <li><span class="when">dia 1 · 60&nbsp;minutos</span><h3>Primeira consulta</h3><p>Conversa sobre rotina, histórico, exames e gostos. Bioimpedância para medir massa muscular e gordura, sem drama com a balança.</p></li>
+      <li><span class="when">em até 3&nbsp;dias</span><h3>Plano no aplicativo</h3><p>Seu plano alimentar chega no app, com opções de troca para cada refeição, lista de compras e receitas.</p></li>
+      <li><span class="when">o mês todo</span><h3>Acompanhamento no WhatsApp</h3><p>Dúvida no mercado, jantar fora, semana de viagem: você manda mensagem e eu respondo em até um dia útil.</p></li>
+      <li><span class="when">em 30&nbsp;dias</span><h3>Retorno</h3><p>Nova bioimpedância, conversa sobre o que funcionou e ajuste do plano para o mês seguinte.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="band" id="planos">
+  <div class="wrap">
+    <div class="head">
+      <h2>Planos e valores</h2>
+      <p class="lede">Preço à vista, como na feira. O valor é o mesmo no consultório e online.</p>
+    </div>
+    <div class="tags">
+      <div class="tagwrap"><article class="tag">
+        <h3>Consulta avulsa</h3><p class="sub">Para começar ou tirar uma dúvida pontual</p>
+        <p class="price">a partir de <b>R$&nbsp;320</b></p>
+        <ul><li>Consulta de 60&nbsp;minutos com bioimpedância</li><li>Plano alimentar no app em até 3&nbsp;dias</li><li>15&nbsp;dias de WhatsApp</li><li>Recibo para reembolso</li></ul>
+        <a class="btn" href="https://wa.me/5511900000000?text=Ol%C3%A1%2C%20Helena!%20Quero%20agendar%20uma%20consulta%20avulsa." target="_blank" rel="noopener">Agendar consulta avulsa</a>
+      </article></div>
+      <div class="tagwrap"><span class="hand">o mais escolhido</span><article class="tag best">
+        <h3>Pacote trimestral</h3><p class="sub">Três meses para o plano virar hábito</p>
+        <p class="price">a partir de <b>R$&nbsp;840</b>ou 3x de R$&nbsp;280 sem juros</p>
+        <ul><li>1ª consulta e 2&nbsp;retornos mensais</li><li>Bioimpedância em todos os encontros</li><li>WhatsApp durante os 3&nbsp;meses</li><li>Lista de compras e receitas novas a cada mês</li></ul>
+        <a class="btn" href="https://wa.me/5511900000000?text=Ol%C3%A1%2C%20Helena!%20Quero%20saber%20do%20pacote%20trimestral." target="_blank" rel="noopener">Quero o trimestral</a>
+      </article></div>
+      <div class="tagwrap"><article class="tag">
+        <h3>Pacote semestral</h3><p class="sub">Para metas longas: esporte, gestação, exames</p>
+        <p class="price">a partir de <b>R$&nbsp;1.500</b>ou 6x de R$&nbsp;250 sem juros</p>
+        <ul><li>1ª consulta e 5&nbsp;retornos mensais</li><li>Bioimpedância em todos os encontros</li><li>WhatsApp durante os 6&nbsp;meses</li><li>Revisão dos exames no meio do caminho</li></ul>
+        <a class="btn" href="https://wa.me/5511900000000?text=Ol%C3%A1%2C%20Helena!%20Quero%20saber%20do%20pacote%20semestral." target="_blank" rel="noopener">Quero o semestral</a>
+      </article></div>
+    </div>
+    <div class="modes">
+      <div><h3>No consultório</h3><p>Na Vila Madalena, com bioimpedância no aparelho e medidas feitas na hora. Bom para quem mora ou trabalha na zona oeste.</p></div>
+      <div><h3>Online</h3><p>Por vídeo, de qualquer cidade. Você envia peso e medidas seguindo um guia simples, e o plano chega no mesmo app. Mesma duração, mesmo acompanhamento.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band about" id="sobre">
+  <div class="wrap">
+    <figure>
+      <div class="plate"><img loading="lazy" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=800&h=800&fit=crop&crop=faces&q=80&auto=format" width="800" height="800" alt="Helena Prado sorrindo, de cabelo escuro preso em coque e camiseta branca"></div>
+      <figcaption class="crn">CRN-3&nbsp;00000 (fictício)</figcaption>
+    </figure>
+    <div>
+      <h2>Oi, eu sou a Helena</h2>
+      <p class="lede">Nutricionista há 12 anos, filha de feirante e cozinheira de domingo. Abri o consultório para atender do jeito que eu gostaria de ser atendida.</p>
+      <ul class="creed">
+        <li>Nenhum alimento é vilão e nenhum é milagre.</li>
+        <li>Plano bom é o que você consegue seguir numa terça-feira comum.</li>
+        <li>Meu trabalho termina quando você não precisa mais de mim.</li>
+      </ul>
+      <p class="cv">Graduada em Nutrição (2013), com pós-graduação em Nutrição Clínica e especialização em Comportamento Alimentar. Formação complementar em Nutrição Esportiva e Materno-Infantil.</p>
+      <p class="cv">Helena Prado, nutricionista · CRN-3&nbsp;00000</p>
+      <p class="hand sign" aria-hidden="true">Helena</p>
+    </div>
+  </div>
+</section>
+
+<section class="band why" id="diferenciais">
+  <div class="wrap">
+    <div>
+      <h2>Feito para a vida que você já tem</h2>
+      <p class="lede">Dieta de gaveta funciona no papel. O seu plano precisa funcionar na marmita, no restaurante por quilo e no churrasco de sábado.</p>
+      <dl>
+        <div><dt>Plano para a rotina real</dt><dd>Opções para a marmita, para o restaurante e para o fim de semana, do jeito que a sua semana acontece de verdade.</dd></div>
+        <div><dt>Lista de compras e receitas</dt><dd>Você sai com a lista pronta para o mercado e receitas de 20&nbsp;minutos testadas na minha cozinha.</dd></div>
+        <div><dt>Sem suplemento empurrado</dt><dd>Não vendo produto nem ganho comissão. Suplemento só entra quando o exame ou o treino pedem.</dd></div>
+        <div><dt>Recibo para reembolso</dt><dd>Emito recibo com CRN e CPF, no formato que o convênio pede para reembolsar a consulta.</dd></div>
+      </dl>
+    </div>
+    <figure class="stall">
+      <img loading="lazy" src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=900&h=1125&fit=crop&q=80&auto=format" width="900" height="1125" alt="Banca de feira com pimentões, berinjelas, tomates, abóboras e frutas empilhadas">
+      <div class="plate"><img loading="lazy" src="https://images.unsplash.com/photo-1505576399279-565b52d4ac71?w=480&h=480&fit=crop&q=80&auto=format" width="480" height="480" alt="Salada em camadas montada em um pote de vidro, com grão-de-bico, tomate, abacate e folhas"></div>
+      <span class="hand" aria-hidden="true">a marmita de quinta</span>
+    </figure>
+  </div>
+</section>
+
+<section class="band revs-band" id="avaliacoes">
+  <div class="wrap">
+    <div class="head">
+      <h2>O que contam no Google</h2>
+      <p class="lede"><b>5,0&nbsp;<span class="stars" aria-hidden="true">★</span></b> de média em 190&nbsp;avaliações.</p>
+    </div>
+    <div class="revs">
+      <figure class="rev">
+        <header><span class="av" style="background:#B0413E" aria-hidden="true">C</span><span><cite>Camila Arantes</cite><small>há 2 semanas</small></span><svg role="img" aria-label="Avaliação no Google"><use href="#i-g"/></svg></header>
+        <p class="stars" role="img" aria-label="5 de 5 estrelas">★★★★★</p>
+        <blockquote>Passei a vida entre dieta e culpa. Com a Helena parei de classificar comida como certa ou errada. Hoje como pão no café da manhã sem peso na consciência e nunca tive tanta disposição.</blockquote>
+      </figure>
+      <figure class="rev">
+        <header><span class="av" style="background:#2F6FAE" aria-hidden="true">M</span><span><cite>Marcelo Teixeira</cite><small>há 1 mês</small></span><svg role="img" aria-label="Avaliação no Google"><use href="#i-g"/></svg></header>
+        <p class="stars" role="img" aria-label="5 de 5 estrelas">★★★★★</p>
+        <blockquote>Cheguei com o colesterol alto e medo de remédio. Em quatro meses meus exames voltaram ao normal e meu cardiologista pediu o contato dela. E eu continuo almoçando no quilo todo dia.</blockquote>
+      </figure>
+      <figure class="rev">
+        <header><span class="av" style="background:#7A4BA8" aria-hidden="true">J</span><span><cite>Juliana Sakamoto</cite><small>há 2 meses</small></span><svg role="img" aria-label="Avaliação no Google"><use href="#i-g"/></svg></header>
+        <p class="stars" role="img" aria-label="5 de 5 estrelas">★★★★★</p>
+        <blockquote>Meu filho de quatro anos só comia macarrão e nugget. A Helena nos ensinou a apresentar comida sem pressão. Semana passada ele pediu brócolis. Eu quase chorei na mesa.</blockquote>
+      </figure>
+    </div>
+    <p class="cfn">Você não vai encontrar fotos de antes e depois nem quilos perdidos por aqui. O Conselho Federal de Nutrição restringe esse tipo de divulgação, e resultado de verdade não cabe em uma foto.</p>
+  </div>
+</section>
+
+<section class="band faq" id="duvidas">
+  <div class="wrap">
+    <div>
+      <h2>Dúvidas frequentes</h2>
+      <p class="lede">Se a sua não estiver aqui, <a class="link" href="https://wa.me/5511900000000?text=Ol%C3%A1%2C%20Helena!%20Tenho%20uma%20d%C3%BAvida." target="_blank" rel="noopener">pergunte no WhatsApp</a>.</p>
+      <figure class="plate"><img loading="lazy" src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=480&h=480&fit=crop&q=80&auto=format" width="480" height="480" alt="Prato azul com ovos cozidos, cenoura ralada, folhas verdes e rabanete sobre mesa de madeira"></figure>
+    </div>
+    <div>
+      <details open>
+        <summary>Atende por convênio? Consigo reembolso?</summary>
+        <p>O atendimento é particular. Emito recibo com CRN para você pedir reembolso, e a maioria dos planos devolve parte do valor. Vale confirmar com o seu convênio qual é o limite para consulta com nutricionista.</p>
+      </details>
+      <details>
+        <summary>Você atende online?</summary>
+        <p>Sim, por vídeo, para qualquer cidade do Brasil e para brasileiros no exterior. A consulta tem a mesma duração, o plano chega no mesmo app e o acompanhamento pelo WhatsApp é igual.</p>
+      </details>
+      <details>
+        <summary>Vou passar fome?</summary>
+        <p>Não. Fome o tempo todo é sinal de plano mal montado. Seu cardápio tem volume, proteína e fibra para dar saciedade, e se a fome apertar você me avisa e a gente ajusta na mesma semana.</p>
+      </details>
+      <details>
+        <summary>Preciso levar exames?</summary>
+        <p>Se tiver exames de sangue dos últimos seis meses, traga. Se não tiver, começamos do mesmo jeito, e eu indico o que vale pedir ao seu médico para o retorno.</p>
+      </details>
+      <details>
+        <summary>Em quanto tempo vejo resultado?</summary>
+        <p>Disposição, sono e intestino costumam melhorar nas primeiras duas ou três semanas. Composição corporal e exames pedem de dois a três meses de constância. Desconfie de quem promete menos que isso.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="band contact on-green" id="contato">
+  <div class="wrap">
+    <div>
+      <h2>Vamos conversar sobre o seu prato</h2>
+      <p class="lede">Me chame no WhatsApp, conte o que você procura e eu envio os horários da semana.</p>
+      <address>
+        <div><b>Endereço</b><span>Rua das Jabuticabeiras, 142, sala&nbsp;5, Vila Madalena<br>São Paulo, SP. A 8&nbsp;minutos a pé do metrô Vila Madalena.</span></div>
+        <div><b>Horário</b><span>Segunda a quinta, das 8h às 20h<br>Sexta, das 8h às 17h. Sábado, das 9h às 13h (só online)</span></div>
+        <div><b>WhatsApp</b><span><a href="https://wa.me/5511900000000" target="_blank" rel="noopener">(11)&nbsp;90000-0000</a></span></div>
+      </address>
+      <a class="btn sun" href="https://wa.me/5511900000000?text=Ol%C3%A1%2C%20Helena!%20Quero%20agendar%20uma%20consulta." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Agendar consulta no WhatsApp</a>
+    </div>
+    <div class="map">
+      <iframe title="Mapa da Vila Madalena, São Paulo" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Vila+Madalena,+S%C3%A3o+Paulo+-+SP&z=15&hl=pt-BR&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="logo" translate="no" href="#topo" aria-label="Helena Prado Nutrição, voltar ao topo">Helena Prado</a>
+    <div>
+      <p>Helena Prado Nutrição · Nutricionista responsável: Helena Prado, CRN-3&nbsp;00000</p>
+      <p>Marca, profissional, registro, valores e avaliações fictícios. Site demonstrativo criado por <a href="https://soulfork.com.br" target="_blank" rel="noopener">SoulFork</a>.</p>
+    </div>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/5511900000000?text=Ol%C3%A1%2C%20Helena!%20Quero%20falar%20sobre%20uma%20consulta." target="_blank" rel="noopener" aria-label="Falar com Helena Prado no WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg></a>
+
+<script>
+// the four steps appear once when seen; without IO they are simply shown
+var ol=document.querySelector('.steps ol');
+if('IntersectionObserver' in window){new IntersectionObserver(function(es,io){if(es[0].isIntersecting){ol.classList.add('in');io.disconnect()}},{threshold:.2}).observe(ol)}else{ol.classList.add('in')}
+// close the mobile menu after picking a link
+document.querySelectorAll('.menu nav a').forEach(function(a){a.addEventListener('click',function(){a.closest('details').removeAttribute('open')})});
+</script>
+</body>
+</html>

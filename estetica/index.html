@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ateliê Lume | Estética avançada nos Jardins, São Paulo</title>
+<meta name="description" content="Tratamentos faciais, corporais, injetáveis e depilação a laser nos Jardins. Avaliação gratuita com análise de pele e bioimpedância. Agende pelo WhatsApp.">
+<meta name="robots" content="noindex,follow">
+<meta name="theme-color" content="#3B2030">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%233B2030'/%3E%3Ccircle cx='32' cy='32' r='15' fill='none' stroke='%23D9A37E' stroke-width='2'/%3E%3Ccircle cx='32' cy='32' r='5' fill='%23EFEAE1'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Hanken+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+:root{
+  --linen:#EFEAE1; --paper:#F8F5EF; --stone:#DDD4C7; --plum:#3B2030; --plum-deep:#2A1622;
+  --copper:#8F4E2A; --copper-light:#D9A37E; --ink:#241820; --ink-soft:#5E4E56; --on-plum:#D8CBD0;
+  --rule:rgba(59,32,48,.22);
+  --display:"Bodoni Moda","Didot",Georgia,serif;
+  --body:"Hanken Grotesk",system-ui,sans-serif;
+  --wrap:1240px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px;-webkit-text-size-adjust:100%}
+body{margin:0;font:300 1.0625rem/1.7 var(--body);color:var(--ink);background:var(--linen);overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.08;letter-spacing:-.015em;margin:0;text-wrap:balance}
+h2{font-size:clamp(2.1rem,4.6vw,3.75rem)}
+h3{font-size:1.5rem}
+p{margin:0}
+a{color:inherit}
+a,summary{touch-action:manipulation;-webkit-tap-highlight-color:rgba(143,78,42,.18)}
+:focus-visible{outline:2px solid var(--copper);outline-offset:4px}
+.on-dark :focus-visible{outline-color:var(--copper-light)}
+.wrap{width:min(var(--wrap),100% - 3rem);margin-inline:auto}
+.skip{position:absolute;left:-999px;top:0;background:var(--plum);color:var(--linen);padding:.75rem 1rem;z-index:100}
+.skip:focus{left:.5rem;top:.5rem}
+.lede{font-size:1.15rem;color:var(--ink-soft);max-width:52ch;margin-top:1.5rem}
+.band{padding-block:clamp(5rem,11vw,9.5rem)}
+.head{display:grid;grid-template-columns:1fr 1fr;gap:2rem clamp(2rem,6vw,6rem);align-items:end;padding-bottom:2.5rem;border-bottom:1px solid var(--rule)}
+.head .lede{margin-top:0}
+
+.btn{display:inline-flex;align-items:center;gap:.7rem;font:400 1rem/1 var(--body);letter-spacing:.01em;text-decoration:none;padding:1.15rem 1.75rem;background:var(--plum);color:var(--linen);border:1px solid var(--plum);transition:background-color .25s,color .25s}
+.btn svg{width:1.2em;height:1.2em;flex:none}
+.btn:hover{background:transparent;color:var(--plum)}
+.btn-light{background:var(--linen);color:var(--plum);border-color:var(--linen)}
+.btn-light:hover{color:var(--linen)}
+.link{text-underline-offset:.35em;text-decoration-thickness:1px;text-decoration-color:var(--copper)}
+.link:hover{text-decoration-thickness:2px}
+
+/* header */
+.top{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(239,234,225,.93);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:72px}
+.logo{font:400 1.6rem/1 var(--display);text-decoration:none;color:var(--plum);white-space:nowrap;letter-spacing:-.01em}
+.logo i{font-size:.72em;margin-right:.3em;color:var(--copper)}
+.nav{display:flex;gap:2rem}
+.nav a{text-decoration:none;font-size:.95rem;font-weight:400;padding:.4rem 0;border-bottom:1px solid transparent;transition:border-color .25s}
+.nav a:hover{border-color:var(--copper)}
+.top .btn{padding:.8rem 1.2rem;font-size:.92rem}
+.actions{display:flex;align-items:center;gap:.5rem}
+.menu{display:none;position:relative}
+.menu summary{list-style:none;width:44px;height:44px;display:grid;place-items:center;cursor:pointer;color:var(--plum)}
+.menu summary::-webkit-details-marker{display:none}
+.menu nav{position:absolute;right:0;top:58px;background:var(--paper);border:1px solid var(--rule);padding:.5rem;min-width:220px;display:grid}
+.menu nav a{padding:.85rem 1rem;text-decoration:none;font-weight:400}
+.menu nav a:hover{background:var(--stone)}
+
+/* hero: copy left, tall photo bleeding to the right edge, small detail print overlapping */
+.hero{position:relative;display:grid;grid-template-columns:minmax(1.5rem,1fr) minmax(0,calc(var(--wrap)*.56)) minmax(0,calc(var(--wrap)*.44)) minmax(0,1fr);min-height:min(100svh,920px);padding-top:72px}
+.hero-copy{grid-column:2;align-self:center;padding:clamp(3rem,6vw,5rem) clamp(2rem,5vw,5rem) clamp(3rem,6vw,5rem) 0}
+.hero h1{font-size:clamp(2.6rem,5vw,4.6rem);line-height:1.02;letter-spacing:-.025em}
+.hero h1 i{font-weight:400}
+.hero .lede{font-size:clamp(1.08rem,1.4vw,1.22rem);max-width:44ch}
+.hero-cta{display:flex;flex-wrap:wrap;align-items:center;gap:1.25rem 2rem;margin-top:2.5rem}
+.rating{display:inline-flex;align-items:center;gap:.75rem;margin-top:2.25rem;padding-top:1.25rem;border-top:1px solid var(--rule);text-decoration:none;font-size:.98rem;font-weight:400}
+.rating svg{width:22px;height:22px;flex:none}
+.rating b{font-weight:500}
+.star{color:var(--copper)}
+.hero-photo{grid-column:3/5;position:relative;margin:0}
+.hero-photo>img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.hero-print{position:absolute;left:-4.5rem;bottom:3.5rem;width:clamp(150px,15vw,210px);border:8px solid var(--linen);background:var(--linen)}
+.hero-print img{aspect-ratio:4/5;object-fit:cover;width:100%}
+
+/* treatments: a printed menu, not a card grid */
+.menu-cat{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(2rem,6vw,6rem);align-items:center;padding-block:clamp(3rem,6vw,5rem);border-bottom:1px solid var(--rule)}
+.menu-cat:nth-of-type(even) figure{order:2}
+.menu-cat figure{margin:0;background:var(--stone)}
+.menu-cat img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.menu-cat h3{font-size:clamp(1.9rem,3vw,2.6rem);font-style:italic}
+.menu-cat h3+p{color:var(--ink-soft);margin-top:.75rem;max-width:48ch}
+.rows{list-style:none;margin:2rem 0 0;padding:0}
+.rows li{display:grid;grid-template-columns:1fr auto auto;gap:.25rem 1.5rem;align-items:baseline;padding:1.1rem 0;border-top:1px solid var(--rule)}
+.rows b{font:400 1.2rem/1.3 var(--display)}
+.rows small{grid-column:1/-1;color:var(--ink-soft);font-size:.95rem;max-width:52ch}
+.rows .dur{color:var(--ink-soft);font-size:.92rem;white-space:nowrap}
+.rows .from{font-size:.92rem;color:var(--ink-soft);white-space:nowrap;text-align:right;min-width:8.5rem}
+.rows .from em{font:400 1.3rem/1 var(--display);font-style:normal;color:var(--copper);margin-left:.3rem}
+.note{margin-top:2rem;font-size:.95rem;color:var(--ink-soft);max-width:70ch}
+
+/* diferenciais */
+.why{background:var(--plum);color:var(--linen)}
+.why .lede{color:var(--on-plum)}
+.why .head{border-color:rgba(239,234,225,.25)}
+.why-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(2rem,6vw,6rem);margin-top:clamp(3rem,6vw,5rem);align-items:start}
+.why figure{margin:0}
+.why figure img{width:100%;aspect-ratio:3/4;object-fit:cover}
+.why dl{margin:0}
+.why dl div{padding:1.75rem 0;border-bottom:1px solid rgba(239,234,225,.25)}
+.why dl div:first-child{padding-top:0}
+.why dt{font:400 1.55rem/1.2 var(--display)}
+.why dd{margin:.6rem 0 0;color:var(--on-plum);max-width:54ch}
+
+/* steps — a real sequence, so it gets numerals */
+.steps ol{list-style:none;margin:clamp(3rem,6vw,5rem) 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);counter-reset:s}
+.steps li{counter-increment:s;padding:0 clamp(1.25rem,3vw,3rem);border-left:1px solid var(--rule)}
+.steps li:first-child{padding-left:0;border-left:0}
+.steps li::before{content:counter(s);font:italic 400 5.5rem/1 var(--display);color:var(--copper);display:block;margin-bottom:1.5rem}
+.steps li p{color:var(--ink-soft);margin-top:.75rem}
+
+/* team */
+.team{background:var(--paper)}
+.people{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.5rem,4vw,4rem);margin-top:clamp(3rem,6vw,5rem)}
+.people figure{margin:0}
+.people li:nth-child(2){margin-top:5rem}
+.people ul,.people{list-style:none;padding:0}
+.people img{width:100%;aspect-ratio:3/4;object-fit:cover;filter:saturate(.85)}
+.people h3{margin-top:1.5rem;font-size:1.6rem}
+.people p{color:var(--ink-soft);margin-top:.4rem;font-size:1rem}
+.people .reg{font-size:.9rem;margin-top:.75rem;padding-top:.75rem;border-top:1px solid var(--rule);color:var(--ink)}
+
+/* reviews */
+.revs{display:grid;grid-template-columns:repeat(3,1fr);margin-top:clamp(3rem,6vw,5rem)}
+.rev{margin:0;padding:0 clamp(1.25rem,3vw,3rem);border-left:1px solid var(--rule);display:flex;flex-direction:column;gap:1.5rem}
+.rev:first-child{padding-left:0;border-left:0}
+.rev blockquote{margin:0;font:italic 400 1.35rem/1.45 var(--display);flex:1}
+.rev figcaption{display:flex;align-items:center;gap:.8rem;font-size:.95rem}
+.rev cite{font-style:normal;font-weight:500;display:block}
+.rev small{color:var(--ink-soft);font-size:.88rem}
+.rev svg{width:22px;height:22px;margin-left:auto;flex:none}
+
+/* faq */
+.faq{background:var(--stone)}
+.faq .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(2rem,6vw,6rem)}
+.faq details{border-bottom:1px solid var(--rule)}
+.faq details:first-of-type{border-top:1px solid var(--rule)}
+.faq summary{list-style:none;cursor:pointer;padding:1.5rem 0;font:400 1.35rem/1.3 var(--display);display:flex;justify-content:space-between;gap:1rem;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font:300 1.8rem/1 var(--body);color:var(--copper);transition:transform .25s;flex:none}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 2.5rem 1.6rem 0;color:var(--ink-soft);max-width:60ch}
+
+/* contact */
+.contact{background:var(--plum);color:var(--linen)}
+.contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,6rem);align-items:stretch}
+.contact address{font-style:normal;margin-top:2.5rem}
+.contact address div{padding:1.25rem 0;border-top:1px solid rgba(239,234,225,.25);display:grid;grid-template-columns:7.5rem 1fr;gap:1rem}
+.contact address b{font:italic 400 1.15rem/1.5 var(--display);color:var(--copper-light)}
+.contact address span{color:var(--on-plum)}
+.contact .btn{margin-top:2rem}
+.map{min-height:460px;background:var(--plum-deep)}
+.map iframe{width:100%;height:100%;min-height:460px;border:0;display:block;filter:grayscale(1) sepia(.18) contrast(.95)}
+
+footer{background:var(--plum-deep);color:var(--on-plum);padding:2.5rem 0 6.5rem;font-size:.92rem}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem 2rem;align-items:center}
+footer .logo{color:var(--linen);font-size:1.35rem}
+footer .logo i{color:var(--copper-light)}
+footer a{color:var(--linen)}
+
+.fab{position:fixed;right:1.1rem;bottom:max(1.1rem,env(safe-area-inset-bottom));z-index:60;width:58px;height:58px;border-radius:50%;background:#1FA855;color:#fff;display:grid;place-items:center;box-shadow:0 10px 24px -8px rgba(36,24,32,.55);transition:transform .2s}
+.fab:hover{transform:scale(1.06)}
+.fab svg{width:30px;height:30px}
+
+/* motion: one hero entrance; photos unveil once on scroll. Nothing else moves. */
+@media (prefers-reduced-motion:no-preference){
+  .hero h1,.hero .lede,.hero-cta,.rating{animation:rise 1s cubic-bezier(.2,.7,.2,1) both}
+  .hero .lede{animation-delay:.15s}.hero-cta{animation-delay:.28s}.rating{animation-delay:.4s}
+  .hero-photo>img{animation:unveil 1.4s cubic-bezier(.6,0,.2,1) both}
+  .hero-print{animation:rise 1s .9s cubic-bezier(.2,.7,.2,1) both}
+  .js .rv img{clip-path:inset(0 0 100% 0);transition:clip-path 1.1s cubic-bezier(.6,0,.2,1)}
+  .js .rv.in img{clip-path:inset(0)}
+}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}}
+@keyframes unveil{from{clip-path:inset(0 0 100% 0)}to{clip-path:inset(0)}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+
+@media (max-width:1024px){
+  .nav{display:none}.menu{display:block}
+}
+@media (max-width:860px){
+  .hero{display:block;min-height:0}
+  .hero-copy{padding:3rem 1.5rem 3rem}
+  .hero-photo{margin-left:1.5rem;aspect-ratio:4/5}
+  .hero-print{left:-1.5rem;bottom:-2.5rem;width:120px;border-width:6px}
+  .hero+section{padding-top:7rem}
+  .head,.menu-cat,.why-grid,.faq .wrap,.contact .wrap{grid-template-columns:1fr}
+  .menu-cat:nth-of-type(even) figure{order:0}
+  .menu-cat figure{max-width:420px}
+  .steps ol,.revs,.people{grid-template-columns:1fr}
+  .steps li,.rev{padding:2rem 0 0;margin-top:2rem;border-left:0;border-top:1px solid var(--rule)}
+  .steps li:first-child,.rev:first-child{padding-top:0;margin-top:0;border-top:0}
+  .people li:nth-child(2){margin-top:0}
+  .people figure{max-width:420px}
+  .why figure{max-width:420px}
+}
+@media (max-width:560px){
+  .top .btn span{display:none}
+  .top .btn{padding:.8rem}
+  .hero-cta .btn{width:100%;justify-content:center}
+  .rows li{grid-template-columns:1fr auto}
+  .rows .dur{grid-row:2;grid-column:1}
+  .rows small{grid-row:3}
+  .rows .from{min-width:0}
+  .contact address div{grid-template-columns:1fr;gap:.1rem}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 15l-1.4 5.1 5.2-1.4A9.9 9.9 0 1 0 12.04 2Zm0 1.8a8.1 8.1 0 1 1-4.1 15.1l-.3-.2-3.1.8.8-3-.2-.3A8.1 8.1 0 0 1 12.04 3.8Zm-3.3 3.9c-.2 0-.5.1-.7.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.2 5 4.4 2.4.9 2.900.8 3.5.7.5-.1 1.700-.7 1.900-1.4.2-.7.2-1.200.2-1.400-.1-.1-.3-.2-.6-.4l-1.900-.9c-.3-.1-.5-.2-.7.2l-.9 1.100c-.2.2-.3.2-.6.1a7.500 7.500 0 0 1-3.700-3.200c-.3-.5.3-.5.8-1.500.1-.2 0-.4 0-.5l-.9-2.200c-.2-.5-.5-.5-.7-.5h-.6Z"/></symbol>
+  <symbol id="i-g" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20H24v8.500h11.300C33.700 33.400 29.300 36.500 24 36.500a12.500 12.500 0 1 1 8.200-21.900l6-6A21 21 0 1 0 45 24c0-1.400-.1-2.700-.4-4Z"/><path fill="#FF3D00" d="m5.300 14.700 7 5.100A12.500 12.500 0 0 1 32.200 14.600l6-6A21 21 0 0 0 5.300 14.700Z"/><path fill="#4CAF50" d="M24 45c5.200 0 10-2 13.600-5.200l-6.500-5.300A12.500 12.500 0 0 1 12.300 28.300l-7 5.400A21 21 0 0 0 24 45Z"/><path fill="#1976D2" d="M43.600 20H24v8.500h11.300a12.600 12.600 0 0 1-4.200 6l6.500 5.300C41.500 36.300 45 30.800 45 24c0-1.400-.1-2.700-.4-4Z"/></symbol>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" translate="no" href="#topo" aria-label="Ateliê Lume, início"><i>ateliê</i>Lume</a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#tratamentos">Tratamentos</a>
+      <a href="#diferenciais">Diferenciais</a>
+      <a href="#equipe">Equipe</a>
+      <a href="#duvidas">Dúvidas</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <div class="actions">
+      <a class="btn" href="https://wa.me/5511900000000?text=Ol%C3%A1!%20Quero%20agendar%20uma%20avalia%C3%A7%C3%A3o%20no%20Ateli%C3%AA%20Lume." target="_blank" rel="noopener" aria-label="Agendar avaliação pelo WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg><span>Agendar avaliação</span></a>
+      <details class="menu">
+        <summary aria-label="Abrir menu"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path stroke="currentColor" stroke-width="1.4" stroke-linecap="round" d="M4 8h16M4 16h16"/></svg></summary>
+        <nav aria-label="Menu">
+          <a href="#tratamentos">Tratamentos</a>
+          <a href="#diferenciais">Diferenciais</a>
+          <a href="#equipe">Equipe</a>
+          <a href="#duvidas">Dúvidas</a>
+          <a href="#contato">Contato</a>
+        </nav>
+      </details>
+    </div>
+  </div>
+</header>
+
+<main id="conteudo">
+<div class="hero" id="topo">
+  <div class="hero-copy">
+    <h1>Antes de qualquer tratamento, <i>a gente olha a sua pele.</i></h1>
+    <p class="lede">Estética facial, corporal e injetáveis nos Jardins. Cada plano começa com análise de pele e bioimpedância, feitas por biomédica e dermatologista. Você só faz o que tem indicação.</p>
+    <div class="hero-cta">
+      <a class="btn" href="https://wa.me/5511900000000?text=Ol%C3%A1!%20Quero%20agendar%20uma%20avalia%C3%A7%C3%A3o%20gratuita%20no%20Ateli%C3%AA%20Lume." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Agendar avaliação gratuita</a>
+      <a class="link" href="#tratamentos">Ver tratamentos e valores</a>
+    </div>
+    <div><a class="rating" href="#avaliacoes" aria-label="Nota 4,9 de 5 no Google, com 410 avaliações. Ver depoimentos"><svg aria-hidden="true"><use href="#i-g"/></svg><span><b>4,9&nbsp;<span class="star" aria-hidden="true">★</span></b> no Google · 410&nbsp;avaliações</span></a></div>
+  </div>
+  <figure class="hero-photo">
+    <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=1400&h=1750&fit=crop&q=80&auto=format" width="1400" height="1750" alt="Cliente de olhos fechados recebendo máscara facial aplicada com pincel por uma profissional" fetchpriority="high">
+    <div class="hero-print"><img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=420&h=525&fit=crop&q=80&auto=format" width="420" height="525" alt="Mãos da profissional vertendo óleo antes de um atendimento corporal"></div>
+  </figure>
+</div>
+
+<section class="band" id="tratamentos">
+  <div class="wrap">
+    <div class="head">
+      <h2>Carta de tratamentos</h2>
+      <p class="lede">Valores de partida por sessão. O plano fechado, com número de sessões e intervalo, sai da sua avaliação, que é gratuita e sem compromisso.</p>
+    </div>
+
+    <article class="menu-cat">
+      <figure class="rv"><img loading="lazy" src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&h=1000&fit=crop&q=80&auto=format" width="800" height="1000" alt="Profissional aplicando máscara facial com pincel no rosto de uma cliente"></figure>
+      <div>
+        <h3>Faciais</h3>
+        <p>Para textura, viço, manchas e poros. Protocolos ajustados ao seu tipo de pele.</p>
+        <ul class="rows">
+          <li><b>Limpeza de pele profunda</b><span class="dur">60&nbsp;min</span><span class="from">a partir de <em>R$&nbsp;180</em></span><small>Extração cuidadosa, alta frequência e máscara calmante.</small></li>
+          <li><b>Peeling químico</b><span class="dur">40&nbsp;min</span><span class="from">a partir de <em>R$&nbsp;250</em></span><small>Renovação celular para manchas e marcas, com ácido definido na avaliação.</small></li>
+          <li><b>Microagulhamento</b><span class="dur">60&nbsp;min</span><span class="from">a partir de <em>R$&nbsp;450</em></span><small>Estímulo de colágeno com anestésico tópico e ativos de uso profissional.</small></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="menu-cat">
+      <figure class="rv"><img loading="lazy" src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=800&h=1000&fit=crop&q=80&auto=format" width="800" height="1000" alt="Mãos de uma terapeuta fazendo massagem nas costas de uma cliente"></figure>
+      <div>
+        <h3>Corporais</h3>
+        <p>Para retenção de líquido, gordura localizada e firmeza, com medidas acompanhadas a cada retorno.</p>
+        <ul class="rows">
+          <li><b>Drenagem linfática</b><span class="dur">50&nbsp;min</span><span class="from">a partir de <em>R$&nbsp;140</em></span><small>Manual, método Leduc. Indicada também para pós-operatório.</small></li>
+          <li><b>Criolipólise</b><span class="dur">60&nbsp;min</span><span class="from">a partir de <em>R$&nbsp;690</em></span><small>Por área tratada, com manta de proteção e avaliação de prega cutânea.</small></li>
+          <li><b>Radiofrequência</b><span class="dur">40&nbsp;min</span><span class="from">a partir de <em>R$&nbsp;220</em></span><small>Aquecimento controlado para flacidez de abdômen, braços e coxas.</small></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="menu-cat">
+      <figure class="rv"><img loading="lazy" src="https://images.unsplash.com/photo-1552693673-1bf958298935?w=800&h=1000&fit=crop&q=80&auto=format" width="800" height="1000" alt="Profissional de luvas realizando um procedimento estético no rosto de uma cliente com touca"></figure>
+      <div>
+        <h3>Injetáveis</h3>
+        <p>Aplicados só pela dermatologista ou pela biomédica esteta, com produto aberto na sua frente e lote anotado no prontuário.</p>
+        <ul class="rows">
+          <li><b>Toxina botulínica</b><span class="dur">30&nbsp;min</span><span class="from">a partir de <em>R$&nbsp;990</em></span><small>Terço superior, com retorno de ajuste em 15 dias incluso.</small></li>
+          <li><b>Preenchimento com ácido hialurônico</b><span class="dur">45&nbsp;min</span><span class="from">a partir de <em>R$&nbsp;1.490</em></span><small>Por seringa. Lábios, olheiras, malar ou mento.</small></li>
+          <li><b>Bioestimulador de colágeno</b><span class="dur">45&nbsp;min</span><span class="from">a partir de <em>R$&nbsp;1.890</em></span><small>Firmeza gradual para rosto, pescoço ou corpo.</small></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="menu-cat">
+      <figure class="rv"><img loading="lazy" src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&h=1000&fit=crop&q=80&auto=format" width="800" height="1000" alt="Toalhas dobradas, frasco sem rótulo e flores sobre a bancada da cabine"></figure>
+      <div>
+        <h3>Depilação a laser</h3>
+        <p>Laser de diodo com ponteira resfriada, para todos os fototipos. Sessões a cada 30 a 45 dias.</p>
+        <ul class="rows">
+          <li><b>Axilas</b><span class="dur">15&nbsp;min</span><span class="from">a partir de <em>R$&nbsp;79</em></span></li>
+          <li><b>Virilha completa</b><span class="dur">20&nbsp;min</span><span class="from">a partir de <em>R$&nbsp;129</em></span></li>
+          <li><b>Pernas inteiras</b><span class="dur">50&nbsp;min</span><span class="from">a partir de <em>R$&nbsp;289</em></span></li>
+        </ul>
+      </div>
+    </article>
+    <p class="note">Não publicamos fotos de antes e depois nem prometemos resultado: cada pele responde de um jeito, e as normas dos conselhos profissionais pedem essa cautela. Na avaliação você vê o que é realista para o seu caso.</p>
+  </div>
+</section>
+
+<section class="band why on-dark" id="diferenciais">
+  <div class="wrap">
+    <div class="head">
+      <h2>O que muda quando a clínica começa pelo diagnóstico</h2>
+      <p class="lede">Você não escolhe tratamento em vitrine. A gente mede, explica o que encontrou e indica só o que faz sentido.</p>
+    </div>
+    <div class="why-grid">
+      <figure class="rv"><img loading="lazy" src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=900&h=1200&fit=crop&q=80&auto=format" width="900" height="1200" alt="Cliente relaxando em cabine privativa durante um atendimento corporal"></figure>
+      <dl>
+        <div><dt>Avaliação individual com medidas</dt><dd>Bioimpedância para composição corporal e análise de pele por imagem, que mostra manchas, poros e hidratação. Você leva o relatório.</dd></div>
+        <div><dt>Dermatologista responsável</dt><dd>Equipe com médica dermatologista como responsável técnica e biomédica esteta em todos os procedimentos injetáveis.</dd></div>
+        <div><dt>Equipamentos com registro na Anvisa</dt><dd>Laser, criolipólise e radiofrequência de fabricantes registrados, com manutenção em dia e ponteiras conferidas a cada atendimento.</dd></div>
+        <div><dt>Cabines privativas</dt><dd>Uma cliente por cabine, com porta fechada, isolamento acústico e horário que não se sobrepõe ao de ninguém.</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="band steps" id="como-funciona">
+  <div class="wrap">
+    <div class="head">
+      <h2>Como funciona</h2>
+      <p class="lede">Três etapas, sem pacote fechado na primeira visita.</p>
+    </div>
+    <ol>
+      <li><h3>Avaliação</h3><p>Quarenta minutos de conversa, análise de pele e bioimpedância. Gratuita. Você conta o que incomoda e o que já tentou.</p></li>
+      <li><h3>Plano personalizado</h3><p>Você recebe por escrito os tratamentos indicados, quantas sessões, o intervalo entre elas e o valor total. Decide com calma.</p></li>
+      <li><h3>Acompanhamento</h3><p>A cada retorno refazemos as medidas e ajustamos o plano. Entre sessões, a equipe responde suas dúvidas pelo WhatsApp.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="band team" id="equipe">
+  <div class="wrap">
+    <div class="head">
+      <h2>Quem cuida de você</h2>
+      <p class="lede">Profissionais com registro ativo no conselho de classe. Você sabe o nome e a formação de quem vai te atender antes de entrar na cabine.</p>
+    </div>
+    <ul class="people">
+      <li><figure class="rv"><img loading="lazy" src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=700&h=933&fit=crop&q=80&auto=format" width="700" height="933" alt="Dra. Helena Vasconcelos, de jaleco branco, sorrindo"></figure>
+        <h3>Dra. Helena Vasconcelos</h3><p>Dermatologista e responsável técnica. Residência em dermatologia e 14 anos de consultório.</p><p class="reg">CRM-SP 000.000 · RQE 00.000</p></li>
+      <li><figure class="rv"><img loading="lazy" src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=700&h=933&fit=crop&q=80&auto=format" width="700" height="933" alt="Dra. Marina Sato, de uniforme azul, de braços cruzados e sorrindo"></figure>
+        <h3>Dra. Marina Sato</h3><p>Biomédica esteta, pós-graduada em harmonização facial. Conduz as avaliações e os injetáveis.</p><p class="reg">CRBM-1 00.000</p></li>
+      <li><figure class="rv"><img loading="lazy" src="https://images.unsplash.com/photo-1651008376811-b90baee60c1f?w=700&h=933&fit=crop&q=80&auto=format" width="700" height="933" alt="Camila Rocha, de jaleco branco, sentada e sorrindo"></figure>
+        <h3>Camila Rocha</h3><p>Fisioterapeuta dermatofuncional. Cuida dos protocolos corporais e do pós-operatório.</p><p class="reg">CREFITO-3 000.000-F</p></li>
+    </ul>
+  </div>
+</section>
+
+<section class="band" id="avaliacoes">
+  <div class="wrap">
+    <div class="head">
+      <h2>O que as clientes contam no Google</h2>
+      <p class="lede"><b style="font-weight:500">4,9&nbsp;<span class="star" aria-hidden="true">★</span></b> de média em 410&nbsp;avaliações.</p>
+    </div>
+    <div class="revs">
+      <figure class="rev">
+        <p class="star" role="img" aria-label="5 de 5 estrelas">★★★★★</p>
+        <blockquote>Fui querendo preenchimento e saí com indicação de tratar a pele primeiro. Ninguém tentou me vender nada. Três meses depois, minha pele nunca esteve tão boa.</blockquote>
+        <figcaption><span><cite>Renata Figueiredo</cite><small>há 3 semanas</small></span><svg role="img" aria-label="Avaliação no Google"><use href="#i-g"/></svg></figcaption>
+      </figure>
+      <figure class="rev">
+        <p class="star" role="img" aria-label="5 de 5 estrelas">★★★★★</p>
+        <blockquote>A avaliação com bioimpedância foi o que me convenceu. A Camila mostrou os números, explicou o plano e refaz as medidas em todo retorno. Dá para ver a evolução no papel.</blockquote>
+        <figcaption><span><cite>Juliana Prado</cite><small>há 1 mês</small></span><svg role="img" aria-label="Avaliação no Google"><use href="#i-g"/></svg></figcaption>
+      </figure>
+      <figure class="rev">
+        <p class="star" role="img" aria-label="5 de 5 estrelas">★★★★★</p>
+        <blockquote>Tinha medo de toxina ficar artificial. A Dra. Marina foi conservadora, marcou retorno em quinze dias e ajustou um detalhe. Ficou natural, ninguém percebeu, só elogiam.</blockquote>
+        <figcaption><span><cite>Patrícia Nogueira</cite><small>há 2 meses</small></span><svg role="img" aria-label="Avaliação no Google"><use href="#i-g"/></svg></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="band faq" id="duvidas">
+  <div class="wrap">
+    <div>
+      <h2>Dúvidas frequentes</h2>
+      <p class="lede">Se a sua não estiver aqui, <a class="link" href="https://wa.me/5511900000000" target="_blank" rel="noopener">pergunte no WhatsApp</a>.</p>
+    </div>
+    <div>
+      <details open>
+        <summary>Os procedimentos doem?</summary>
+        <p>A maioria causa só um leve desconforto. Em microagulhamento e injetáveis usamos anestésico tópico antes, e o laser tem ponteira resfriada. Na avaliação explicamos a sensação de cada um.</p>
+      </details>
+      <details>
+        <summary>Quantas sessões vou precisar?</summary>
+        <p>Depende do tratamento e da resposta do seu corpo. Laser costuma pedir de 8 a 10 sessões; peelings e radiofrequência, de 4 a 6; toxina é uma aplicação a cada 4 a 6 meses. O número estimado vem por escrito no seu plano.</p>
+      </details>
+      <details>
+        <summary>Vocês parcelam?</summary>
+        <p>Sim, em até 10 vezes sem juros no cartão para planos acima de R$&nbsp;600. No Pix, 5% de desconto. Sessões avulsas são pagas no dia.</p>
+      </details>
+      <details>
+        <summary>A avaliação é gratuita mesmo?</summary>
+        <p>É. Dura cerca de 40 minutos, inclui análise de pele e bioimpedância, e você leva o relatório mesmo que decida não fazer nada conosco.</p>
+      </details>
+      <details>
+        <summary>Quem não pode fazer os tratamentos?</summary>
+        <p>Gestantes e lactantes têm restrição para injetáveis, peelings e alguns equipamentos. Doenças autoimunes, uso de isotretinoína e pele bronzeada também pedem cuidado. Por isso a avaliação vem antes de tudo.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="band contact on-dark" id="contato">
+  <div class="wrap">
+    <div>
+      <h2>Venha conhecer o ateliê</h2>
+      <address>
+        <div><b>Endereço</b><span>Alameda das Magnólias, 214, 3º&nbsp;andar, Jardins<br>São Paulo, SP. Valet na porta.</span></div>
+        <div><b>Horário</b><span>Segunda a sexta, das 9h às 20h<br>Sábado, das 9h às 15h</span></div>
+        <div><b>WhatsApp</b><span><a class="link" href="https://wa.me/5511900000000" target="_blank" rel="noopener">(11)&nbsp;90000-0000</a></span></div>
+      </address>
+      <a class="btn btn-light" href="https://wa.me/5511900000000?text=Ol%C3%A1!%20Quero%20agendar%20uma%20avalia%C3%A7%C3%A3o%20gratuita%20no%20Ateli%C3%AA%20Lume." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Agendar avaliação gratuita</a>
+    </div>
+    <div class="map">
+      <iframe title="Mapa dos Jardins, São Paulo" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Jardins,+S%C3%A3o+Paulo+-+SP&z=15&hl=pt-BR&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="logo" translate="no" href="#topo"><i>ateliê</i>Lume</a>
+    <p>Marca, equipe, registros e avaliações fictícios. Site demonstrativo criado por <a href="https://soulfork.com.br" target="_blank" rel="noopener">SoulFork</a>.</p>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/5511900000000?text=Ol%C3%A1!%20Quero%20agendar%20uma%20avalia%C3%A7%C3%A3o%20no%20Ateli%C3%AA%20Lume." target="_blank" rel="noopener" aria-label="Falar com o Ateliê Lume no WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg></a>
+
+<script>
+// photos unveil once; without IO support everything simply stays visible
+if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+}else{document.documentElement.classList.remove('js')}
+// close the mobile menu after picking a link
+document.querySelectorAll('.menu nav a').forEach(function(a){a.addEventListener('click',function(){a.closest('details').removeAttribute('open')})});
+</script>
+</body>
+</html>

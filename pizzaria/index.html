@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Forno da Vila | Pizza de forno a lenha com entrega na Vila Prudente</title>
+<meta name="description" content="Pizzaria de bairro na Vila Prudente, São Paulo. Massa de 48 horas, forno a lenha a 450 °C e entrega própria em cerca de 40 minutos. Peça pelo WhatsApp.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Forno da Vila | Pizza de forno a lenha com entrega na Vila Prudente">
+<meta property="og:description" content="Massa de 48 horas, forno a lenha e entrega própria em cerca de 40 minutos na Vila Prudente e no Ipiranga.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1604068549290-dea0e4a305ca?w=1200&h=630&fit=crop&q=80&auto=format">
+<meta property="og:locale" content="pt_BR">
+<meta name="robots" content="noindex,follow">
+<meta name="theme-color" content="#24100D">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%2324100D'/%3E%3Ccircle cx='32' cy='32' r='20' fill='%23F5A524'/%3E%3Ccircle cx='26' cy='27' r='4' fill='%2324100D'/%3E%3Ccircle cx='39' cy='36' r='4' fill='%2324100D'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--forno:#24100D;--carvao:#160907;--surface:#3A1913;--line:#5A2E24;--ember:#F5A524;--fogo:#FF6A1F;--massa:#F4E7CF;--massa2:#CDB79A;--verde:#7BD389;--serif:"Young Serif",Georgia,serif;--sans:"Figtree",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:5rem}
+body{font-family:var(--sans);font-size:1.0625rem;line-height:1.55;color:var(--massa);background:var(--forno);overflow-x:hidden;
+ background-image:radial-gradient(rgba(255,255,255,.035) 1px,transparent 1px),radial-gradient(rgba(0,0,0,.35) 1px,transparent 1.2px);background-size:23px 23px,41px 41px;background-position:0 0,11px 7px}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.08;letter-spacing:-.01em}
+h2{font-size:clamp(2rem,4.5vw,3.25rem);margin-bottom:.5em}
+h3{font-size:1.5rem}
+p{max-width:62ch}
+:focus-visible{outline:3px solid var(--ember);outline-offset:3px;border-radius:4px}
+.skip{position:absolute;left:-999px;top:0;background:var(--ember);color:var(--carvao);padding:.75rem 1rem;z-index:100;font-weight:700}
+.skip:focus{left:0}
+.wrap{width:min(1180px,100% - 2.5rem);margin-inline:auto}
+section{padding:5.5rem 0}
+.btn{display:inline-flex;align-items:center;gap:.6rem;background:var(--ember);color:var(--carvao);font-weight:700;padding:.95rem 1.5rem;border-radius:999px;text-decoration:none;border:0;cursor:pointer;font:inherit;font-weight:700;transition:background .15s,transform .15s}
+.btn:hover{background:var(--fogo);transform:translateY(-1px)}
+.btn svg{width:22px;height:22px;flex:none}
+.btn-line{background:transparent;color:var(--massa);border:2px solid var(--line)}
+.btn-line:hover{background:var(--surface)}
+.lead{color:var(--massa2);font-size:1.15rem}
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(36,16,13,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;gap:1.5rem;height:4.5rem}
+.logo{font-family:var(--serif);font-size:1.55rem;text-decoration:none;letter-spacing:-.02em;display:flex;align-items:center;gap:.5rem}
+.logo i{width:14px;height:14px;border-radius:50%;background:var(--ember);box-shadow:0 0 0 3px var(--forno),0 0 0 4px var(--ember)}
+.nav{display:flex;gap:1.4rem;margin-left:auto;font-weight:500}
+.nav a{text-decoration:none;color:var(--massa2)}
+.nav a:hover{color:var(--massa)}
+.open{display:flex;align-items:center;gap:.5rem;font-size:.9rem;color:var(--massa2);white-space:nowrap}
+.open b{width:9px;height:9px;border-radius:50%;background:var(--verde);display:inline-block}
+.bar .btn{padding:.7rem 1.1rem;font-size:.95rem}
+.menu-t{display:none}
+/* hero */
+.hero{position:relative;overflow:hidden;padding:3rem 0 4rem;min-height:calc(100vh - 4.5rem);display:flex;align-items:center}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:2rem;align-items:center}
+.hero h1{font-size:clamp(2.4rem,4.6vw,4.1rem);max-width:14ch}
+.hero h1 em{font-style:normal}
+.hero .lead{margin:1.2rem 0 1.8rem;max-width:44ch}
+.cta{display:flex;flex-wrap:wrap;gap:1rem;align-items:center}
+.selo{display:flex;align-items:center;gap:.5rem;margin-top:2.2rem;color:var(--massa2)}
+.selo .star{color:var(--ember);font-size:1.3rem;line-height:1}
+.selo strong{color:var(--massa)}
+.pizza{position:relative;justify-self:end;width:min(46vw,640px);aspect-ratio:1;margin-right:calc(-1 * max(2rem,(100vw - 1180px)/2 + 6rem));border-radius:50%;overflow:hidden;
+ box-shadow:0 0 60px 10px rgba(255,106,31,.35),0 0 140px 40px rgba(245,165,36,.18);animation:brasa 3.2s ease-in-out infinite alternate}
+.pizza img{width:100%;height:100%;object-fit:cover}
+@keyframes brasa{from{box-shadow:0 0 60px 10px rgba(255,106,31,.32),0 0 140px 40px rgba(245,165,36,.14)}to{box-shadow:0 0 80px 16px rgba(255,106,31,.5),0 0 180px 60px rgba(245,165,36,.26)}}
+/* cardápio */
+.grp{margin-top:3rem}
+.grp h3{display:flex;align-items:baseline;gap:1rem;font-size:1.9rem;color:var(--ember)}
+.grp h3 small{font-family:var(--sans);font-size:.95rem;color:var(--massa2);font-weight:400}
+.items{list-style:none;padding:0;margin-top:1rem;border-top:1px solid var(--line)}
+.item{display:grid;grid-template-columns:1fr auto;gap:.4rem 1.5rem;padding:1.1rem 0;border-bottom:1px solid var(--line);align-items:center}
+.item h4{font-family:var(--serif);font-weight:400;font-size:1.25rem}
+.item p{color:var(--massa2);font-size:.95rem;max-width:none}
+.sizes{display:flex;gap:.5rem;grid-row:span 2}
+.add{font:inherit;font-size:.9rem;font-weight:500;color:var(--massa);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:.5rem .55rem .5rem .9rem;cursor:pointer;display:inline-flex;align-items:center;gap:.5rem;white-space:nowrap;transition:background .15s,border-color .15s}
+.add b{width:24px;height:24px;border-radius:50%;background:var(--ember);color:var(--carvao);display:grid;place-items:center;font-weight:700;font-size:1.05rem;line-height:1}
+.add:hover{background:var(--line);border-color:var(--ember)}
+.add.ok{border-color:var(--verde)}
+.tag{display:inline-block;font-size:.75rem;background:var(--surface);border:1px solid var(--line);color:var(--massa2);border-radius:4px;padding:.1rem .4rem;margin-left:.4rem;vertical-align:middle}
+/* pedido */
+.pedido{background:var(--carvao);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.pedido .wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:3rem;align-items:start}
+.cart{background:var(--surface);border-radius:20px;padding:1.5rem;border:1px solid var(--line);margin-top:1.5rem}
+.cart ul{list-style:none;padding:0}
+.cart li{display:grid;grid-template-columns:1fr auto auto;gap:.6rem 1rem;align-items:center;padding:.8rem 0;border-bottom:1px solid var(--line)}
+.cart li span{color:var(--massa2);font-size:.9rem;display:block}
+.qty{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px}
+.qty button,.rm{font:inherit;background:none;border:0;color:var(--massa);cursor:pointer;width:34px;height:34px;font-size:1.2rem;line-height:1}
+.qty output{min-width:1.6rem;text-align:center;font-weight:700}
+.rm{color:var(--massa2);border-radius:50%}
+.rm:hover{color:var(--fogo)}
+.empty{color:var(--massa2);padding:1rem 0}
+.total{display:flex;justify-content:space-between;font-family:var(--serif);font-size:1.5rem;padding-top:1rem}
+.form{display:grid;gap:1rem}
+label{display:grid;gap:.35rem;font-weight:500;font-size:.95rem}
+input,select,textarea{font:inherit;color:var(--massa);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:.8rem .9rem;width:100%}
+select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%23F4E7CF' stroke-width='2'%3E%3Cpath d='M3 6l5 5 5-5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right .9rem center;padding-right:2.5rem}
+option{color:#000}
+.form .btn{justify-content:center;font-size:1.1rem;padding:1.1rem}
+.hint{font-size:.85rem;color:var(--massa2)}
+#troco{display:none}
+.form.dinheiro #troco{display:grid}
+/* combos */
+.combos{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2rem}
+.combo{background:linear-gradient(160deg,var(--surface),var(--carvao));border:1px solid var(--line);border-radius:22px;padding:2rem;display:flex;flex-direction:column;gap:.6rem}
+.combo h3{color:var(--ember)}
+.combo .preco{font-family:var(--serif);font-size:2.2rem;margin-top:auto;padding-top:1rem}
+.combo .preco s{color:var(--massa2);font-size:1.1rem;font-family:var(--sans);margin-right:.5rem}
+.combo p{color:var(--massa2);max-width:none}
+/* porque */
+.porque .wrap{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.porque .foto{border-radius:50% 50% 50% 50%/45% 45% 55% 55%;overflow:hidden;aspect-ratio:4/5;box-shadow:0 30px 60px -30px #000}
+.porque .foto img{width:100%;height:100%;object-fit:cover}
+.razoes{list-style:none;padding:0;display:grid;gap:1.4rem;margin-top:1.5rem}
+.razoes li{display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start;opacity:0;transform:translateX(-14px);transition:opacity .5s,transform .5s}
+.razoes.in li{opacity:1;transform:none}
+.razoes.in li:nth-child(2){transition-delay:.1s}.razoes.in li:nth-child(3){transition-delay:.2s}.razoes.in li:nth-child(4){transition-delay:.3s}.razoes.in li:nth-child(5){transition-delay:.4s}
+.razoes b{font-family:var(--serif);font-weight:400;color:var(--ember);font-size:1.6rem;min-width:4.5rem;line-height:1.2}
+.razoes p{color:var(--massa2);max-width:none}
+.razoes strong{display:block;color:var(--massa);font-weight:700;margin-bottom:.15rem}
+/* entrega */
+.entrega{background:var(--carvao);border-block:1px solid var(--line)}
+.taxas{list-style:none;padding:0;margin-top:1.5rem;max-width:640px}
+.taxas li{display:flex;justify-content:space-between;gap:1rem;padding:.9rem 0;border-bottom:1px dotted var(--line)}
+.taxas li span{color:var(--massa2);font-size:.95rem}
+.taxas li b{font-family:var(--serif);font-weight:400;font-size:1.3rem;white-space:nowrap}
+.retira{margin-top:2rem;background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--ember);border-radius:14px;padding:1.2rem 1.4rem;max-width:640px}
+/* galeria */
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem}
+.gal figure{border-radius:16px;overflow:hidden;aspect-ratio:4/3;background:var(--surface)}
+.gal figure:first-child{grid-row:span 2;aspect-ratio:auto}
+.gal img{width:100%;height:100%;object-fit:cover}
+/* depoimentos */
+.dep{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2rem}
+.dep blockquote{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:1.6rem;display:flex;flex-direction:column;gap:.8rem}
+.dep .stars{color:var(--ember);letter-spacing:.1em}
+.dep p{max-width:none}
+.dep footer{color:var(--massa2);font-size:.9rem;margin-top:auto}
+.dep footer strong{color:var(--massa)}
+/* faq */
+.faq{max-width:760px}
+details{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;padding:1.2rem 2.2rem 1.2rem 0;font-family:var(--serif);font-size:1.25rem;list-style:none;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:.2rem;top:1.1rem;color:var(--ember);font-size:1.6rem;line-height:1;transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--massa2);padding-bottom:1.3rem}
+/* contato */
+.contato .wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:3rem;align-items:center}
+.contato address{font-style:normal;display:grid;gap:1rem;margin:1.5rem 0 2rem;color:var(--massa2)}
+.contato address strong{color:var(--massa);display:block}
+.contato iframe{width:100%;aspect-ratio:4/3;border:0;border-radius:20px;filter:grayscale(1) invert(.9) sepia(.4) hue-rotate(-20deg) saturate(1.4) contrast(.9)}
+/* rodapé */
+.foot{border-top:1px solid var(--line);padding:2.5rem 0 calc(2.5rem + env(safe-area-inset-bottom));color:var(--massa2);font-size:.95rem}
+.foot .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem}
+.foot a{color:var(--ember)}
+/* flutuantes */
+.fab{position:fixed;right:1.1rem;bottom:max(1.1rem,env(safe-area-inset-bottom));z-index:60;width:58px;height:58px;border-radius:50%;background:#1A8F4A;color:#fff;display:grid;place-items:center;box-shadow:0 10px 24px -8px #000;border:3px solid var(--massa);transition:transform .2s,bottom .2s}
+.fab:hover{transform:scale(1.06)}
+.fab svg{width:30px;height:30px}
+.minicart{position:fixed;left:1rem;right:5.2rem;bottom:max(1.1rem,env(safe-area-inset-bottom));z-index:60;background:var(--ember);color:var(--carvao);border-radius:999px;padding:.85rem 1.3rem;display:none;justify-content:space-between;align-items:center;gap:1rem;font-weight:700;text-decoration:none;box-shadow:0 10px 24px -8px #000}
+.minicart.on{display:flex}
+.minicart span{font-weight:500;font-size:.95rem}
+@media (prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ .pizza{animation:none}
+ .razoes li{opacity:1;transform:none;transition:none}
+ .btn,.fab,.add{transition:none}
+}
+@media (max-width:980px){
+ .nav,.open{display:none}
+ .menu-t{display:block;margin-left:auto}
+ .menu-t summary{list-style:none;cursor:pointer;font-weight:500;padding:.5rem .8rem;border:1px solid var(--line);border-radius:999px}
+ .menu-t summary::-webkit-details-marker{display:none}
+ .menu-t nav{position:absolute;left:0;right:0;top:4.5rem;background:var(--forno);border-bottom:1px solid var(--line);display:grid;padding:1rem 1.25rem}
+ .menu-t nav a{padding:.7rem 0;text-decoration:none;border-bottom:1px solid var(--line)}
+ .menu-t nav a:last-child{border:0}
+ .bar .btn{padding:.6rem .9rem}
+ .bar .btn span{display:none}
+ .hero{min-height:0;padding:1.5rem 0 3rem}
+ .hero .wrap{grid-template-columns:1fr}
+ .pizza{order:-1;justify-self:end;width:min(64vw,340px);margin-right:calc(-1 * 22vw);margin-bottom:.5rem}
+ .pedido .wrap,.porque .wrap,.contato .wrap{grid-template-columns:1fr}
+ .porque .foto{max-width:420px}
+ .combos,.dep,.gal{grid-template-columns:1fr 1fr}
+ .gal figure:first-child{grid-column:span 2}
+ section{padding:4rem 0}
+}
+@media (max-width:640px){
+ .combos,.dep,.gal{grid-template-columns:1fr}
+ .gal figure:first-child{grid-column:auto;grid-row:auto;aspect-ratio:4/3}
+ .item{grid-template-columns:1fr}
+ .sizes{grid-row:auto;flex-wrap:wrap;margin-top:.3rem}
+ .cart li{grid-template-columns:1fr auto;grid-template-rows:auto auto}
+ .cart li .rm{grid-column:2;grid-row:1}
+ .cart li .qty{grid-column:1;grid-row:2;justify-self:start}
+ .foot{padding-bottom:calc(6rem + env(safe-area-inset-bottom))}
+ body.has-cart .fab{bottom:max(1.1rem,env(safe-area-inset-bottom))}
+}
+@media (min-width:641px){.minicart{display:none!important}}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js')</script>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+<header>
+ <div class="wrap bar">
+  <a class="logo" href="#"><i aria-hidden="true"></i>Forno da Vila</a>
+  <nav class="nav" aria-label="Seções">
+   <a href="#cardapio">Cardápio</a><a href="#combos">Combos</a><a href="#entrega">Entrega</a><a href="#faq">Dúvidas</a><a href="#contato">Contato</a>
+  </nav>
+  <p class="open"><b aria-hidden="true"></b>Aberto agora · entrega em ~40&nbsp;min</p>
+  <details class="menu-t"><summary>Menu</summary>
+   <nav aria-label="Seções"><a href="#cardapio">Cardápio</a><a href="#combos">Combos</a><a href="#entrega">Entrega</a><a href="#faq">Dúvidas</a><a href="#contato">Contato</a></nav>
+  </details>
+  <a class="btn" href="https://wa.me/5511900000000?text=Ol%C3%A1%21%20Quero%20fazer%20um%20pedido." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 12 12 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg><span>Pedir no WhatsApp</span></a>
+ </div>
+</header>
+
+<main id="conteudo">
+<section class="hero">
+ <div class="wrap">
+  <div>
+   <h1>Massa de 48 horas, forno a lenha, <em>na sua mesa em 40&nbsp;minutos.</em></h1>
+   <p class="lead">Pizza de bairro feita do jeito demorado: a massa descansa dois dias, o molho é de tomate fresco e o forno fica a 450&nbsp;°C. A entrega é nossa, sem aplicativo no meio, então você paga menos.</p>
+   <div class="cta">
+    <a class="btn" href="#cardapio">Pedir agora</a>
+    <a class="btn btn-line" href="#combos">Ver combos</a>
+   </div>
+   <p class="selo"><span class="star" aria-hidden="true">★</span><strong>4,8 no Google</strong> · 2.300 avaliações</p>
+  </div>
+  <div class="pizza"><img src="https://images.unsplash.com/photo-1604068549290-dea0e4a305ca?w=900&h=900&fit=crop&q=80&auto=format" width="900" height="900" alt="Pizza marguerita recém-saída do forno, com manjericão fresco e mussarela derretida" fetchpriority="high"></div>
+ </div>
+</section>
+
+<section id="cardapio">
+ <div class="wrap">
+  <h2>Cardápio</h2>
+  <p class="lead">Broto tem 25&nbsp;cm (4 fatias). Grande tem 35&nbsp;cm (8 fatias). Toque no tamanho para adicionar ao pedido.</p>
+
+  <div class="grp">
+   <h3>Clássicas <small>as que não saem do forno</small></h3>
+   <ul class="items" id="classicas">
+    <li class="item" data-n="Marguerita" data-b="42" data-g="68"><h4>Marguerita</h4><p>Molho de tomate da casa, mussarela, manjericão fresco e azeite.</p></li>
+    <li class="item" data-n="Calabresa da Vila" data-b="44" data-g="72"><h4>Calabresa da Vila</h4><p>Calabresa artesanal em fatias finas, cebola roxa e orégano.</p></li>
+    <li class="item" data-n="Portuguesa" data-b="48" data-g="78"><h4>Portuguesa</h4><p>Presunto, ovo, cebola, azeitona, ervilha e mussarela.</p></li>
+    <li class="item" data-n="Mussarela" data-b="40" data-g="64"><h4>Mussarela</h4><p>Mussarela em dobro, tomate e orégano. Simples de propósito.</p></li>
+    <li class="item" data-n="Frango com catupiry" data-b="46" data-g="76"><h4>Frango com catupiry</h4><p>Frango desfiado no molho, catupiry original e milho.</p></li>
+   </ul>
+  </div>
+
+  <div class="grp">
+   <h3>Especiais da casa <small>receitas nossas</small></h3>
+   <ul class="items">
+    <li class="item" data-n="Brasa &amp; Mel" data-b="52" data-g="86"><h4>Brasa &amp; Mel</h4><p>Gorgonzola, pera assada no forno, nozes e fio de mel.</p></li>
+    <li class="item" data-n="Vila Prudente" data-b="54" data-g="88"><h4>Vila Prudente</h4><p>Linguiça de pernil da feira, abobrinha grelhada, provolone e pimenta biquinho.</p></li>
+    <li class="item" data-n="Parma com rúcula" data-b="56" data-g="92"><h4>Parma com rúcula</h4><p>Presunto de Parma, rúcula, lascas de parmesão e tomate seco.</p></li>
+    <li class="item" data-n="Horta" data-b="48" data-g="78"><h4>Horta <span class="tag">vegana</span></h4><p>Molho de tomate, cogumelos, berinjela, tomate confit e queijo de castanha.</p></li>
+    <li class="item" data-n="Quatro queijos da roça" data-b="50" data-g="84"><h4>Quatro queijos da roça</h4><p>Mussarela, minas curado, provolone e gorgonzola.</p></li>
+   </ul>
+  </div>
+
+  <div class="grp">
+   <h3>Doces <small>para dividir</small></h3>
+   <ul class="items">
+    <li class="item" data-n="Banana com canela" data-b="38" data-g="62"><h4>Banana com canela</h4><p>Banana caramelizada, canela, leite condensado e mussarela.</p></li>
+    <li class="item" data-n="Chocolate com morango" data-b="42" data-g="68"><h4>Chocolate com morango</h4><p>Chocolate meio amargo derretido e morangos frescos.</p></li>
+    <li class="item" data-n="Romeu e Julieta" data-b="40" data-g="64"><h4>Romeu e Julieta</h4><p>Goiabada cascão e queijo minas frescal.</p></li>
+    <li class="item" data-n="Doce de leite com coco" data-b="40" data-g="64"><h4>Doce de leite com coco</h4><p>Doce de leite mineiro e coco queimado.</p></li>
+    <li class="item" data-n="Brigadeiro" data-b="42" data-g="68"><h4>Brigadeiro</h4><p>Brigadeiro cremoso e granulado belga.</p></li>
+   </ul>
+  </div>
+
+  <div class="grp">
+   <h3>Bebidas</h3>
+   <ul class="items">
+    <li class="item" data-n="Refrigerante 2 L" data-u="14"><h4>Refrigerante 2&nbsp;L</h4><p>Coca-Cola, Guaraná ou Fanta.</p></li>
+    <li class="item" data-n="Refrigerante lata" data-u="7"><h4>Refrigerante lata</h4><p>350&nbsp;ml, gelado.</p></li>
+    <li class="item" data-n="Suco natural 500 ml" data-u="12"><h4>Suco natural 500&nbsp;ml</h4><p>Laranja, limão ou abacaxi com hortelã.</p></li>
+    <li class="item" data-n="Cerveja long neck" data-u="11"><h4>Cerveja long neck</h4><p>Heineken ou Original.</p></li>
+    <li class="item" data-n="Água com ou sem gás" data-u="5"><h4>Água com ou sem gás</h4><p>500&nbsp;ml.</p></li>
+   </ul>
+  </div>
+ </div>
+</section>
+
+<section id="pedido" class="pedido">
+ <div class="wrap">
+  <div>
+   <h2>Monte seu pedido</h2>
+   <p class="lead">O pedido vai pronto para o nosso WhatsApp. A gente confirma o tempo e o valor por lá, em menos de dois minutos.</p>
+   <div class="cart" aria-live="polite">
+    <ul id="cart-list"></ul>
+    <p class="empty" id="cart-empty">Ainda não tem nada aqui. Escolha uma pizza no <a href="#cardapio">cardápio</a>.</p>
+    <p class="total"><span>Total</span><span id="cart-total">R$&nbsp;0</span></p>
+    <p class="hint">Taxa de entrega calculada por bairro. Retirada no balcão tem 10% de desconto.</p>
+   </div>
+  </div>
+  <form class="form" id="order">
+   <label>Seu nome<input id="f-n" required autocomplete="name" placeholder="Como te chamamos no portão?"></label>
+   <label>Endereço e bairro<input id="f-e" required autocomplete="street-address" placeholder="Rua, número, complemento e bairro"></label>
+   <label>Forma de pagamento
+    <select id="f-p" required>
+     <option value="Pix">Pix (chave enviada no WhatsApp)</option>
+     <option value="Cartão na entrega">Cartão na entrega</option>
+     <option value="Dinheiro">Dinheiro</option>
+    </select>
+   </label>
+   <label id="troco">Troco para quanto?<input id="f-t" inputmode="numeric" placeholder="Ex.: 100"></label>
+   <button class="btn" type="submit"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 12 12 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg>Enviar pedido no WhatsApp</button>
+   <p class="hint" id="order-msg">Adicione pelo menos um item para enviar.</p>
+  </form>
+ </div>
+</section>
+
+<section id="combos">
+ <div class="wrap">
+  <h2>Combos e promoções</h2>
+  <p class="lead">Preços de referência. O que valer no dia a gente confirma no WhatsApp.</p>
+  <div class="combos">
+   <article class="combo"><h3>Terça em dobro</h3><p>Toda terça, duas grandes clássicas pelo preço de uma. Só para entrega e retirada.</p><p class="preco"><s>R$&nbsp;136</s>R$&nbsp;68</p></article>
+   <article class="combo"><h3>Combo família</h3><p>Duas grandes (uma salgada e uma doce), refrigerante 2&nbsp;L e borda recheada nas duas.</p><p class="preco"><s>R$&nbsp;172</s>R$&nbsp;139</p></article>
+   <article class="combo"><h3>Borda recheada grátis</h3><p>De quarta a quinta, a borda de catupiry ou cheddar sai por conta da casa em qualquer grande.</p><p class="preco"><s>R$&nbsp;12</s>R$&nbsp;0</p></article>
+  </div>
+ </div>
+</section>
+
+<section class="porque">
+ <div class="wrap">
+  <div class="foto"><img src="https://images.unsplash.com/photo-1579751626657-72bc17010498?w=800&h=1000&fit=crop&q=80&auto=format" width="800" height="1000" alt="Pizza napolitana na boca do forno a lenha, com o fogo aceso ao fundo" loading="lazy"></div>
+  <div>
+   <h2>Por que a gente</h2>
+   <ul class="razoes" id="razoes">
+    <li><b>48&nbsp;h</b><p><strong>Massa de fermentação longa</strong>Dois dias de descanso. Fica leve, digere fácil e a borda infla como tem de ser.</p></li>
+    <li><b>450&nbsp;°C</b><p><strong>Forno a lenha de verdade</strong>Noventa segundos de forno. Base crocante, queijo derretido e aquela pinta preta na borda.</p></li>
+    <li><b>casa</b><p><strong>Molho feito aqui</strong>Tomate fresco cozido de manhã com azeite e manjericão. Nada de lata.</p></li>
+    <li><b>0%</b><p><strong>Entrega própria, sem aplicativo</strong>Os motoboys são nossos. Sem taxa de app, o preço da pizza cai para você.</p></li>
+    <li><b>2</b><p><strong>Opções sem glúten e vegana</strong>Massa sem glúten em qualquer sabor (+R$&nbsp;8) e queijo de castanha no lugar da mussarela.</p></li>
+   </ul>
+  </div>
+ </div>
+</section>
+
+<section id="entrega" class="entrega">
+ <div class="wrap">
+  <h2>Entrega e retirada</h2>
+  <p class="lead">Tempo médio de 40 minutos. Em noite de jogo ou chuva, pode passar de 55, e a gente avisa antes.</p>
+  <ul class="taxas">
+   <li><div>Vila Prudente, Vila Zelina, Jardim Independência<span>até 2&nbsp;km</span></div><b>R$&nbsp;5</b></li>
+   <li><div>Ipiranga, Vila Alpina, Parque São Lucas<span>de 2 a 4&nbsp;km</span></div><b>R$&nbsp;9</b></li>
+   <li><div>Mooca, Sacomã, Vila Ema, Água Rasa<span>de 4 a 6&nbsp;km</span></div><b>R$&nbsp;13</b></li>
+   <li><div>Cambuci, Tatuapé, São Caetano (centro)<span>de 6 a 8&nbsp;km</span></div><b>R$&nbsp;18</b></li>
+  </ul>
+  <p class="retira"><strong>Retirada no balcão: 10% de desconto.</strong><br>Peça pelo WhatsApp, avise que vai buscar e a pizza sai do forno na hora em que você chega.</p>
+ </div>
+</section>
+
+<section>
+ <div class="wrap">
+  <h2>Do forno para a foto</h2>
+  <div class="gal">
+   <figure><img src="https://images.unsplash.com/photo-1541745537411-b8046dc6d66c?w=800&h=1100&fit=crop&q=80&auto=format" width="800" height="1100" alt="Fatia de pizza sendo puxada com o queijo esticando" loading="lazy"></figure>
+   <figure><img src="https://images.unsplash.com/photo-1595854341625-f33ee10dbf94?w=800&h=600&fit=crop&q=80&auto=format" width="800" height="600" alt="Marguerita sobre bancada polvilhada de farinha" loading="lazy"></figure>
+   <figure><img src="https://images.unsplash.com/photo-1590947132387-155cc02f3212?w=800&h=600&fit=crop&q=80&auto=format" width="800" height="600" alt="Fatias de pizza com alho, tomate e ervas ao redor" loading="lazy"></figure>
+   <figure><img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?w=800&h=600&fit=crop&q=80&auto=format" width="800" height="600" alt="Pizza de calabresa vista de cima sobre madeira escura" loading="lazy"></figure>
+   <figure><img src="https://images.unsplash.com/photo-1506354666786-959d6d497f1a?w=800&h=600&fit=crop&q=80&auto=format" width="800" height="600" alt="Pizza rústica inteira com tomate e manjericão" loading="lazy"></figure>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="wrap">
+  <h2>Quem pede, repete</h2>
+  <div class="dep">
+   <blockquote><span class="stars" aria-label="5 estrelas">★★★★★</span><p>Chegou em 35 minutos, quente, e a borda não murchou no caminho. A Brasa &amp; Mel virou vício aqui em casa.</p><footer><strong>Renata Sousa</strong> · Vila Prudente · há 2 semanas</footer></blockquote>
+   <blockquote><span class="stars" aria-label="5 estrelas">★★★★★</span><p>Massa fininha e leve, dá para comer uma grande sem passar mal. Os motoboys são sempre os mesmos, dá até para conhecer.</p><footer><strong>Marcelo Tavares</strong> · Ipiranga · há 1 mês</footer></blockquote>
+   <blockquote><span class="stars" aria-label="5 estrelas">★★★★★</span><p>A vegana é a melhor que já comi em São Paulo. E o pedido pelo WhatsApp é rápido, sem app travando.</p><footer><strong>Camila Ferraz</strong> · Vila Alpina · há 1 mês</footer></blockquote>
+  </div>
+ </div>
+</section>
+
+<section id="faq">
+ <div class="wrap">
+  <h2>Dúvidas de quem pede</h2>
+  <div class="faq">
+   <details><summary>Quanto tempo demora a entrega?</summary><p>Em média 40 minutos, contando o forno. Sexta e sábado depois das 20h pode chegar a 55. Você recebe o tempo estimado na confirmação.</p></details>
+   <details><summary>Dá para fazer meia a meia?</summary><p>Sim, em qualquer tamanho. Cobra-se o valor do sabor mais caro. É só escrever no WhatsApp quais as duas metades.</p></details>
+   <details><summary>Tem borda recheada?</summary><p>Catupiry ou cheddar, R$&nbsp;12 na grande e R$&nbsp;8 no broto. De quarta a quinta a borda na grande é grátis.</p></details>
+   <details><summary>Aceita vale-refeição?</summary><p>Aceitamos Alelo, Sodexo, VR e Ticket na entrega e no balcão. Também Pix, cartão e dinheiro.</p></details>
+   <details><summary>Tem salão para comer na pizzaria?</summary><p>Temos oito mesas no salão e mais quatro na calçada. Não fazemos reserva; de sexta e sábado costuma ter fila de uns 15 minutos.</p></details>
+  </div>
+ </div>
+</section>
+
+<section id="contato" class="contato">
+ <div class="wrap">
+  <div>
+   <h2>Onde a gente fica</h2>
+   <address>
+    <p><strong>Rua Modelo, 480</strong>Vila Prudente, São Paulo, SP</p>
+    <p><strong>Terça a domingo, 18h às 23h30</strong>Segunda o forno descansa.</p>
+    <p><strong>WhatsApp</strong>(11)&nbsp;90000-0000</p>
+   </address>
+   <a class="btn" href="https://wa.me/5511900000000?text=Ol%C3%A1%21%20Quero%20fazer%20um%20pedido." target="_blank" rel="noopener">Pedir no WhatsApp</a>
+  </div>
+  <iframe src="https://www.google.com/maps?q=Vila+Prudente,+S%C3%A3o+Paulo&z=14&output=embed" title="Mapa da região da Vila Prudente" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+ </div>
+</section>
+</main>
+
+<footer class="foot">
+ <div class="wrap">
+  <p>Forno da Vila · pizzaria fictícia. Fotos: Unsplash.</p>
+  <p>Site demonstrativo criado por <a href="https://soulfork.com.br" target="_blank" rel="noopener">SoulFork</a></p>
+ </div>
+</footer>
+
+<a class="fab" href="https://wa.me/5511900000000?text=Ol%C3%A1%21%20Quero%20fazer%20um%20pedido." target="_blank" rel="noopener" aria-label="Pedir no WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 12 12 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg></a>
+<a class="minicart" id="minicart" href="#pedido"><span id="mini-n"></span><b id="mini-t"></b></a>
+
+<script>
+var $=function(id){return document.getElementById(id)},cart=[];
+function brl(v){return 'R$ '+v.toLocaleString('pt-BR')}
+// build the size buttons from data attributes: one "+" per size
+document.querySelectorAll('.item').forEach(function(li){
+  var d=li.dataset,box=document.createElement('div');box.className='sizes';
+  var opts=d.u?[['Unidade',+d.u]]:[['Broto',+d.b],['Grande',+d.g]];
+  opts.forEach(function(o){
+    var b=document.createElement('button');b.type='button';b.className='add';
+    b.innerHTML=(d.u?'':o[0]+' ')+brl(o[1])+' <b aria-hidden="true">+</b>';
+    b.setAttribute('aria-label','Adicionar '+d.n+(d.u?'':' '+o[0].toLowerCase())+' ao pedido');
+    b.addEventListener('click',function(){add(d.n,o[0],o[1]);b.classList.add('ok');setTimeout(function(){b.classList.remove('ok')},900)});
+    box.appendChild(b)});
+  li.appendChild(box)});
+function add(n,s,p){var f=cart.filter(function(c){return c.n===n&&c.s===s})[0];if(f)f.q++;else cart.push({n:n,s:s,p:p,q:1});render()}
+function total(){return cart.reduce(function(t,c){return t+c.p*c.q},0)}
+function render(){
+  var ul=$('cart-list');ul.innerHTML='';
+  cart.forEach(function(c,i){
+    var li=document.createElement('li');
+    li.innerHTML='<div>'+c.n+'<span>'+(c.s==='Unidade'?'':c.s+' · ')+brl(c.p)+'</span></div>'+
+      '<div class="qty"><button type="button" aria-label="Menos um">−</button><output>'+c.q+'</output><button type="button" aria-label="Mais um">+</button></div>'+
+      '<button type="button" class="rm" aria-label="Remover '+c.n+'">×</button>';
+    var bs=li.querySelectorAll('button');
+    bs[0].onclick=function(){c.q>1?c.q--:cart.splice(i,1);render()};
+    bs[1].onclick=function(){c.q++;render()};
+    bs[2].onclick=function(){cart.splice(i,1);render()};
+    ul.appendChild(li)});
+  var n=cart.reduce(function(t,c){return t+c.q},0);
+  $('cart-empty').style.display=n?'none':'';
+  $('cart-total').textContent=brl(total());
+  $('order-msg').textContent=n?'Você vai revisar tudo no WhatsApp antes de confirmar.':'Adicione pelo menos um item para enviar.';
+  $('mini-n').textContent=n+(n===1?' item':' itens');$('mini-t').textContent=brl(total());
+  $('minicart').classList.toggle('on',n>0);document.body.classList.toggle('has-cart',n>0)}
+$('f-p').addEventListener('change',function(){$('order').classList.toggle('dinheiro',this.value==='Dinheiro')});
+$('order').addEventListener('submit',function(e){
+  e.preventDefault();
+  if(!cart.length){$('order-msg').textContent='Adicione pelo menos um item antes de enviar.';return}
+  var lines=cart.map(function(c){return '• '+c.q+'x '+c.n+(c.s==='Unidade'?'':' ('+c.s.toLowerCase()+')')+' — '+brl(c.p*c.q).replace(' ',' ')});
+  var pay=$('f-p').value+($('f-p').value==='Dinheiro'&&$('f-t').value?' (troco para '+$('f-t').value.trim()+')':'');
+  var msg='Olá! Quero fazer um pedido:\n'+lines.join('\n')+'\nTotal: '+brl(total()).replace(' ',' ')+' (sem a taxa de entrega)\n\nNome: '+$('f-n').value.trim()+'\nEndereço: '+$('f-e').value.trim()+'\nPagamento: '+pay;
+  window.open('https://wa.me/5511900000000?text='+encodeURIComponent(msg),'_blank','noopener')});
+var rz=$('razoes');
+if('IntersectionObserver' in window){new IntersectionObserver(function(es,io){if(es[0].isIntersecting){rz.classList.add('in');io.disconnect()}},{threshold:.15}).observe(rz)}else{rz.classList.add('in')}
+document.querySelectorAll('.menu-t nav a').forEach(function(a){a.addEventListener('click',function(){a.closest('details').removeAttribute('open')})});
+</script>
+</body>
+</html>

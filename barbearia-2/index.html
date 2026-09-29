@@ -145,7 +145,6 @@ a,summary,button,label{touch-action:manipulation;-webkit-tap-highlight-color:rgb
 .ag-sum .btn{width:100%}
 .ag-sum .btn[aria-disabled=true]{opacity:.45;pointer-events:none}
 .ag-sum .hint a{color:var(--acc)}
-.agenda+.book h2::after{content:" (mensagem simples)";display:block;font:500 1rem/1.4 var(--body);color:var(--mut);margin-top:.3rem}
 /* booking */
 .book{background:var(--bg2);border-block:1px solid var(--line)}
 .book .wrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(2rem,5vw,4.5rem);align-items:center}
@@ -416,38 +415,8 @@ footer a{color:var(--txt)}
         <p class="ag-lbl">Resumo</p>
         <p class="ag-line" id="ag-res">Monte seu horário ao lado.</p>
         <a class="btn" id="ag-go" href="#agenda" aria-disabled="true" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Confirmar no WhatsApp</a>
-        <p class="hint">Simulação sem cadastro: nada é salvo. Prefere só mandar mensagem? <a href="#agendar">Use o formulário simples</a>.</p>
+        <p class="hint">Simulação sem cadastro: nada é salvo.</p>
       </aside>
-    </div>
-  </div>
-</section>
-
-<section class="band book" id="agendar">
-  <div class="wrap">
-    <figure class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=900&h=1125&fit=crop&q=80&auto=format" width="900" height="1125" alt="Barbeiro de mãos tatuadas acertando o contorno da nuca de um cliente com a navalha"></figure>
-    <div>
-      <h2>Agendar</h2>
-      <p class="lede">Diga o que quer fazer e quando pode vir. A mensagem já vai pronta para o WhatsApp e a gente confirma o horário exato.</p>
-      <form class="slip" id="slip">
-        <label>Serviço
-          <select id="f-s" name="servico">
-            <option>Corte</option><option>Barba</option><option selected>Corte + barba</option><option>Sobrancelha</option><option>Pigmentação</option><option>Luzes ou platinado</option><option>Corte infantil</option><option>Pacote noivo</option>
-          </select></label>
-        <label>Barbeiro
-          <select id="f-b" name="barbeiro">
-            <option value="">Sem preferência</option><option>Kadu</option><option>Léo</option><option>Rafa</option><option>Vini</option>
-          </select></label>
-        <label>Dia<input id="f-d" name="dia" type="date" required></label>
-        <fieldset><legend>Período</legend>
-          <div class="turns">
-            <label><input type="radio" name="periodo" value="manhã"><span>Manhã</span></label>
-            <label><input type="radio" name="periodo" value="tarde" checked><span>Tarde</span></label>
-            <label><input type="radio" name="periodo" value="noite"><span>Noite</span></label>
-          </div>
-        </fieldset>
-        <button class="btn" type="submit"><svg aria-hidden="true"><use href="#i-wa"/></svg>Pedir horário no WhatsApp</button>
-        <p class="hint">Abre o WhatsApp com a mensagem pronta. Segunda-feira a casa não abre.</p>
-      </form>
     </div>
   </div>
 </section>
@@ -634,18 +603,9 @@ footer a{color:var(--txt)}
 <a class="fab" href="https://wa.me/5511900000000?text=Ol%C3%A1%21%20Quero%20agendar%20um%20hor%C3%A1rio%20na%20Sua%20Barbearia." target="_blank" rel="noopener" aria-label="Falar com a barbearia no WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg></a>
 
 <script>
-var $=function(id){return document.getElementById(id)},day=$('f-d');
+var $=function(id){return document.getElementById(id)};
 var DIAS=['domingo','segunda','terça','quarta','quinta','sexta','sábado'];
 function pad(n){return (n<10?'0':'')+n}
-var now=new Date();day.min=now.getFullYear()+'-'+pad(now.getMonth()+1)+'-'+pad(now.getDate());
-// split the ISO string by hand: new Date('yyyy-mm-dd') is UTC and shifts the day in Brazil
-function parts(v){var p=v.split('-');return {d:p[2],m:p[1],w:new Date(+p[0],p[1]-1,+p[2]).getDay()}}
-day.addEventListener('input',function(){day.setCustomValidity(day.value&&parts(day.value).w===1?'Segunda-feira a casa não abre. Escolha outro dia.':'')});
-function bookingUrl(){
-  var p=parts(day.value),b=$('f-b').value,t=document.querySelector('[name=periodo]:checked').value;
-  var msg='Olá! Quero agendar: '+$('f-s').value+', '+(b?'com '+b:'sem preferência de barbeiro')+', '+DIAS[p.w]+' '+p.d+'/'+p.m+', '+(t==='manhã'?'de manhã':'à '+t)+'.';
-  return 'https://wa.me/5511900000000?text='+encodeURIComponent(msg)}
-$('slip').addEventListener('submit',function(e){e.preventDefault();window.open(bookingUrl(),'_blank','noopener')});
 // one reveal: the service cards light up when first seen
 var sv=$('svc');
 if('IntersectionObserver' in window){new IntersectionObserver(function(es,io){if(es[0].isIntersecting){sv.classList.add('in');io.disconnect()}},{threshold:.1}).observe(sv)}else{sv.classList.add('in')}
